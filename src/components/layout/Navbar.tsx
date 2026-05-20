@@ -5,191 +5,115 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-
   const [open, setOpen] = useState(false);
+
+  const navLinks = ["Home", "Services", "About", "Help"];
 
   return (
     <>
-      {/* NAVBAR */}
-      <header className="absolute top-4 left-0 w-full z-50 px-4 md:px-8">
-
+      {/* ================= NAVBAR ================= */}
+      <header className="fixed top-3 left-0 w-full z-50 px-2 sm:px-4 md:px-8">
         <div
           className="
+            w-full
             max-w-7xl
             mx-auto
 
-            h-[72px] md:h-[88px]
+            h-[64px]
+            md:h-[84px]
 
             flex
             items-center
             justify-between
 
-            px-5 md:px-10
+            px-3
+            sm:px-5
+            md:px-8
 
             rounded-full
 
             bg-white/20
-            backdrop-blur-xl
+            backdrop-blur-2xl
 
-            border border-white/30
+            border
+            border-white/30
 
             shadow-[0_8px_32px_rgba(0,0,0,0.15)]
 
-            transition-all
-            duration-300
-
-            hover:bg-white/25
+            overflow-hidden
           "
         >
+          {/* ================= LEFT ================= */}
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            {/* LOGO */}
+            <div className="relative w-12 h-12 md:w-16 md:h-16 shrink-0">
+              <Image
+                src="/images/logo/logo.png"
+                alt="logo"
+                fill
+                sizes="64px"
+                className="object-contain"
+                priority
+              />
+            </div>
 
-       {/* LEFT */}
-<div className="flex items-center gap-3">
-
-  {/* LOGO */}
-  <div className="relative w-14 h-14 md:w-20 md:h-20">
-
-    <Image
-      src="/images/logo/logo.png"
-      alt="logo"
-      fill
-      className="object-contain"
-    />
-
-  </div>
-
-  {/* TEXT */}
-  <h1
-    className="
-      text-lg
-      md:text-2xl
-
-      font-black
-      text-green-700
-
-      whitespace-nowrap
-      leading-none
-    "
-  >
-    JAN GAN MAN
-  </h1>
-
-</div>
-
-          {/* DESKTOP NAV */}
-          <nav
-            className="
-              hidden
-              lg:flex
-              items-center
-              gap-12
-            "
-          >
-
-            <a
-              href="#"
+            {/* TEXT */}
+            <h1
               className="
-                relative
-                text-xl
-                font-semibold
-                text-black/80
+                text-[15px]
+                sm:text-lg
+                md:text-2xl
 
-                after:absolute
-                after:left-0
-                after:-bottom-2
-                after:h-[3px]
-                after:w-0
-                after:bg-green-500
-                after:rounded-full
-                after:transition-all
-                after:duration-300
+                font-black
+                text-green-700
 
-                hover:after:w-full
-                hover:text-black
+                truncate
+                whitespace-nowrap
+                leading-none
               "
             >
-              Home
-            </a>
+              JAN GAN MAN
+            </h1>
+          </div>
 
-            <a
-              href="#"
-              className="
-                relative
-                text-xl
-                font-semibold
-                text-black/80
+          {/* ================= DESKTOP NAV ================= */}
+          <nav className="hidden lg:flex items-center gap-10">
+            {navLinks.map((item) => (
+              <a
+                key={item}
+                href="#"
+                className="
+                  relative
 
-                after:absolute
-                after:left-0
-                after:-bottom-2
-                after:h-[3px]
-                after:w-0
-                after:bg-green-500
-                after:rounded-full
-                after:transition-all
-                after:duration-300
+                  text-lg
+                  font-semibold
+                  text-black/80
 
-                hover:after:w-full
-                hover:text-black
-              "
-            >
-              Services
-            </a>
+                  transition-all
+                  duration-300
 
-            <a
-              href="#"
-              className="
-                relative
-                text-xl
-                font-semibold
-                text-black/80
+                  hover:text-black
 
-                after:absolute
-                after:left-0
-                after:-bottom-2
-                after:h-[3px]
-                after:w-0
-                after:bg-green-500
-                after:rounded-full
-                after:transition-all
-                after:duration-300
+                  after:absolute
+                  after:left-0
+                  after:-bottom-2
+                  after:h-[3px]
+                  after:w-0
+                  after:bg-lime-500
+                  after:rounded-full
+                  after:transition-all
+                  after:duration-300
 
-                hover:after:w-full
-                hover:text-black
-              "
-            >
-              About
-            </a>
-
-            <a
-              href="#"
-              className="
-                relative
-                text-xl
-                font-semibold
-                text-black/80
-
-                after:absolute
-                after:left-0
-                after:-bottom-2
-                after:h-[3px]
-                after:w-0
-                after:bg-green-500
-                after:rounded-full
-                after:transition-all
-                after:duration-300
-
-                hover:after:w-full
-                hover:text-black
-              "
-            >
-              Help
-            </a>
-
+                  hover:after:w-full
+                "
+              >
+                {item}
+              </a>
+            ))}
           </nav>
 
-          {/* RIGHT SIDE */}
-          <div className="flex items-center gap-4">
-
+          {/* ================= RIGHT ================= */}
+          <div className="flex items-center gap-3 shrink-0">
             {/* DESKTOP BUTTON */}
             <button
               className="
@@ -199,8 +123,8 @@ export default function Navbar() {
                 items-center
                 justify-center
 
-                px-7
-                h-[52px]
+                px-6
+                h-[48px]
 
                 rounded-2xl
 
@@ -208,7 +132,8 @@ export default function Navbar() {
                 hover:bg-lime-600
 
                 text-white
-                text-lg
+                text-sm
+                lg:text-base
                 font-bold
 
                 transition-all
@@ -228,8 +153,8 @@ export default function Navbar() {
               className="
                 lg:hidden
 
-                w-11
-                h-11
+                w-10
+                h-10
 
                 rounded-full
 
@@ -239,18 +164,39 @@ export default function Navbar() {
                 flex
                 items-center
                 justify-center
+
+                border
+                border-white/20
               "
             >
-              <Menu size={24} />
+              <Menu size={22} />
             </button>
-
           </div>
-
         </div>
-
       </header>
 
-      {/* MOBILE SIDEBAR */}
+      {/* ================= OVERLAY ================= */}
+      <div
+        onClick={() => setOpen(false)}
+        className={`
+          fixed
+          inset-0
+          bg-black/40
+          backdrop-blur-sm
+          z-[90]
+
+          transition-all
+          duration-500
+
+          ${
+            open
+              ? "opacity-100 visible"
+              : "opacity-0 invisible"
+          }
+        `}
+      />
+
+      {/* ================= MOBILE SIDEBAR ================= */}
       <div
         className={`
           fixed
@@ -273,13 +219,15 @@ export default function Navbar() {
           transition-all
           duration-500
 
-          ${open ? "translate-x-0" : "translate-x-full"}
+          ${
+            open
+              ? "translate-x-0"
+              : "translate-x-full"
+          }
         `}
       >
-
         {/* CLOSE */}
         <div className="flex justify-end">
-
           <button
             onClick={() => setOpen(false)}
             className="
@@ -293,80 +241,61 @@ export default function Navbar() {
               flex
               items-center
               justify-center
+
+              border
+              border-white/20
             "
           >
             <X size={22} />
           </button>
-
         </div>
 
-        {/* MOBILE LINKS */}
-        <nav className="flex flex-col gap-8 mt-16">
+        {/* LINKS */}
+        <nav className="flex flex-col gap-7 mt-16">
+          {navLinks.map((item) => (
+            <a
+              key={item}
+              href="#"
+              onClick={() => setOpen(false)}
+              className="
+                text-2xl
+                font-bold
+                text-black/80
 
-          <a
-            href="#"
-            className="
-              text-2xl
-              font-bold
-              text-black/80
-            "
-          >
-            Home
-          </a>
+                transition-all
+                duration-300
 
-          <a
-            href="#"
-            className="
-              text-2xl
-              font-bold
-              text-black/80
-            "
-          >
-            Services
-          </a>
+                hover:translate-x-2
+                hover:text-green-700
+              "
+            >
+              {item}
+            </a>
+          ))}
 
-          <a
-            href="#"
-            className="
-              text-2xl
-              font-bold
-              text-black/80
-            "
-          >
-            About
-          </a>
-
-          <a
-            href="#"
-            className="
-              text-2xl
-              font-bold
-              text-black/80
-            "
-          >
-            Help
-          </a>
-
+          {/* BUTTON */}
           <button
             className="
-              mt-8
+              mt-6
 
-              h-[55px]
+              h-[54px]
 
               rounded-2xl
 
               bg-lime-500
+              hover:bg-lime-600
 
               text-white
               text-lg
               font-bold
+
+              transition-all
+              duration-300
             "
           >
             Download App
           </button>
-
         </nav>
-
       </div>
     </>
   );

@@ -1,15 +1,24 @@
-import { ServiceCard } from "./ServiceCard";
 import type { Service } from "@/types/home";
+import ServiceCard from "./ServiceCard";
 
-type ServiceGridProps = {
+interface ServiceGridProps {
   services: Service[];
-};
+}
 
-export function ServiceGrid({ services }: ServiceGridProps) {
+export default function ServiceGrid({
+  services,
+}: ServiceGridProps) {
   return (
-    <section className="services-grid" aria-label="Services">
+    <section className="grid grid-cols-2 gap-5 px-4 py-8">
       {services.map((service) => (
-        <ServiceCard key={service.title} service={service} />
+        <ServiceCard
+          key={service.title}
+          title={service.title}
+          description={service.description}
+          icon={service.icon}
+          tone={service.tone}
+          href={service.href}
+        />
       ))}
     </section>
   );

@@ -9,8 +9,8 @@ export default function Sun() {
     <motion.div
       className="
         absolute
-        top-15
-        right-90
+        top-1
+        right-10
         z-10
       "
       animate={{

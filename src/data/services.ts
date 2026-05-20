@@ -4,56 +4,65 @@ export const services: Service[] = [
   {
     title: "Naukri",
     description: "Kaam dhoondo",
-    icon: "job",
+    icon: "Job",
     tone: "purple",
+    href: "/naukri",
   },
 
   {
     title: "Dukaan",
     description: "Paas ki dukaan",
-    icon: "shop",
+    icon: "Shop",
     tone: "orange",
+    href: "/dukaan",
   },
 
   {
     title: "Sarkari Yojana",
     description: "Yojana aur labh",
-    icon: "scheme",
+    icon: "Scheme",
     tone: "yellow",
+    href: "/sarkari-yojana",
   },
 
   {
     title: "Swasthya",
     description: "Sehat ki seva",
-    icon: "health",
+    icon: "Health",
     tone: "red",
+    href: "/swasthya",
   },
 
   {
     title: "Shiksha",
     description: "Padho aur badho",
-    icon: "education",
+    icon: "Education",
     tone: "blue",
+    href: "/shiksha",
   },
 
   {
     title: "Krishi",
     description: "Kheti ki jankari",
-    icon: "farming",
+    icon: "Farming",
     tone: "green",
+    href: "/krishi",
   },
 
-  {
-    title: "Police",
-    description: "Suraksha aur help",
-    icon: "police",
-    tone: "indigo",
-  },
+ {
+  title: "Police",
+  description: "Suraksha aur help",
+  icon: "Police",
+  tone: "indigo",
+  href: "/police",
+  image: "/assets/home/police.png",
+},
 
   {
     title: "AI Sahayak",
     description: "Poocho kuch bhi",
-    icon: "ai",
+    icon: "Ai",
     tone: "pink",
+    href: "/ai-sahayak",
   },
 ];

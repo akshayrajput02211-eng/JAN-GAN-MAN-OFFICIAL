@@ -1,8 +1,22 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
 
-@import "../styles/landing.css";
-@import "../styles/footer.css";
-@import "../styles/updates.css";
-@import "../styles/ask-banner.css";
-@import "../styles/services.css";
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

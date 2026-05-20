@@ -8,7 +8,7 @@ export default function Grass() {
         bottom-0
         left-0
         w-full
-        z-5
+        z-[5]
       "
     >
       <Image
@@ -16,7 +16,14 @@ export default function Grass() {
         alt="grass"
         width={1920}
         height={400}
-        className="w-full h-auto object-cover"
+        priority
+        className="
+          w-full
+          h-auto
+          object-cover
+          select-none
+          pointer-events-none
+        "
       />
     </div>
   );

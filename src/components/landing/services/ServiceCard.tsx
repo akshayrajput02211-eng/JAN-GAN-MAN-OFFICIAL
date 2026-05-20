@@ -1,41 +1,292 @@
-import {
-  BookOpen,
-  Bot,
-  BriefcaseBusiness,
-  HeartPulse,
-  Landmark,
-  Shield,
-  Sprout,
-  Store,
-  type LucideIcon,
-} from "lucide-react";
-import type { Service, ServiceIcon } from "@/types/home";
+"use client";
+import policeImg from "@/assets/home/police.png";
+import Link from "next/link";
+import Image from "next/image";
+import gsap from "gsap";
 
-const serviceIcons: Record<ServiceIcon, LucideIcon> = {
-  job: BriefcaseBusiness,
-  shop: Store,
-  scheme: Landmark,
-  health: HeartPulse,
-  education: BookOpen,
-  farming: Sprout,
-  police: Shield,
-  ai: Bot,
-};
+interface Props {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  tone: string;
+  href: string;
+  image: string;
+}
 
-type ServiceCardProps = {
-  service: Service;
-};
-
-export function ServiceCard({ service }: ServiceCardProps) {
-  const Icon = serviceIcons[service.icon];
-
+export default function ServiceCard({
+  title,
+  description,
+  icon,
+  href,
+  image,
+}: Props) {
   return (
-    <article className="service-card">
-      <span className={`icon-badge ${service.tone}`}>
-        <Icon aria-hidden="true" />
-      </span>
-      <h2>{service.title}</h2>
-      <p>{service.description}</p>
-    </article>
+    <Link href={href} className="block h-full">
+      {/* WRAPPER */}
+      <div
+        className="
+          group
+          relative
+
+          h-full
+        "
+      >
+        {/* PREMIUM OUTSIDE GLOW */}
+        <div
+          className="
+            absolute
+            inset-[-10px]
+
+            rounded-[34px]
+
+            bg-gradient-to-br
+            from-violet-400
+            via-purple-500
+            to-indigo-600
+
+            opacity-20
+
+            blur-2xl
+
+            transition-all duration-500
+
+            group-hover:opacity-40
+            group-hover:scale-[1.02]
+          "
+        />
+
+        {/* MAIN CARD */}
+        <div
+          onMouseEnter={(e) => {
+            gsap.to(e.currentTarget, {
+              y: -6,
+              duration: 0.35,
+              ease: "power3.out",
+            });
+          }}
+          onMouseLeave={(e) => {
+            gsap.to(e.currentTarget, {
+              y: 0,
+              duration: 0.35,
+              ease: "power3.out",
+            });
+          }}
+          className="
+            relative z-10
+
+            flex flex-col
+            justify-between
+
+            h-full
+            min-h-[260px]
+
+            overflow-hidden
+
+            rounded-[30px]
+
+            border border-white/70
+
+            bg-[#f9f9ff]/95
+
+            p-5
+            sm:p-6
+
+            backdrop-blur-xl
+
+            shadow-[0_12px_40px_rgba(0,0,0,0.06)]
+
+            transition-all duration-500
+
+            group-hover:shadow-[0_20px_60px_rgba(99,102,241,0.12)]
+          "
+        >
+          {/* TOP */}
+          <div
+            className="
+              flex items-start
+              justify-between
+
+              gap-4
+            "
+          >
+            {/* LEFT */}
+            <div className="flex-1 min-w-0">
+              
+              {/* ICON */}
+              <div
+                className="
+                  flex items-center
+                  justify-center
+
+                  w-14 h-14
+                  sm:w-16 sm:h-16
+
+                  rounded-2xl
+
+                  bg-gradient-to-br
+                  from-violet-500
+                  via-purple-500
+                  to-indigo-500
+
+                  text-white
+
+                  shadow-[0_10px_25px_rgba(99,102,241,0.25)]
+
+                  transition-all duration-300
+
+                  group-hover:rotate-3
+                  group-hover:scale-105
+                "
+              >
+                <div className="scale-110">
+                  {icon}
+                </div>
+              </div>
+
+              {/* TITLE */}
+              <h3
+                className="
+                  mt-4
+
+                  text-lg
+                  sm:text-[22px]
+
+                  font-black
+
+                  leading-tight
+
+                  tracking-tight
+
+                  text-[#1e1b4b]
+
+                  line-clamp-2
+                "
+              >
+                {title}
+              </h3>
+
+              {/* DESCRIPTION */}
+              <p
+                className="
+                  mt-2
+
+                  text-sm
+                  sm:text-[15px]
+
+                  leading-6
+
+                  text-slate-500
+
+                  line-clamp-3
+                "
+              >
+                {description}
+              </p>
+            </div>
+
+            {/* MINI IMAGE CARD */}
+            <div
+              className="
+                flex-shrink-0
+
+                rounded-[22px]
+
+                border border-white/80
+
+                bg-white
+
+                p-2
+
+                shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+
+                transition-all duration-300
+
+                group-hover:scale-105
+              "
+            >
+              <div
+                className="
+                  relative
+
+                  h-[70px]
+                  w-[70px]
+
+                  sm:h-[82px]
+                  sm:w-[82px]
+                "
+              >
+              {image && (
+  <Image
+    src={image}
+    alt={title}
+    width={300}
+    height={300}
+    className="object-contain"
+  />
+)}
+              </div>
+            </div>
+          </div>
+
+          {/* BOTTOM */}
+          <div
+            className="
+              mt-6
+
+              flex items-center
+              justify-end
+            "
+          >
+            {/* ARROW */}
+            <div
+              className="
+                flex items-center
+                justify-center
+
+                w-10 h-10
+
+                rounded-full
+
+                bg-violet-100
+
+                text-violet-700
+
+                shadow-sm
+
+                transition-all duration-300
+
+                group-hover:bg-violet-600
+                group-hover:text-white
+                group-hover:translate-x-1
+              "
+            >
+              →
+            </div>
+          </div>
+
+          {/* SHINE EFFECT */}
+          <div
+            className="
+              absolute
+              top-0
+              left-[-120%]
+
+              h-full
+              w-[90px]
+
+              rotate-12
+
+              bg-white/50
+
+              blur-2xl
+
+              transition-all duration-1000
+
+              group-hover:left-[130%]
+            "
+          />
+        </div>
+      </div>
+    </Link>
   );
 }

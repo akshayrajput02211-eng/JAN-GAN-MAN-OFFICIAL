@@ -5,7 +5,7 @@ export default function Girl() {
     <div
       className="
         absolute
-        bottom-29
+        bottom-[99px]
         right-[15%]
         z-20
       "
@@ -15,6 +15,8 @@ export default function Girl() {
         alt="girl"
         width={510}
         height={310}
+        className="w-[220px] md:w-[510px] h-auto"
+        priority
       />
     </div>
   );

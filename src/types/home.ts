@@ -8,12 +8,13 @@ export type ServiceIcon =
   | "police"
   | "ai";
 
-export type Service = {
+export interface Service {
   title: string;
   description: string;
-  icon: ServiceIcon;
+  icon: string;
   tone: string;
-};
+  href: string;
+}
 
 export type UpdateItem = {
   title: string;

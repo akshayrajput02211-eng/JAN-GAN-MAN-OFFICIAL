@@ -3,7 +3,7 @@ export default function HeroText() {
     <div
       className="
         absolute
-        top-[28%]
+        top-[29%]
         left-1/2
         -translate-x-1/2
         -translate-y-1/2
@@ -11,38 +11,55 @@ export default function HeroText() {
         z-30
         w-full
         px-4
+        
       "
     >
       <h1
-        className="
+        className=" 
           font-black
-          leading-tight
+          leading-[0.95]
+          tracking-tight
           text-4xl
+          sm:text-5xl
           md:text-6xl
           lg:text-7xl
+          drop-shadow-[0_4px_12px_rgba(0,0,0,0.25)]
         "
       >
-        <span className="text-green-800">
+        <span
+          className="
+            block
+            text-green-800
+          "
+        >
           Aapka Gaon
         </span>
 
-        <br />
-
-        <span className="text-orange-500">
+        <span
+          className="
+            block
+            mt-2
+            text-orange-500
+          "
+        >
           Aapki Madad
         </span>
       </h1>
 
-      {/* <p
+      <p
         className="
-          mt-4
+          mt-5
           text-sm
-          md:text-xl
+          sm:text-base
+          md:text-lg
           text-gray-700
+          font-medium
+          max-w-xl
+          mx-auto
         "
       >
-        Ek App, Gaon ki har zaroorat
-      </p> */}
+       
+      </p>
     </div>
   );
 }

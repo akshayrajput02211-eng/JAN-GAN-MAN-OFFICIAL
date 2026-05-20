@@ -13,7 +13,7 @@ import Navbar from "@/components/layout/Navbar";
 export default function Hero() {
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      <Navbar/>
+      <Navbar />
 
       <Sky />
 
@@ -30,7 +30,8 @@ export default function Hero() {
       <Girl />
 
       <SearchBox />
-        <div
+
+      <div
         className="
           absolute bottom-0
           w-full h-40
@@ -39,8 +40,6 @@ export default function Hero() {
           to-transparent
         "
       />
-
     </section>
-    
   );
 }
