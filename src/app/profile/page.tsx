@@ -1,0 +1,18 @@
+import ProfileHero from "@/components/profile/ProfileHero";
+import ProfileStats from "@/components/profile/ProfileStats";
+import ProfileMenu from "@/components/profile/ProfileMenu";
+import BottomNavbar from "@/components/profile/BottomNavbar";
+
+export default function ProfilePage() {
+  return (
+    <main className="min-h-screen bg-[#f5f7fb] pb-32 px-4 md:px-6">
+      <div className="mx-auto max-w-7xl">
+        <ProfileHero />
+        <ProfileStats />
+        <ProfileMenu />
+      </div>
+
+      <BottomNavbar />
+    </main>
+  );
+}

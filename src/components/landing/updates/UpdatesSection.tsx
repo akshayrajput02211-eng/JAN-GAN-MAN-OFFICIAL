@@ -321,7 +321,7 @@ export function UpdatesSection({
       {/* MOBILE BUTTON */}
       <div className="mt-8 flex sm:hidden">
         <a
-          href="#"
+          href="/sarkari-seva/updates"
           className="
             w-full
 

@@ -14,10 +14,12 @@ import { services } from "@/data/services";
 
 import { updates } from "@/data/updates";
 
+
 export default function HomePage() {
   return (
     <main>
       <Hero />
+      
 
       <ServiceGrid services={services} />
 

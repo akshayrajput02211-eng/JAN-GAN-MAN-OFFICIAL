@@ -1,17 +1,37 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const navLinks = ["Home", "Services", "About", "Help"];
+  const navLinks = [
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Services",
+      href: "/services",
+    },
+    {
+      label: "About",
+      href: "/about",
+    },
+    {
+      label: "Help",
+      href: "/help",
+    },
+  ];
 
   return (
     <>
       {/* ================= NAVBAR ================= */}
+
       <header className="fixed top-3 left-0 w-full z-50 px-2 sm:px-4 md:px-8">
         <div
           className="
@@ -44,8 +64,13 @@ export default function Navbar() {
           "
         >
           {/* ================= LEFT ================= */}
-          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+
+          <Link
+            href="/"
+            className="flex items-center gap-2 sm:gap-3 min-w-0"
+          >
             {/* LOGO */}
+
             <div className="relative w-12 h-12 md:w-16 md:h-16 shrink-0">
               <Image
                 src="/images/logo/logo.png"
@@ -58,6 +83,7 @@ export default function Navbar() {
             </div>
 
             {/* TEXT */}
+
             <h1
               className="
                 text-[15px]
@@ -74,14 +100,15 @@ export default function Navbar() {
             >
               JAN GAN MAN
             </h1>
-          </div>
+          </Link>
 
           {/* ================= DESKTOP NAV ================= */}
+
           <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((item) => (
-              <a
-                key={item}
-                href="#"
+              <Link
+                key={item.label}
+                href={item.href}
                 className="
                   relative
 
@@ -107,15 +134,18 @@ export default function Navbar() {
                   hover:after:w-full
                 "
               >
-                {item}
-              </a>
+                {item.label}
+              </Link>
             ))}
           </nav>
 
           {/* ================= RIGHT ================= */}
+
           <div className="flex items-center gap-3 shrink-0">
-            {/* DESKTOP BUTTON */}
-            <button
+            {/* ================= PROFILE BUTTON ================= */}
+
+            <Link
+              href="/profile"
               className="
                 hidden
                 md:flex
@@ -145,9 +175,10 @@ export default function Navbar() {
               "
             >
               MY PROFILE
-            </button>
+            </Link>
 
-            {/* MOBILE MENU BUTTON */}
+            {/* ================= MOBILE MENU BUTTON ================= */}
+
             <button
               onClick={() => setOpen(true)}
               className="
@@ -176,6 +207,7 @@ export default function Navbar() {
       </header>
 
       {/* ================= OVERLAY ================= */}
+
       <div
         onClick={() => setOpen(false)}
         className={`
@@ -197,6 +229,7 @@ export default function Navbar() {
       />
 
       {/* ================= MOBILE SIDEBAR ================= */}
+
       <div
         className={`
           fixed
@@ -226,7 +259,8 @@ export default function Navbar() {
           }
         `}
       >
-        {/* CLOSE */}
+        {/* ================= CLOSE BUTTON ================= */}
+
         <div className="flex justify-end">
           <button
             onClick={() => setOpen(false)}
@@ -250,12 +284,13 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* LINKS */}
+        {/* ================= MOBILE LINKS ================= */}
+
         <nav className="flex flex-col gap-7 mt-16">
           {navLinks.map((item) => (
-            <a
-              key={item}
-              href="#"
+            <Link
+              key={item.label}
+              href={item.href}
               onClick={() => setOpen(false)}
               className="
                 text-2xl
@@ -269,12 +304,15 @@ export default function Navbar() {
                 hover:text-green-700
               "
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
 
-          {/* BUTTON */}
-          <button
+          {/* ================= PROFILE BUTTON ================= */}
+
+          <Link
+            href="/profile"
+            onClick={() => setOpen(false)}
             className="
               mt-6
 
@@ -291,10 +329,14 @@ export default function Navbar() {
 
               transition-all
               duration-300
+
+              flex
+              items-center
+              justify-center
             "
           >
-            Download App
-          </button>
+            My Profile
+          </Link>
         </nav>
       </div>
     </>

@@ -12,9 +12,11 @@ export default function UserBubble({
       className="
         mb-6
 
-        flex justify-end
+        flex
+        justify-end
 
-        px-4 md:px-8
+        px-4
+        md:px-8
       "
     >
       <div
@@ -34,7 +36,8 @@ export default function UserBubble({
           via-[#3b82f6]
           to-[#7c3aed]
 
-          px-20 py-6
+          px-6
+          py-5
 
           text-white
 
@@ -42,9 +45,11 @@ export default function UserBubble({
         "
       >
         {/* LIGHT */}
+
         <div
           className="
-            absolute inset-0
+            absolute
+            inset-0
 
             bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.22),transparent_35%)]
           "
@@ -52,11 +57,15 @@ export default function UserBubble({
 
         <p
           className="
-            relative z-10
+            relative
+            z-10
 
-            text-[25px]
+            text-base
+            md:text-xl
 
-            leading-8
+            font-medium
+
+            leading-7
 
             tracking-wide
           "

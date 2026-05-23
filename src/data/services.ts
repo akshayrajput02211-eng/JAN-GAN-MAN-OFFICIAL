@@ -18,11 +18,11 @@ export const services: Service[] = [
   },
 
   {
-    title: "Sarkari Yojana",
+    title: "Sarkari Seva",
     description: "Yojana aur labh",
     icon: "Scheme",
     tone: "yellow",
-    href: "/sarkari-yojana",
+    href: "/sarkari-seva",
   },
 
   {

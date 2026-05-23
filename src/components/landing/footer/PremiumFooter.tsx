@@ -47,7 +47,7 @@ export function PremiumFooter() {
           absolute inset-0
 
           bg-gradient-to-b
-          from-[#04110c]/10
+          from-[#04110c]/20
           via-[#081a13]/20
           to-[#10271d]/34
         "
