@@ -1,32 +1,37 @@
 import { jobs } from "@/data/jobs";
+
 import FilterSidebar from "./FilterSidebar";
 import JobCard from "./JobCard";
 import JobStatusCard from "./JobStatusCard";
-import ServiceSidebar from "@/components/naukri/shared/service-sidebar/ServiceSidebar";
 
 export default function JobsSection() {
   return (
     <section
       className="
         mt-10
+        lg:mt-14
 
         grid
         gap-8
+        xl:gap-10
 
-        xl:grid-cols-[1fr_280px_340px]
+        xl:grid-cols-[minmax(0,1fr)_340px]
       "
     >
-      {/* LEFT */}
+      {/* ================= LEFT SIDE ================= */}
+
       <div className="min-w-0">
         {/* HEADING */}
-        <div className="mb-8">
+
+        <div className="mb-8 lg:mb-10">
           <h2
             className="
               text-3xl
               sm:text-4xl
-              lg:text-5xl
+              lg:text-6xl
 
               font-black
+
               leading-tight
 
               text-[#1b2452]
@@ -39,44 +44,92 @@ export default function JobsSection() {
             className="
               mt-3
 
+              max-w-2xl
+
               text-sm
               sm:text-base
-              lg:text-lg
+              lg:text-xl
+
+              leading-relaxed
 
               text-gray-500
             "
           >
-            Aapke location ke 5-10 km ke andar jobs.
+            Aapke location ke 5-10 km ke andar nearby
+            verified jobs available hain.
           </p>
+
+          {/* CTA BUTTON */}
+
+          <button
+            className="
+              mt-6
+
+              rounded-2xl
+
+              bg-gradient-to-r
+              from-[#2563eb]
+              to-[#3b82f6]
+
+              px-6
+              py-4
+
+              text-sm
+              sm:text-base
+
+              font-bold
+              text-white
+
+              shadow-[0_10px_30px_rgba(37,99,235,0.35)]
+
+              transition-all
+              duration-300
+
+              hover:scale-[1.03]
+            "
+          >
+             Apne Liye Saare Job Dekhe...
+          </button>
         </div>
 
-        {/* JOBS */}
-        <div className="space-y-6">
+        {/* JOB LIST */}
+
+        <div
+          className="
+            space-y-5
+            lg:space-y-7
+          "
+        >
           {jobs.map((job) => (
-            <JobCard key={job.id} {...job} />
+            <JobCard
+              key={job.id}
+              {...job}
+            />
           ))}
         </div>
       </div>
 
-      {/* RIGHT */}
-    {/* SERVICES */}
-<ServiceSidebar />
+      {/* ================= RIGHT SIDEBAR ================= */}
 
-{/* FILTER */}
-<div
-  className="
-    space-y-6
+      <div
+        className="
+          space-y-6
+          lg:space-y-8
 
-    xl:sticky
-    xl:top-28
+          xl:sticky
+          xl:top-28
 
-    h-fit
-  "
->
-  <FilterSidebar />
+          h-fit
+        "
+      >
+        {/* FILTER */}
 
-  <JobStatusCard />
-</div>
+        <FilterSidebar />
+
+        {/* STATUS */}
+
+        <JobStatusCard />
+      </div>
     </section>
   );
 }

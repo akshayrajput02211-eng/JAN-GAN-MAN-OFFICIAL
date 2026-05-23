@@ -1,19 +1,17 @@
-import { ChatMessageType } from "@/types/chat";
+import { Message } from "../types/chat";
 
-export const chatData: ChatMessageType[] = [
+export const initialMessages: Message[] = [
   {
     id: 1,
     type: "bot",
-    text: "Namaste 👋 Main AI Sahayak hu.",
+    text: "Namaste 👋 Main AI Sahayak hoon — aapka digital dost.",
+    time: "Abhi",
   },
-  {
-    id: 2,
-    type: "user",
-    text: "PM Kisan Yojana kaise apply karein?",
-  },
-  {
-    id: 3,
-    type: "bot",
-    text: "Official website par jayein aur registration karein.",
-  },
+];
+
+export const suggestions = [
+  "PM Kisan Yojana",
+  "Mausam batao",
+  "Naukri chahiye",
+  "Ration card",
 ];

@@ -20,7 +20,7 @@ export const services = [
   {
     title: "Police",
     icon: <Shield size={20} />,
-    href: "/police",
+    href: "/suraksha",
     color: "from-indigo-500 to-violet-500",
   },
 
@@ -34,7 +34,7 @@ export const services = [
   {
     title: "Health",
     icon: <HeartPulse size={20} />,
-    href: "/health",
+    href: "/swasthya",
     color: "from-rose-500 to-red-500",
   },
 
@@ -55,7 +55,7 @@ export const services = [
   {
     title: "Yojana",
     icon: <Landmark size={20} />,
-    href: "/yojana",
+    href: "/sarkari-seva",
     color: "from-sky-500 to-blue-500",
   },
 

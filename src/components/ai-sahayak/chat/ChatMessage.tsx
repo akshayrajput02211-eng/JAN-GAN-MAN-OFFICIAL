@@ -1,5 +1,5 @@
-import UserBubble from "./UserBubble";
-import BotBubble from "./BotBubble";
+import UserBubble from "./UserMessage";
+import BotBubble from "./BotMessage";
 
 interface Props {
   type: "user" | "bot";

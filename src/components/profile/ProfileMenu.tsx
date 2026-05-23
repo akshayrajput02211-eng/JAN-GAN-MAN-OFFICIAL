@@ -24,8 +24,10 @@ export default function ProfileMenu() {
 
         border
         border-white/40
+        dark:border-slate-700/50
 
         bg-white/80
+        dark:bg-slate-800/80
 
         backdrop-blur-2xl
 
@@ -71,6 +73,7 @@ export default function ProfileMenu() {
 
                 border-b
                 border-[#edf1f7]
+                dark:border-slate-700/50
 
                 px-4
                 py-5
@@ -106,6 +109,9 @@ export default function ProfileMenu() {
                     from-[#f4f7ff]
                     to-[#eef2ff]
 
+                    dark:from-slate-700
+                    dark:to-slate-600
+
                     shadow-[0_10px_25px_rgba(53,88,255,0.08)]
 
                     overflow-hidden
@@ -133,6 +139,7 @@ export default function ProfileMenu() {
                       text-lg
                       font-black
                       text-[#10224f]
+                      dark:text-white
 
                       transition-all
                       duration-300
@@ -151,6 +158,7 @@ export default function ProfileMenu() {
 
                       text-sm
                       text-[#7b879d]
+                      dark:text-slate-400
 
                       md:text-base
                     "
@@ -176,6 +184,7 @@ export default function ProfileMenu() {
                   rounded-full
 
                   bg-[#f8faff]
+                  dark:bg-slate-700
 
                   shadow-sm
 
@@ -191,6 +200,7 @@ export default function ProfileMenu() {
                     w-5
 
                     text-[#7b879d]
+                    dark:text-slate-400
 
                     transition-all
                     duration-300

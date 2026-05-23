@@ -1,316 +1,396 @@
 "use client";
 
 import Image from "next/image";
-import PostJobForm from "./PostJobForm";
+
 import {
   Clock3,
+  MapPin,
   RefreshCcw,
+  ShieldCheck,
 } from "lucide-react";
+
+import PostJobForm from "./PostJobForm";
+
+const features = [
+  {
+    icon: <Clock3 size={18} />,
+    title: "24 Hour Live",
+  },
+  {
+    icon: <RefreshCcw size={18} />,
+    title: "Auto Refresh",
+  },
+  {
+    icon: <ShieldCheck size={18} />,
+    title: "Verified Workers",
+  },
+  {
+    icon: <MapPin size={18} />,
+    title: "Nearby Jobs",
+  },
+];
 
 export default function HeroSection() {
   return (
     <section
       className="
         relative
-        w-full
         overflow-hidden
-        rounded-[40px]
+
+        rounded-[36px]
+
         border
-        border-white/60
+        border-white/50
+
         bg-gradient-to-br
-        from-[#edf7ff]
-        via-[#f7fbff]
-        to-[#eef9ef]
+        from-[#eef6ff]
+        via-[#f8fbff]
+        to-[#f4fff5]
+
         shadow-[0_20px_80px_rgba(0,0,0,0.06)]
       "
     >
-      {/* FULL BG IMAGE */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/naukri/housecloud.png"
-          alt="background"
-          fill
-          priority
-          className="
-            object-cover
-            object-center
-            scale-[1.02]
-            opacity-[0.88]
-          "
-        />
-      </div>
+      {/* BACKGROUND GLOW */}
 
-      {/* TOP BLUR */}
       <div
         className="
           absolute
           left-[-120px]
           top-[-120px]
-          z-[1]
+
           h-[320px]
           w-[320px]
+
           rounded-full
-          bg-blue-200/30
+
+          bg-blue-300/20
+
           blur-3xl
         "
       />
 
-      {/* MAIN GRID */}
+      <div
+        className="
+          absolute
+          bottom-[-100px]
+          right-[-100px]
+
+          h-[260px]
+          w-[260px]
+
+          rounded-full
+
+          bg-green-300/20
+
+          blur-3xl
+        "
+      />
+
+      {/* MAIN CONTENT */}
+
       <div
         className="
           relative
           z-10
+
           grid
-          gap-10
+          gap-12
 
-          px-6
-          py-10
+          px-5
+          py-8
 
-          lg:grid-cols-[1.1fr_0.9fr]
-          lg:px-14
-          lg:py-14
+          lg:grid-cols-[1.05fr_0.95fr]
+
+          lg:px-10
+          lg:py-10
         "
       >
-        {/* LEFT CONTENT */}
-        <div className="relative">
+        {/* LEFT SIDE */}
+
+        <div
+          className="
+            flex
+            flex-col
+            justify-center
+          "
+        >
           {/* BADGE */}
+
           <div
             className="
               inline-flex
+              w-fit
               items-center
               gap-2
+
               rounded-full
+
               border
               border-green-200
-              bg-[#e8f9eb]
-              px-5
+
+              bg-green-50
+
+              px-4
               py-2
+
               text-sm
               font-semibold
+
               text-green-700
             "
           >
             <div className="h-2 w-2 rounded-full bg-green-500" />
-            One Day. Right Help.
+
+            Trusted Daily Jobs Platform
           </div>
 
-          {/* HEADING */}
+          {/* TITLE */}
+
           <h1
             className="
-              mt-8
+              mt-6
+
               max-w-[650px]
 
-              text-5xl
-              font-black
-              leading-[1.05]
-              tracking-[-2px]
-              text-[#18214d]
-
-              md:text-6xl
+              text-4xl
+              sm:text-5xl
               lg:text-7xl
+
+              font-black
+
+              leading-[1.05]
+
+              tracking-[-2px]
+
+              text-[#18214d]
             "
           >
-            Post a Job for
-
+            Find Daily Jobs
             <span className="block text-blue-600">
-              One Day
+              Near Your Area
             </span>
           </h1>
 
           {/* DESCRIPTION */}
+
           <p
             className="
-              mt-8
+              mt-6
+
               max-w-[560px]
 
-              text-lg
-              leading-relaxed
-              text-[#4b5578]
+              text-base
+              sm:text-lg
+              lg:text-xl
 
-              md:text-2xl
+              leading-relaxed
+
+              text-[#4b5578]
             "
           >
-            Roz kaam post karo aur 24 ghante ke andar
-            nearby workers se connect ho jao.
+            Nearby workers aur local job providers se
+            instantly connect ho jao. Roz naye kaam,
+            verified profiles aur direct calling support.
           </p>
 
-          {/* FEATURES */}
+          {/* CTA */}
+
           <div
             className="
-              mt-50
+              mt-8
+
+              flex
+              flex-wrap
+
+              gap-4
+            "
+          >
+            <button
+              className="
+                rounded-2xl
+
+                bg-gradient-to-r
+                from-blue-600
+                to-blue-500
+
+                px-6
+                py-4
+
+                text-sm
+                sm:text-base
+
+                font-bold
+                text-white
+
+                shadow-[0_10px_30px_rgba(37,99,235,0.35)]
+
+                transition-all
+                duration-300
+
+                hover:scale-[1.03]
+              "
+            >
+              Yahan Apne Liye Saare Job Dekhe
+            </button>
+
+            <button
+              className="
+                rounded-2xl
+
+                border
+                border-[#dbe4f0]
+
+                bg-white/70
+
+                px-6
+                py-4
+
+                text-sm
+                sm:text-base
+
+                font-bold
+
+                text-[#18214d]
+
+                backdrop-blur-xl
+
+                transition-all
+                duration-300
+
+                hover:bg-white
+              "
+            >
+              Kaam Post Karein
+            </button>
+          </div>
+
+          {/* FEATURES */}
+
+          <div
+            className="
+              mt-10
+
               grid
-              gap-5
+              gap-4
 
               sm:grid-cols-2
             "
           >
-            <FeatureCard
-              icon={<Clock3 size={22} />}
-              title="Live for 24 Hours"
-              desc="Job 24 ghante tak visible rahega"
-            />
+            {features.map((item) => (
+              <div
+                key={item.title}
+                className="
+                  flex
+                  items-center
+                  gap-3
 
-            <FeatureCard
-              icon={<RefreshCcw size={22} />}
-              title="Auto Refresh"
-              desc="Automatically next day refresh"
-            />
-          </div>
+                  rounded-2xl
 
-          {/* SCENE IMAGE */}
-          <div
-            className="
-              relative
-              mt-12
-              w-full
-            "
-          >
-           
+                  border
+                  border-white/60
+
+                  bg-white/70
+
+                  px-4
+                  py-4
+
+                  backdrop-blur-xl
+                "
+              >
+                <div
+                  className="
+                    flex
+                    h-10
+                    w-10
+
+                    items-center
+                    justify-center
+
+                    rounded-xl
+
+                    bg-blue-100
+
+                    text-blue-600
+                  "
+                >
+                  {item.icon}
+                </div>
+
+                <div>
+                  <h4
+                    className="
+                      text-sm
+                      font-bold
+
+                      text-[#18214d]
+                    "
+                  >
+                    {item.title}
+                  </h4>
+
+                  <p
+                    className="
+                      text-xs
+                      text-gray-500
+                    "
+                  >
+                    Professional support
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* RIGHT FORM */}
-        <div className="relative flex justify-center lg:justify-end mt-15">
+        {/* RIGHT SIDE */}
+
+        <div
+          className="
+            relative
+
+            flex
+            items-center
+            justify-center
+          "
+        >
+          {/* IMAGE */}
+
           <div
             className="
-              sticky
-              top-100
+              absolute
+              inset-0
+
+              hidden
+              lg:block
+            "
+          >
+            <Image
+              src="/images/naukri/housecloud.png"
+              alt="background"
+              fill
+              priority
+              className="
+                object-contain
+                opacity-20
+              "
+            />
+          </div>
+
+          {/* FORM */}
+
+          <div
+            className="
+              relative
+              z-10
+
               w-full
-              max-w-[4000px]
-
-              rounded-[35px]
-              
-
-             
-
-             
-
-              
-              
+              max-w-[540px]
             "
           >
             <PostJobForm />
           </div>
         </div>
       </div>
-
-      {/* BOTTOM STRIP */}
-      <div
-        className="
-          relative
-          z-10
-          grid
-          border-t
-          border-white/60
-          bg-white/70
-          backdrop-blur-xl
-
-          sm:grid-cols-2
-          lg:grid-cols-4
-        "
-      >
-        <BottomInfo
-          title="24 Hour Live"
-          desc="Job 24 ghante visible"
-        />
-
-        <BottomInfo
-          title="Auto Refresh"
-          desc="Automatically refresh"
-        />
-
-        <BottomInfo
-          title="Profile Visible"
-          desc="Workers aapko dekhenge"
-        />
-
-        <BottomInfo
-          title="Call & Message"
-          desc="Direct connect"
-        />
-      </div>
     </section>
-  );
-}
-
-function FeatureCard({
-  icon,
-  title,
-  desc,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  desc: string;
-}) {
-  return (
-    <div
-      className="
-        flex
-        items-start
-        gap-4
-
-        rounded-2xl
-        border
-        border-white/70
-        bg-white/70
-
-        p-5
-
-        backdrop-blur-lg
-      "
-    >
-      <div
-        className="
-          flex
-          h-12
-          w-12
-          items-center
-          justify-center
-          rounded-2xl
-          bg-blue-100
-          text-blue-600
-        "
-      >
-        {icon}
-      </div>
-
-      <div>
-        <h4 className="font-bold text-[#18214d]">
-          {title}
-        </h4>
-
-        <p className="mt-1 text-sm text-gray-500">
-          {desc}
-        </p>
-      </div>
-    </div>
-  );
-}
-
-function BottomInfo({
-  title,
-  desc,
-}: {
-  title: string;
-  desc: string;
-}) {
-  return (
-    <div
-      className="
-        border-r
-        border-white/50
-
-        px-6
-        py-6
-      "
-    >
-      <h4 className="font-bold text-blue-600">
-        {title}
-      </h4>
-
-      <p className="mt-2 text-sm text-gray-500">
-        {desc}
-      </p>
-    </div>
   );
 }

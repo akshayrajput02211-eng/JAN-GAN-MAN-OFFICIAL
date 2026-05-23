@@ -4,10 +4,19 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 
-import { Menu, X } from "lucide-react";
+import {
+  Menu,
+  X,
+  Settings,
+} from "lucide-react";
+
+import ServiceSidebar from "@/components/cta/service-sidebar/ServiceSidebar";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+
+  const [serviceOpen, setServiceOpen] =
+    useState(false);
 
   const navLinks = [
     {
@@ -142,6 +151,50 @@ export default function Navbar() {
           {/* ================= RIGHT ================= */}
 
           <div className="flex items-center gap-3 shrink-0">
+            {/* ================= SERVICES BUTTON ================= */}
+
+            <button
+              onClick={() =>
+                setServiceOpen(true)
+              }
+              className="
+                hidden
+                md:flex
+
+                items-center
+                gap-2
+
+                px-5
+                h-[48px]
+
+                rounded-2xl
+
+                bg-white/30
+                hover:bg-white/50
+
+                backdrop-blur-xl
+
+                border
+                border-white/20
+
+                text-black
+                text-sm
+                lg:text-base
+                font-semibold
+
+                transition-all
+                duration-300
+
+                hover:scale-105
+
+                shadow-lg
+              "
+            >
+              <Settings size={18} />
+
+              Services
+            </button>
+
             {/* ================= PROFILE BUTTON ================= */}
 
             <Link
@@ -180,7 +233,9 @@ export default function Navbar() {
             {/* ================= MOBILE MENU BUTTON ================= */}
 
             <button
-              onClick={() => setOpen(true)}
+              onClick={() =>
+                setOpen(true)
+              }
               className="
                 lg:hidden
 
@@ -209,7 +264,9 @@ export default function Navbar() {
       {/* ================= OVERLAY ================= */}
 
       <div
-        onClick={() => setOpen(false)}
+        onClick={() =>
+          setOpen(false)
+        }
         className={`
           fixed
           inset-0
@@ -263,7 +320,9 @@ export default function Navbar() {
 
         <div className="flex justify-end">
           <button
-            onClick={() => setOpen(false)}
+            onClick={() =>
+              setOpen(false)
+            }
             className="
               w-10
               h-10
@@ -291,7 +350,9 @@ export default function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              onClick={() => setOpen(false)}
+              onClick={() =>
+                setOpen(false)
+              }
               className="
                 text-2xl
                 font-bold
@@ -308,13 +369,54 @@ export default function Navbar() {
             </Link>
           ))}
 
+          {/* ================= SERVICES BUTTON ================= */}
+
+          <button
+            onClick={() => {
+              setOpen(false);
+
+              setServiceOpen(true);
+            }}
+            className="
+              mt-4
+
+              h-[54px]
+
+              rounded-2xl
+
+              bg-white/30
+              hover:bg-white/50
+
+              border
+              border-white/20
+
+              text-black
+              text-lg
+              font-bold
+
+              transition-all
+              duration-300
+
+              flex
+              items-center
+              justify-center
+              gap-2
+            "
+          >
+            <Settings size={20} />
+
+            Services
+          </button>
+
           {/* ================= PROFILE BUTTON ================= */}
 
           <Link
             href="/profile"
-            onClick={() => setOpen(false)}
+            onClick={() =>
+              setOpen(false)
+            }
             className="
-              mt-6
+              mt-2
 
               h-[54px]
 
@@ -339,6 +441,13 @@ export default function Navbar() {
           </Link>
         </nav>
       </div>
+
+      {/* ================= SERVICES SIDEBAR ================= */}
+
+      <ServiceSidebar
+        open={serviceOpen}
+        setOpen={setServiceOpen}
+      />
     </>
   );
 }

@@ -54,8 +54,8 @@ export const services: Service[] = [
   description: "Suraksha aur help",
   icon: "Police",
   tone: "indigo",
-  href: "/police",
-  image: "/assets/home/police.png",
+  href: "/suraksha",
+  
 },
 
   {

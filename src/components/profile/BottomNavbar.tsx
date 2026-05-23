@@ -66,8 +66,10 @@ export default function BottomNavbar() {
 
           border
           border-white/40
+          dark:border-slate-700/50
 
           bg-white/85
+          dark:bg-slate-900/90
 
           backdrop-blur-3xl
 
@@ -88,6 +90,8 @@ export default function BottomNavbar() {
             md:rounded-[38px]
 
             bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),transparent_65%)]
+
+            dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_65%)]
 
             pointer-events-none
           "
@@ -132,6 +136,7 @@ export default function BottomNavbar() {
                 sm:gap-2
 
                 text-[#7a859f]
+                dark:text-slate-400
               "
             >
               <div
@@ -154,6 +159,7 @@ export default function BottomNavbar() {
                   sm:rounded-2xl
 
                   bg-white/70
+                  dark:bg-slate-800/70
 
                   shadow-lg
                 "
@@ -195,6 +201,7 @@ export default function BottomNavbar() {
                 sm:gap-2
 
                 text-[#7a859f]
+                dark:text-slate-400
               "
             >
               <div
@@ -217,6 +224,7 @@ export default function BottomNavbar() {
                   sm:rounded-2xl
 
                   bg-white/70
+                  dark:bg-slate-800/70
 
                   shadow-lg
                 "
@@ -259,6 +267,7 @@ export default function BottomNavbar() {
                 gap-2
 
                 text-[#7a859f]
+                dark:text-slate-400
               "
             >
               <div
@@ -275,6 +284,7 @@ export default function BottomNavbar() {
                   rounded-2xl
 
                   bg-white/70
+                  dark:bg-slate-800/70
 
                   shadow-lg
                 "
@@ -316,80 +326,77 @@ export default function BottomNavbar() {
 
         {/* ================= MIC BUTTON ================= */}
 
-        {/* ================= SIMPLE CENTER MIC ================= */}
+        <motion.button
+          className="
+            absolute
+            left-1/2
+            top-0
 
-<motion.button
- 
- 
-  className="
-    absolute
-    left-1/2
-    top-0
+            z-50
 
-    z-50
+            flex
 
-    flex
+            h-16
+            w-16
 
-    h-16
-    w-16
+            sm:h-20
+            sm:w-20
 
-    sm:h-20
-    sm:w-20
+            md:h-24
+            md:w-24
 
-    md:h-24
-    md:w-24
+            -translate-x-1/2
+            -translate-y-1/2
 
-    -translate-x-1/2
-    -translate-y-1/2
+            items-center
+            justify-center
 
-    items-center
-    justify-center
+            rounded-full
 
-    rounded-full
+            border-[5px]
+            border-white
+            dark:border-slate-900
 
-    border-[5px]
-    border-white
+            bg-[#22c55e]
 
-    bg-[#22c55e]
+            shadow-[0_15px_40px_rgba(34,197,94,0.35)]
 
-    shadow-[0_15px_40px_rgba(34,197,94,0.35)]
+            transition-all
+            duration-300
+          "
+        >
+          {/* INNER LIGHT */}
 
-    transition-all
-    duration-300
-  "
->
-  {/* INNER LIGHT */}
+          <div
+            className="
+              absolute
+              inset-0
 
-  <div
-    className="
-      absolute
-      inset-0
+              rounded-full
 
-      rounded-full
+              bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.45),transparent_65%)]
+            "
+          />
 
-      bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.45),transparent_65%)]
-    "
-  />
+          {/* ICON */}
 
-  {/* ICON */}
+          <Mic
+            className="
+              relative
+              z-10
 
-  <Mic
-    className="
-      relative
-      z-10
+              h-7
+              w-7
 
-      h-7
-      w-7
+              sm:h-8
+              sm:w-8
 
-      sm:h-8
-      sm:w-8
+              md:h-10
+              md:w-10
 
-      md:h-10
-      md:w-10
-
-      text-white
-    "
-  />
+              text-white
+            "
+          />
 
           {/* GLOW */}
 
@@ -420,7 +427,6 @@ export default function BottomNavbar() {
               bg-green-400/20
             "
           />
-
         </motion.button>
 
         {/* ================= RIGHT SIDE ================= */}
@@ -462,6 +468,7 @@ export default function BottomNavbar() {
                 sm:gap-2
 
                 text-[#7a859f]
+                dark:text-slate-400
               "
             >
               <div
@@ -484,6 +491,7 @@ export default function BottomNavbar() {
                   sm:rounded-2xl
 
                   bg-white/70
+                  dark:bg-slate-800/70
 
                   shadow-lg
                 "
@@ -526,6 +534,7 @@ export default function BottomNavbar() {
                 gap-2
 
                 text-[#7a859f]
+                dark:text-slate-400
               "
             >
               <div
@@ -542,6 +551,7 @@ export default function BottomNavbar() {
                   rounded-2xl
 
                   bg-white/70
+                  dark:bg-slate-800/70
 
                   shadow-lg
                 "
@@ -617,6 +627,9 @@ export default function BottomNavbar() {
                   bg-gradient-to-br
                   from-[#ede9ff]
                   to-[#f5f3ff]
+
+                  dark:from-violet-900/50
+                  dark:to-violet-800/40
 
                   shadow-[0_10px_30px_rgba(91,61,245,0.18)]
                 "

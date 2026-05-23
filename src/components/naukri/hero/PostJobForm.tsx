@@ -2,194 +2,268 @@
 
 import { useState } from "react";
 
+import {
+  Briefcase,
+  MapPin,
+  Wallet,
+} from "lucide-react";
+
 export default function PostJobForm() {
   const [live, setLive] = useState(false);
 
   return (
     <div
-      className={`
-        w-full
-        max-w-[540px]
-        overflow-hidden
-        rounded-[34px]
-        border border-white/40
+      className="
+        relative
+
+        rounded-[36px]
+
+        border
+        border-white/50
+
         bg-white/80
-        backdrop-blur-2xl
-        shadow-[0_25px_80px_rgba(0,0,0,0.12)]
-        transition-all
-        duration-500
-      `}
+
+        p-6
+        lg:p-8
+
+        backdrop-blur-3xl
+
+        shadow-[0_25px_80px_rgba(0,0,0,0.10)]
+      "
     >
-      {/* TOP SECTION */}
+      {/* TOP LIGHT */}
+
       <div
-        className={`
-          p-6
-          transition-all
-          duration-500
-        `}
-      >
-        {/* TOP ROW */}
-        <div className="flex items-start justify-between gap-5">
+        className="
+          absolute
+          inset-0
+
+          bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),transparent_65%)]
+
+          pointer-events-none
+        "
+      />
+
+      {/* CONTENT */}
+
+      <div className="relative z-10">
+        {/* HEADER */}
+
+        <div className="flex items-start justify-between gap-4">
           <div>
             {/* BADGE */}
-            <span
+
+            <div
               className="
                 inline-flex
+                items-center
+                gap-2
+
                 rounded-full
-                bg-gradient-to-r
-                from-blue-100
-                to-cyan-100
+
+                bg-blue-100
+
                 px-4
-                py-1.5
+                py-2
+
                 text-xs
                 font-bold
+
                 text-blue-700
               "
             >
-              One Day Help
-            </span>
+              <div className="h-2 w-2 rounded-full bg-blue-600" />
+
+              Quick Daily Hiring
+            </div>
 
             {/* TITLE */}
+
             <h2
-              className={`
+              className="
+                mt-5
+
+                text-3xl
+                sm:text-4xl
+
                 font-black
-                leading-[1.05]
-                tracking-tight
+
+                leading-tight
+
                 text-[#18214d]
-                transition-all
-                duration-500
-                ${
-                  live
-                    ? "mt-4 text-4xl"
-                    : "mt-3 text-2xl"
-                }
-              `}
+              "
             >
-              Mujhe kaam 
+              Mujhe Kaam
               <br />
-               dundh raha hu
+              Chahiye
             </h2>
 
-            {/* SUBTEXT */}
-            <div
-              className={`
-                overflow-hidden
-                transition-all
-                duration-500
-                ${
-                  live
-                    ? "mt-3 max-h-20 opacity-100"
-                    : "max-h-0 opacity-0"
-                }
-              `}
+            {/* DESCRIPTION */}
+
+            <p
+              className="
+                mt-4
+
+                max-w-[320px]
+
+                text-sm
+                leading-relaxed
+
+                text-gray-500
+              "
             >
-              <p className="text-sm leading-relaxed text-gray-500">
-                Nearby workers ko instantly connect karo
-                aur ek din ke liye kaam pao.
-              </p>
-            </div>
+              Nearby workers aur local employers se
+              instantly connect ho jao.
+            </p>
           </div>
 
           {/* TOGGLE */}
-          <div className="flex items-center gap-3 pt-1">
+
+          <button
+            onClick={() => setLive(!live)}
+            className={`
+              relative
+
+              h-8
+              w-16
+
+              rounded-full
+
+              transition-colors
+              duration-300
+
+              ${
+                live
+                  ? "bg-green-500"
+                  : "bg-gray-300"
+              }
+            `}
+          >
+            {/* TOGGLE DOT */}
+
+            <div
+              className={`
+                absolute
+                top-1
+
+                h-6
+                w-6
+
+                rounded-full
+
+                bg-white
+
+                shadow-md
+
+                transition-transform
+                duration-300
+
+                ${
+                  live
+                    ? "translate-x-8"
+                    : "translate-x-1"
+                }
+              `}
+            />
+
+            {/* TEXT */}
+
             <span
               className={`
-                text-sm
-                font-bold
-                transition-all
-                ${
-                  live
-                    ? "text-green-600"
-                    : "text-gray-400"
-                }
-              `}
-            >
-              {live ? "LIVE" : "OFF"}
-            </span>
+                absolute
+                top-1/2
 
-            <button
-              onClick={() => setLive(!live)}
-              className={`
-                relative
-                h-7
-                w-14
-                rounded-full
-                transition-all
-                duration-300
+                -translate-y-1/2
+
+                text-[10px]
+                font-bold
+                text-white
+
                 ${
                   live
-                    ? "bg-green-500"
-                    : "bg-gray-300"
+                    ? "left-3"
+                    : "right-3"
                 }
               `}
             >
-              <div
-                className={`
-                  absolute
-                  top-1
-                  h-5
-                  w-5
-                  rounded-full
-                  bg-white
-                  shadow-md
-                  transition-all
-                  duration-300
-                  ${
-                    live
-                      ? "right-1"
-                      : "left-1"
-                  }
-                `}
-              />
-            </button>
-          </div>
+              {live ? "ON" : "OFF"}
+            </span>
+          </button>
         </div>
 
-        {/* EXPAND FORM */}
+        {/* FORM AREA */}
+
         <div
           className={`
             overflow-hidden
-            transition-all
-            duration-700
+
+            transition-[max-height,opacity,margin]
+            duration-500
             ease-in-out
-            
+
             ${
               live
-                ? "mt-1 max-h-[900px] opacity-100"
-                : "mt-1 max-h-0 opacity-0"
+                ? "mt-8 max-h-[900px] opacity-100"
+                : "mt-0 max-h-0 opacity-0"
             }
           `}
         >
-          <div className="space-y-6 pb-2">
-            <Input
-              label="Kaun sa kaam chahiye?"
-              placeholder="Painter, Driver, Mason..."
-            />
+          <div className="space-y-5">
+            {/* JOB */}
 
             <Input
+              icon={<Briefcase size={18} />}
+              label="Kaun sa kaam?"
+              placeholder="Painter, Driver..."
+            />
+
+            {/* LOCATION */}
+
+            <Input
+              icon={<MapPin size={18} />}
               label="Location"
-              placeholder="Apna location daalein"
+              placeholder="Apna area daalein"
+            />
+
+            {/* PAYMENT */}
+
+            <Input
+              icon={<Wallet size={18} />}
+              label="Expected Payment"
+              placeholder="₹ Daily payment"
             />
 
             {/* RANGE */}
+
             <div>
-              <div className="mb-4 flex items-center justify-between">
-                <label className="font-semibold text-[#18214d]">
-                  Kitne km ke andar?
+              <div className="mb-3 flex items-center justify-between">
+                <label
+                  className="
+                    text-sm
+                    font-bold
+
+                    text-[#18214d]
+                  "
+                >
+                  Nearby Distance
                 </label>
 
                 <span
                   className="
                     rounded-full
+
                     bg-green-100
+
                     px-3
                     py-1
-                    text-sm
+
+                    text-xs
                     font-bold
+
                     text-green-700
                   "
                 >
-                  10 km Max
+                  10 KM
                 </span>
               </div>
 
@@ -198,39 +272,46 @@ export default function PostJobForm() {
                 className="
                   h-2
                   w-full
+
                   cursor-pointer
+
                   appearance-none
+
                   rounded-full
-                  bg-green-100
-                  accent-green-600
+
+                  bg-blue-100
+
+                  accent-blue-600
                 "
               />
-
-              <div className="mt-2 flex justify-between text-sm text-gray-500">
-                <span>0 km</span>
-                <span>10 km</span>
-              </div>
             </div>
 
-            <Input
-              label="Payment Desire?"
-              placeholder="₹ Enter daily payment"
-            />
-
             {/* BUTTON */}
+
             <button
               className="
                 w-full
+
                 rounded-2xl
-                bg-blue-600
-                py-5
-                text-lg
+
+                bg-gradient-to-r
+                from-blue-600
+                to-blue-500
+
+                py-4
+
+                text-sm
+                sm:text-base
+
                 font-bold
                 text-white
-                transition-all
+
+                shadow-[0_10px_30px_rgba(37,99,235,0.35)]
+
+                transition-transform
                 duration-300
+
                 hover:scale-[1.02]
-                hover:bg-blue-700
               "
             >
               + Job Post Karein
@@ -242,10 +323,14 @@ export default function PostJobForm() {
   );
 }
 
+/* INPUT */
+
 function Input({
+  icon,
   label,
   placeholder,
 }: {
+  icon: React.ReactNode;
   label: string;
   placeholder: string;
 }) {
@@ -254,11 +339,21 @@ function Input({
       <label
         className="
           mb-3
-          block
-          font-semibold
+
+          flex
+          items-center
+          gap-2
+
+          text-sm
+          font-bold
+
           text-[#18214d]
         "
       >
+        <span className="text-blue-600">
+          {icon}
+        </span>
+
         {label}
       </label>
 
@@ -266,21 +361,29 @@ function Input({
         type="text"
         placeholder={placeholder}
         className="
+          h-14
           w-full
+
           rounded-2xl
+
           border
-          border-gray-200
-          bg-[#fafcff]
+          border-[#e7ebf3]
+
+          bg-[#f8fafc]
+
           px-5
-          py-4
-          text-[15px]
+
+          text-sm
+
           outline-none
+
           transition-all
+          duration-300
+
           placeholder:text-gray-400
-          focus:border-blue-400
+
+          focus:border-blue-500
           focus:bg-white
-          focus:ring-4
-          focus:ring-blue-100
         "
       />
     </div>

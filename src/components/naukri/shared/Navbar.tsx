@@ -6,14 +6,22 @@ import {
   Bell,
   Briefcase,
   ChevronDown,
+  Grid2x2,
   Menu,
   Search,
-  User,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
 
-export default function NaukriNavbar() {
+interface Props {
+  sidebarOpen: boolean;
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function NaukriNavbar({
+  sidebarOpen,
+  setSidebarOpen,
+}: Props) {
   return (
     <header
       className="
@@ -32,17 +40,6 @@ export default function NaukriNavbar() {
       "
     >
       <motion.div
-        // initial={{
-        //   y: -40,
-        //   opacity: 0,
-        // }}
-        // animate={{
-        //   y: 0,
-        //   opacity: 1,
-        // }}
-        // transition={{
-        //   duration: 0.6,
-        // }}
         className="
           relative
 
@@ -76,7 +73,7 @@ export default function NaukriNavbar() {
           shadow-[0_15px_50px_rgba(0,0,0,0.08)]
         "
       >
-        {/* PREMIUM LIGHT */}
+        {/* LIGHT */}
 
         <div
           className="
@@ -89,7 +86,7 @@ export default function NaukriNavbar() {
           "
         />
 
-        {/* ================= LEFT ================= */}
+        {/* LEFT */}
 
         <div className="relative z-10 flex items-center gap-3 lg:gap-5">
           {/* MOBILE MENU */}
@@ -171,7 +168,7 @@ export default function NaukriNavbar() {
           </Link>
         </div>
 
-        {/* ================= SEARCH ================= */}
+        {/* SEARCH */}
 
         <div
           className="
@@ -226,7 +223,7 @@ export default function NaukriNavbar() {
           />
         </div>
 
-        {/* ================= RIGHT ================= */}
+        {/* RIGHT */}
 
         <div
           className="
@@ -240,6 +237,53 @@ export default function NaukriNavbar() {
             lg:gap-4
           "
         >
+         {/* SERVICES CTA */}
+
+<motion.button
+  whileHover={{
+    y: -2,
+    scale: 1.03,
+  }}
+  whileTap={{
+    scale: 0.96,
+  }}
+  onClick={() => setSidebarOpen(!sidebarOpen)}
+  className="
+    hidden
+    lg:flex
+
+    items-center
+    gap-2
+
+    h-12
+
+    rounded-2xl
+
+    px-5
+
+    bg-gradient-to-br
+    from-[#897fb1]
+    to-[#9c8ae3]
+
+    text-white
+
+    shadow-[0_10px_30px_rgba(91,61,245,0.35)]
+
+    transition-all
+    duration-300
+  "
+>
+  <span
+    className="
+      text-sm
+      font-bold
+      tracking-wide
+    "
+  >
+    Services
+  </span>
+</motion.button>
+
           {/* NOTIFICATION */}
 
           <motion.button
@@ -270,8 +314,6 @@ export default function NaukriNavbar() {
           >
             <Bell className="h-5 w-5 text-[#10224f]" />
 
-            {/* DOT */}
-
             <span
               className="
                 absolute
@@ -288,7 +330,7 @@ export default function NaukriNavbar() {
             />
           </motion.button>
 
-          {/* PROFILE BUTTON */}
+          {/* PROFILE */}
 
           <Link href="/profile">
             <motion.div
@@ -333,8 +375,6 @@ export default function NaukriNavbar() {
                 duration-300
               "
             >
-              {/* LIGHT */}
-
               <div
                 className="
                   absolute
@@ -345,8 +385,6 @@ export default function NaukriNavbar() {
                   pointer-events-none
                 "
               />
-
-              {/* AVATAR */}
 
               <div
                 className="
@@ -377,8 +415,6 @@ export default function NaukriNavbar() {
                 AK
               </div>
 
-              {/* TEXT */}
-
               <div className="relative z-10 hidden sm:block">
                 <p
                   className="
@@ -401,8 +437,6 @@ export default function NaukriNavbar() {
                   View account
                 </span>
               </div>
-
-              {/* ICON */}
 
               <ChevronDown
                 className="

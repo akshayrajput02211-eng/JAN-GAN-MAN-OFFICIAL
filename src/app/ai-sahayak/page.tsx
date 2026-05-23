@@ -2,34 +2,16 @@ import "@/styles/ai-sahayak.css";
 
 import Navbar from "@/components/ai-sahayak/shared/Navbar";
 
-import BottomNav from "@/components/ai-sahayak/shared/BottomNav";
-
-import ChatContainer from "@/components/ai-sahayak/layout/ChatContainer";
+import AIChatPage from "@/components/ai-sahayak/chat/AIChatPage";
 
 export default function Page() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#f5f7fb]">
-      {/* TOP NAVBAR */}
+    <main className="min-h-screen overflow-hidden bg-[#f4f6fb] dark:bg-[#07111f] transition-colors duration-300">
 
       <Navbar />
 
-      {/* CHAT AREA */}
+      <AIChatPage />
 
-      <div
-        className="
-          mx-auto
-          max-w-[1600px]
-
-          pt-28
-          pb-40
-        "
-      >
-        <ChatContainer />
-      </div>
-
-      {/* BOTTOM NAVBAR */}
-
-      <BottomNav />
     </main>
   );
 }

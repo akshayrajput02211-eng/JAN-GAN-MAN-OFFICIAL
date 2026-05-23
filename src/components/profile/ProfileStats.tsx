@@ -89,8 +89,10 @@ export default function ProfileStats() {
 
               border
               border-white/40
+              dark:border-slate-700/50
 
               bg-white/80
+              dark:bg-slate-800/80
 
               p-4
               sm:p-5
@@ -111,6 +113,8 @@ export default function ProfileStats() {
                 inset-0
 
                 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),transparent_65%)]
+
+                dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.05),transparent_65%)]
 
                 pointer-events-none
               "
@@ -196,6 +200,7 @@ export default function ProfileStats() {
                     tracking-tight
 
                     text-[#10224f]
+                    dark:text-white
                   "
                 >
                   {item.value}
@@ -211,6 +216,7 @@ export default function ProfileStats() {
                     font-medium
 
                     text-[#6f7d95]
+                    dark:text-slate-400
                   "
                 >
                   {item.label}

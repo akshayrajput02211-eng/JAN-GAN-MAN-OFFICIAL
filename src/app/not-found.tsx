@@ -1,5 +1,5 @@
-import NotFoundScene from "@/components/404/NotFoundScene";
+import NotFoundScene from "@/components/error/not-found/NotFoundScene";
 
-export default function NotFoundPage() {
+export default function NotFound() {
   return <NotFoundScene />;
 }

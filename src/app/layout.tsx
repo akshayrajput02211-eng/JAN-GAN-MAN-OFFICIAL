@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+
+import {
+  Geist,
+  Geist_Mono,
+} from "next/font/google";
 
 import "./globals.css";
+
 import "@/styles/services.css";
 import "@/styles/footer.css";
 import "@/styles/animations.css";
 
+import Providers from "./providers";
+
+import FloatingThemeButton from "@/components/shared/FloatingThemeButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +38,38 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`
+        ${geistSans.variable}
+        ${geistMono.variable}
+
+        h-full
+        antialiased
+      `}
     >
-      <body className="min-h-full flex flex-col">
-        {children}
+      <body
+        className="
+          min-h-full
+
+          flex
+          flex-col
+
+          bg-[#f4f8ff]
+
+          text-slate-900
+
+          transition-colors
+          duration-300
+
+          dark:bg-[#07111f]
+          dark:text-white
+        "
+      >
+        <Providers>
+          {children}
+
+          <FloatingThemeButton />
+        </Providers>
       </body>
     </html>
   );

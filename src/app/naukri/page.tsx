@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import "@/styles/animations.css";
 
 import Navbar from "@/components/naukri/shared/Navbar";
@@ -9,12 +13,26 @@ import JobsSection from "@/components/naukri/jobs/JobsSection";
 import HowItWorks from "@/components/naukri/process/HowItWorks";
 import StatsSection from "@/components/naukri/process/StatsSection";
 
+import ServiceSidebar from "@/components/cta/service-sidebar/ServiceSidebar";
+
 export default function NaukriPage() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f5f7fb]">
-      {/* TOP NAVBAR */}
+      {/* NAVBAR */}
 
-      <Navbar />
+      <Navbar
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+
+      {/* SIDEBAR */}
+
+      <ServiceSidebar
+        open={sidebarOpen}
+        setOpen={setSidebarOpen}
+      />
 
       {/* PAGE CONTENT */}
 
@@ -25,7 +43,7 @@ export default function NaukriPage() {
 
           px-4
 
-          pt-28
+          pt-32
           pb-40
         "
       >
@@ -38,7 +56,7 @@ export default function NaukriPage() {
         <StatsSection />
       </div>
 
-      {/* STICKY BOTTOM NAV */}
+      {/* BOTTOM NAV */}
 
       <BottomNav />
     </main>
