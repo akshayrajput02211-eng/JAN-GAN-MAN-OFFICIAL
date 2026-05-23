@@ -6,29 +6,37 @@ type AskBannerProps = {
   className?: string;
 };
 
-export function AskBanner({ className = "" }: AskBannerProps) {
+export function AskBanner({
+  className = "",
+}: AskBannerProps) {
   return (
     <section
       className={`
         relative overflow-hidden
+
         mt-8
+
         rounded-[28px]
-        px-6 py-5
+
+        px-5 py-5
+        sm:px-6 sm:py-6
         md:px-8 md:py-6
 
         flex flex-col md:flex-row
         items-start md:items-center
         justify-between
+
         gap-5
 
         bg-gradient-to-br
-        from-violet-400
-        via-purple-500
-        to-indigo-600
+        from-[#9333ea]
+        via-[#7c3aed]
+        to-[#16a34a]
 
         shadow-[0_15px_40px_rgba(109,40,217,0.28)]
 
         transition-all duration-500
+
         hover:scale-[1.01]
         hover:shadow-[0_20px_60px_rgba(109,40,217,0.38)]
 
@@ -40,7 +48,9 @@ export function AskBanner({ className = "" }: AskBannerProps) {
       <div
         className="
           absolute inset-0
+
           bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.25),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.18),transparent_30%)]
+
           pointer-events-none
         "
       />
@@ -49,43 +59,73 @@ export function AskBanner({ className = "" }: AskBannerProps) {
       <div
         className="
           absolute -top-10 -right-10
+
           w-40 h-40
+
           rounded-full
+
           bg-white/10
+          dark:bg-slate-800/30
+
           blur-3xl
+
           animate-pulse
         "
       />
 
       {/* LEFT CONTENT */}
-      <div className="relative z-10 flex items-center gap-4">
-        
+      <div
+        className="
+          relative z-10
+
+          flex items-center
+
+          gap-4
+
+          w-full
+          md:w-auto
+        "
+      >
         {/* BOT */}
         <div
           className="
             relative
-            w-20 h-20 md:w-24 md:h-24
+
+            shrink-0
+
+            w-16 h-16
+            sm:w-20 sm:h-20
+            md:w-24 md:h-24
 
             rounded-full
 
             bg-gradient-to-b
             from-white
+            dark:from-slate-800
+
             to-slate-100
+            dark:to-slate-900
 
             shadow-[0_10px_25px_rgba(0,0,0,0.15)]
 
             flex items-center justify-center
 
             transition-transform duration-500
-            hover:rotate-6 hover:scale-105
+
+            hover:rotate-6
+            hover:scale-105
           "
         >
           {/* Antenna */}
           <div
             className="
               absolute -top-4
+
               w-1.5 h-5
+
               bg-white
+              dark:bg-slate-700
+
               rounded-full
             "
           >
@@ -95,9 +135,10 @@ export function AskBanner({ className = "" }: AskBannerProps) {
                 -translate-x-1/2
 
                 w-4 h-4
+
                 rounded-full
 
-                bg-violet-500
+                bg-[#9333ea]
 
                 shadow-[0_0_18px_rgba(139,92,246,0.9)]
 
@@ -109,13 +150,14 @@ export function AskBanner({ className = "" }: AskBannerProps) {
           {/* Face */}
           <div
             className="
-              w-14 h-10
+              w-12 h-9
+              sm:w-14 sm:h-10
 
               rounded-2xl
 
               bg-gradient-to-b
-              from-indigo-500
-              to-indigo-800
+              from-[#16a34a]
+              to-[#0f766e]
 
               flex items-center justify-center
               gap-3
@@ -124,8 +166,11 @@ export function AskBanner({ className = "" }: AskBannerProps) {
             <span
               className="
                 w-2.5 h-2.5
+
                 rounded-full
+
                 bg-white
+
                 animate-bounce
               "
             />
@@ -133,9 +178,13 @@ export function AskBanner({ className = "" }: AskBannerProps) {
             <span
               className="
                 w-2.5 h-2.5
+
                 rounded-full
+
                 bg-white
+
                 animate-bounce
+
                 [animation-delay:0.2s]
               "
             />
@@ -151,6 +200,7 @@ export function AskBanner({ className = "" }: AskBannerProps) {
               rounded-full
 
               bg-white
+              dark:bg-slate-700
 
               rotate-[-25deg]
             "
@@ -161,9 +211,14 @@ export function AskBanner({ className = "" }: AskBannerProps) {
         <div className="text-white">
           <h2
             className="
-              text-xl md:text-3xl
+              text-lg
+              sm:text-xl
+              md:text-3xl
+
               font-extrabold
+
               leading-tight
+
               drop-shadow-sm
             "
           >
@@ -173,8 +228,13 @@ export function AskBanner({ className = "" }: AskBannerProps) {
           <p
             className="
               mt-1
-              text-sm md:text-base
+
+              text-xs
+              sm:text-sm
+              md:text-base
+
               text-white/90
+
               font-medium
             "
           >
@@ -189,29 +249,36 @@ export function AskBanner({ className = "" }: AskBannerProps) {
         className="
           relative z-10
 
-          w-full md:w-auto
+          w-full
+          md:w-auto
 
           flex items-center justify-center
+
           gap-3
 
-          px-6 py-4
+          px-5 py-3
+          md:px-6 md:py-4
 
           rounded-2xl
 
-          bg-gradient-to-r
-          from-indigo-700
-          to-violet-700
+          bg-white
+          dark:bg-slate-800
 
-          text-white
+          text-[#9333ea]
+          dark:text-white
+
           font-bold
-          text-sm md:text-base
 
-          shadow-[0_10px_30px_rgba(49,46,129,0.35)]
+          text-sm
+          md:text-base
+
+          shadow-[0_10px_30px_rgba(0,0,0,0.18)]
 
           transition-all duration-300
 
           hover:scale-105
-          hover:shadow-[0_15px_40px_rgba(49,46,129,0.5)]
+
+          hover:shadow-[0_15px_40px_rgba(0,0,0,0.28)]
 
           active:scale-95
         "
@@ -226,11 +293,16 @@ export function AskBanner({ className = "" }: AskBannerProps) {
 
             rounded-full
 
-            bg-white/15
+            bg-[#9333ea]/10
+            dark:bg-slate-700
+
             backdrop-blur-md
           "
         >
-          <Mic className="w-5 h-5" aria-hidden="true" />
+          <Mic
+            className="w-5 h-5"
+            aria-hidden="true"
+          />
         </div>
       </button>
     </section>

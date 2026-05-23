@@ -9,6 +9,11 @@ export default function Grass() {
         left-1/2
         -translate-x-1/2
         z-10
+        w-[180%]
+        sm:w-[150%]
+        md:w-[1250px]
+        max-w-none
+        pointer-events-none
       "
     >
       <Image
@@ -16,7 +21,13 @@ export default function Grass() {
         alt="land"
         width={1250}
         height={520}
-        className="object-contain"
+        priority
+        className="
+          w-full
+          h-auto
+          object-cover
+          select-none
+        "
       />
     </div>
   );

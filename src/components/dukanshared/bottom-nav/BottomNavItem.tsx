@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+
 import { motion } from "framer-motion";
 
 export default function BottomNavItem({
@@ -19,38 +20,65 @@ export default function BottomNavItem({
         }}
         className="
           group
+
           flex
           flex-col
           items-center
           gap-1
-          text-[#64748b]
+
+          text-slate-500
+          dark:text-slate-400
         "
       >
         <div
           className="
             flex
+            h-11
+            w-11
             items-center
             justify-center
 
-            w-11
-            h-11
-
             rounded-2xl
 
+            border
+            border-orange-100
+            dark:border-slate-700/50
+
             bg-white/80
+            dark:bg-slate-800/80
 
             shadow-md
 
             transition-all
             duration-300
 
-            group-hover:bg-[#ecfdf5]
+            group-hover:-translate-y-1
+            group-hover:border-orange-300
+            group-hover:bg-orange-50
+            dark:group-hover:bg-slate-700
           "
         >
-          <Icon className="w-5 h-5" />
+          <Icon
+            className="
+              h-5
+              w-5
+
+              transition-colors
+              duration-300
+
+              group-hover:text-orange-600
+              dark:group-hover:text-orange-400
+            "
+          />
         </div>
 
-        <span className="text-[11px] font-semibold">
+        <span
+          className="
+            text-[11px]
+            font-semibold
+            tracking-wide
+          "
+        >
           {item.label}
         </span>
       </motion.div>

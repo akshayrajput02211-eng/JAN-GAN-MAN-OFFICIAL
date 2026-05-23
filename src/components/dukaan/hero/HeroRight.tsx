@@ -8,43 +8,178 @@ export default function HeroRight() {
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-white rounded-[32px] p-10  shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-green-100"
+      className="
+        rounded-[36px]
+        border
+        border-orange-100
+        dark:border-slate-700/50
+        bg-white
+        dark:bg-slate-800
+        p-10
+        shadow-[0_20px_60px_rgba(234,88,12,0.10)]
+        backdrop-blur-xl
+      "
     >
-      <h2 className="text-3xl font-black text-slate-900">
+      {/* Heading */}
+      <h2
+        className="
+          text-3xl
+          font-black
+          leading-tight
+          tracking-tight
+          text-slate-900
+          dark:text-white
+        "
+      >
         Dukaan Dhundo,
-        <span className="text-green-600 block">Order Karo</span>
+        <span className="block text-orange-600 dark:text-orange-400">
+          Order Karo
+        </span>
       </h2>
 
+      {/* Form */}
       <div className="mt-8 space-y-5">
         <input
           placeholder="Location"
-          className="w-full h-14 rounded-2xl border px-5 outline-none"
+          className="
+            h-14
+            w-full
+            rounded-2xl
+            border
+            border-orange-100
+            dark:border-slate-700/50
+            bg-orange-50/60
+            dark:bg-slate-900
+            px-5
+            text-slate-800
+            dark:text-slate-200
+            placeholder:text-slate-400
+            outline-none
+            transition-all
+            duration-300
+            focus:border-orange-400
+            focus:ring-4
+            focus:ring-orange-100
+            dark:focus:ring-orange-950/40
+          "
         />
 
-        <select className="w-full h-14 rounded-2xl border px-5 outline-none">
+        <select
+          className="
+            h-14
+            w-full
+            rounded-2xl
+            border
+            border-orange-100
+            dark:border-slate-700/50
+            bg-orange-50/60
+            dark:bg-slate-900
+            px-5
+            text-slate-800
+            dark:text-slate-200
+            outline-none
+            transition-all
+            duration-300
+            focus:border-orange-400
+            focus:ring-4
+            focus:ring-orange-100
+            dark:focus:ring-orange-950/40
+          "
+        >
           <option>Kirana</option>
           <option>Dawaai</option>
+          <option>Sabzi</option>
+          <option>Doodh</option>
         </select>
 
-        <button className="w-full h-14 rounded-2xl bg-green-600 text-white font-bold text-lg hover:scale-[1.02] transition">
+        <button
+          className="
+            h-14
+            w-full
+            rounded-2xl
+            bg-gradient-to-r
+            from-orange-600
+            to-orange-700
+            px-6
+            text-lg
+            font-black
+            text-white
+            shadow-lg
+            shadow-orange-300/30
+            transition-all
+            duration-300
+            hover:scale-[1.02]
+            hover:shadow-orange-400/40
+            active:scale-[0.99]
+          "
+        >
           Dukaan Dhundo
         </button>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mt-8">
-        <div className="bg-green-50 rounded-2xl p-4 text-center">
-          <h4 className="font-black text-green-700">5 KM</h4>
-          <p className="text-xs text-slate-500">Range</p>
+      {/* Stats */}
+      <div className="mt-8 grid grid-cols-3 gap-4">
+        <div
+          className="
+            rounded-2xl
+            border
+            border-orange-100
+            dark:border-slate-700/50
+            bg-orange-50
+            dark:bg-slate-900
+            p-4
+            text-center
+          "
+        >
+          <h4 className="text-lg font-black text-orange-700 dark:text-orange-400">
+            5 KM
+          </h4>
+
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            Range
+          </p>
         </div>
 
-        <div className="bg-green-50 rounded-2xl p-4 text-center">
-          <h4 className="font-black text-green-700">COD</h4>
-          <p className="text-xs text-slate-500">Payment</p>
+        <div
+          className="
+            rounded-2xl
+            border
+            border-orange-100
+            dark:border-slate-700/50
+            bg-orange-50
+            dark:bg-slate-900
+            p-4
+            text-center
+          "
+        >
+          <h4 className="text-lg font-black text-orange-700 dark:text-orange-400">
+            COD
+          </h4>
+
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            Payment
+          </p>
         </div>
 
-        <div className="bg-green-50 rounded-2xl p-4 text-center">
-          <h4 className="font-black text-green-700">Fast</h4>
-          <p className="text-xs text-slate-500">Delivery</p>
+        <div
+          className="
+            rounded-2xl
+            border
+            border-orange-100
+            dark:border-slate-700/50
+            bg-orange-50
+            dark:bg-slate-900
+            p-4
+            text-center
+          "
+        >
+          <h4 className="text-lg font-black text-orange-700 dark:text-orange-400">
+            Fast
+          </h4>
+
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+            Delivery
+          </p>
         </div>
       </div>
     </motion.div>

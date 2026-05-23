@@ -1,7 +1,10 @@
 "use client";
+
 import policeImg from "@/assets/home/police.png";
+
 import Link from "next/link";
 import Image from "next/image";
+
 import gsap from "gsap";
 
 interface Props {
@@ -27,7 +30,6 @@ export default function ServiceCard({
         className="
           group
           relative
-
           h-full
         "
       >
@@ -40,9 +42,9 @@ export default function ServiceCard({
             rounded-[34px]
 
             bg-gradient-to-br
-            from-violet-400
-            via-purple-500
-            to-indigo-600
+            from-[#9333ea]
+            via-[#7c3aed]
+            to-[#16a34a]
 
             opacity-20
 
@@ -78,15 +80,17 @@ export default function ServiceCard({
             justify-between
 
             h-full
-            min-h-[260px]
+            min-h-[250px]
 
             overflow-hidden
 
             rounded-[30px]
 
             border border-white/70
+            dark:border-slate-700/50
 
-            bg-[#f9f9ff]/95
+            bg-[#f8fafc]/95
+            dark:bg-slate-800/95
 
             p-5
             sm:p-6
@@ -97,7 +101,7 @@ export default function ServiceCard({
 
             transition-all duration-500
 
-            group-hover:shadow-[0_20px_60px_rgba(99,102,241,0.12)]
+            group-hover:shadow-[0_20px_60px_rgba(147,51,234,0.18)]
           "
         >
           {/* TOP */}
@@ -105,13 +109,11 @@ export default function ServiceCard({
             className="
               flex items-start
               justify-between
-
               gap-4
             "
           >
             {/* LEFT */}
             <div className="flex-1 min-w-0">
-              
               {/* ICON */}
               <div
                 className="
@@ -124,13 +126,13 @@ export default function ServiceCard({
                   rounded-2xl
 
                   bg-gradient-to-br
-                  from-violet-500
-                  via-purple-500
-                  to-indigo-500
+                  from-[#f6b21a]
+                  via-[#9333ea]
+                  to-[#16a34a]
 
                   text-white
 
-                  shadow-[0_10px_25px_rgba(99,102,241,0.25)]
+                  shadow-[0_10px_25px_rgba(147,51,234,0.25)]
 
                   transition-all duration-300
 
@@ -158,6 +160,7 @@ export default function ServiceCard({
                   tracking-tight
 
                   text-[#1e1b4b]
+                  dark:text-white
 
                   line-clamp-2
                 "
@@ -175,7 +178,8 @@ export default function ServiceCard({
 
                   leading-6
 
-                  text-slate-500
+                  text-slate-600
+                  dark:text-slate-300
 
                   line-clamp-3
                 "
@@ -192,8 +196,10 @@ export default function ServiceCard({
                 rounded-[22px]
 
                 border border-white/80
+                dark:border-slate-700/60
 
                 bg-white
+                dark:bg-slate-700
 
                 p-2
 
@@ -215,15 +221,15 @@ export default function ServiceCard({
                   sm:w-[82px]
                 "
               >
-              {image && (
-  <Image
-    src={image}
-    alt={title}
-    width={300}
-    height={300}
-    className="object-contain"
-  />
-)}
+                {image && (
+                  <Image
+                    src={image}
+                    alt={title}
+                    width={300}
+                    height={300}
+                    className="object-contain"
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -247,15 +253,17 @@ export default function ServiceCard({
 
                 rounded-full
 
-                bg-violet-100
+                bg-[#f6b21a]/15
+                dark:bg-[#9333ea]/20
 
-                text-violet-700
+                text-[#9333ea]
+                dark:text-[#f8fafc]
 
                 shadow-sm
 
                 transition-all duration-300
 
-                group-hover:bg-violet-600
+                group-hover:bg-[#9333ea]
                 group-hover:text-white
                 group-hover:translate-x-1
               "
@@ -277,6 +285,7 @@ export default function ServiceCard({
               rotate-12
 
               bg-white/50
+              dark:bg-slate-800/50
 
               blur-2xl
 

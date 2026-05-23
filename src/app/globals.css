@@ -17,7 +17,7 @@ body {
     color 0.3s ease;
 }
 
-/* ✅ FIXED */
+
 html.dark body {
   background: #07111f;
   color: white;
@@ -33,7 +33,7 @@ html.dark body {
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* ✅ FIXED */
+
 html.dark .glass-card {
   background: rgba(15, 23, 42, 0.7);
 
@@ -103,4 +103,24 @@ html.dark .text-soft {
 
 html.dark ::-webkit-scrollbar-thumb {
   background: #334155;
+}
+
+:root {
+  --primary: #f6b21a;
+  --secondary: #16a34a;
+  --accent: #9333ea;
+  --background: #f8fafc;
+}
+
+body {
+  background: var(--background);
+  font-family: "Geist", sans-serif;
+}
+
+.hindi-font {
+  font-family: "Noto Sans Devanagari", sans-serif;
+}
+
+.english-font {
+  font-family: "Geist", sans-serif;
 }

@@ -15,8 +15,10 @@ export function UpdatesSection({
         max-w-7xl
         mx-auto
 
-        px-6 py-20
+        px-4 py-16
+        sm:px-6
         md:px-10
+        md:py-20
 
         rounded-[40px]
         mt-14
@@ -26,7 +28,12 @@ export function UpdatesSection({
         via-white
         to-green-50
 
+        dark:from-slate-900
+        dark:via-slate-800
+        dark:to-slate-900
+
         border border-emerald-100
+        dark:border-slate-700/50
 
         shadow-[0_20px_80px_rgba(16,185,129,0.08)]
       "
@@ -61,10 +68,13 @@ export function UpdatesSection({
         className="
           relative z-10
 
-          flex items-center
-          justify-between
+          flex flex-col
+          sm:flex-row
 
-          gap-4
+          sm:items-center
+          sm:justify-between
+
+          gap-5
 
           mb-12
         "
@@ -79,6 +89,7 @@ export function UpdatesSection({
               uppercase
 
               text-emerald-600
+              dark:text-emerald-400
             "
           >
             Daily Updates
@@ -97,6 +108,7 @@ export function UpdatesSection({
               tracking-tight
 
               text-slate-900
+              dark:text-white
             "
           >
             Aaj ke Zaroori Updates
@@ -160,8 +172,10 @@ export function UpdatesSection({
               rounded-[30px]
 
               border border-emerald-100
+              dark:border-slate-700/50
 
               bg-white/80
+              dark:bg-slate-800/80
 
               p-6
 
@@ -234,6 +248,7 @@ export function UpdatesSection({
                   tracking-tight
 
                   text-slate-900
+                  dark:text-white
                 "
               >
                 {item.title}
@@ -247,6 +262,7 @@ export function UpdatesSection({
                   leading-7
 
                   text-slate-600
+                  dark:text-slate-300
                 "
               >
                 {item.description}
@@ -269,6 +285,7 @@ export function UpdatesSection({
                     tracking-wide
 
                     text-emerald-700
+                    dark:text-emerald-400
                   "
                 >
                   {item.time}
@@ -279,6 +296,7 @@ export function UpdatesSection({
                     rounded-xl
 
                     bg-emerald-50
+                    dark:bg-slate-700
 
                     px-4 py-2
 
@@ -286,8 +304,10 @@ export function UpdatesSection({
                     font-semibold
 
                     text-emerald-700
+                    dark:text-white
 
                     border border-emerald-100
+                    dark:border-slate-600
 
                     transition-all duration-300
 
@@ -310,6 +330,7 @@ export function UpdatesSection({
 
                 ring-1 ring-inset
                 ring-white/50
+                dark:ring-slate-700/40
 
                 pointer-events-none
               "

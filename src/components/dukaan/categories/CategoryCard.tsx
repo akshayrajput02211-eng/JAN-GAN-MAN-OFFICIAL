@@ -9,14 +9,98 @@ export default function CategoryCard({
 }) {
   return (
     <motion.div
-      whileHover={{ y: -6, scale: 1.03 }}
-      className="bg-white rounded-[28px] p-6 text-center shadow-sm border border-slate-100 cursor-pointer"
-    >
-      <div className="w-20 h-20 rounded-full bg-green-100 mx-auto mb-4" />
+      whileHover={{
+        y: -6,
+        scale: 1.03,
+      }}
+      whileTap={{
+        scale: 0.98,
+      }}
+      className="
+        cursor-pointer
 
-      <h4 className="font-bold text-slate-800">
+        rounded-[30px]
+
+        border
+        border-orange-100
+        dark:border-slate-700/50
+
+        bg-white
+        dark:bg-slate-800
+
+        p-6
+
+        text-center
+
+        shadow-[0_10px_30px_rgba(234,88,12,0.08)]
+
+        transition-all
+        duration-300
+      "
+    >
+      {/* Icon Circle */}
+
+      <div
+        className="
+          mx-auto
+          mb-4
+
+          flex
+          h-20
+          w-20
+          items-center
+          justify-center
+
+          rounded-full
+
+          bg-orange-100
+          dark:bg-orange-950/40
+
+          shadow-inner
+        "
+      >
+        <div
+          className="
+            h-10
+            w-10
+
+            rounded-full
+
+            bg-gradient-to-br
+            from-orange-500
+            to-orange-700
+          "
+        />
+      </div>
+
+      {/* Title */}
+
+      <h4
+        className="
+          text-base
+          font-bold
+          tracking-tight
+
+          text-slate-800
+          dark:text-slate-100
+        "
+      >
         {title}
       </h4>
+
+      {/* Subtitle */}
+
+      <p
+        className="
+          mt-2
+          text-sm
+
+          text-slate-500
+          dark:text-slate-400
+        "
+      >
+        Fast local delivery
+      </p>
     </motion.div>
   );
 }

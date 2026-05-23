@@ -11,11 +11,14 @@ export default function JobsSection() {
         mt-10
         lg:mt-14
 
-        grid
+        flex
+        flex-col
+        xl:grid
+
         gap-8
         xl:gap-10
 
-        xl:grid-cols-[minmax(0,1fr)_340px]
+        xl:grid-cols-[1fr_340px]
       "
     >
       {/* ================= LEFT SIDE ================= */}
@@ -34,10 +37,10 @@ export default function JobsSection() {
 
               leading-tight
 
-              text-[#1b2452]
+              text-[#4c1d95]
             "
           >
-            Live Jobs Near You
+            Live Career Opportunities Near You
           </h2>
 
           <p
@@ -52,11 +55,11 @@ export default function JobsSection() {
 
               leading-relaxed
 
-              text-gray-500
+              text-[#6b5ca5]
             "
           >
-            Aapke location ke 5-10 km ke andar nearby
-            verified jobs available hain.
+            Aapke location ke 5-10 km ke andar verified
+            jobs aur career opportunities available hain.
           </p>
 
           {/* CTA BUTTON */}
@@ -68,8 +71,8 @@ export default function JobsSection() {
               rounded-2xl
 
               bg-gradient-to-r
-              from-[#2563eb]
-              to-[#3b82f6]
+              from-[#7c3aed]
+              to-[#4c1d95]
 
               px-6
               py-4
@@ -80,15 +83,16 @@ export default function JobsSection() {
               font-bold
               text-white
 
-              shadow-[0_10px_30px_rgba(37,99,235,0.35)]
+              shadow-[0_12px_35px_rgba(124,58,237,0.35)]
 
               transition-all
               duration-300
 
               hover:scale-[1.03]
+              hover:shadow-[0_16px_40px_rgba(124,58,237,0.45)]
             "
           >
-             Apne Liye Saare Job Dekhe...
+            Apne Liye Saare Jobs Dekhe...
           </button>
         </div>
 
@@ -113,6 +117,9 @@ export default function JobsSection() {
 
       <div
         className="
+          hidden
+          xl:block
+
           space-y-6
           lg:space-y-8
 
@@ -124,11 +131,35 @@ export default function JobsSection() {
       >
         {/* FILTER */}
 
-        <FilterSidebar />
+        <div
+          className="
+            rounded-3xl
+            border
+            border-[#ddd6fe]
+
+            bg-[#f5f3ff]
+
+            p-1
+          "
+        >
+          <FilterSidebar />
+        </div>
 
         {/* STATUS */}
 
-        <JobStatusCard />
+        <div
+          className="
+            rounded-3xl
+            border
+            border-[#ddd6fe]
+
+            bg-[#f5f3ff]
+
+            p-1
+          "
+        >
+          <JobStatusCard />
+        </div>
       </div>
     </section>
   );

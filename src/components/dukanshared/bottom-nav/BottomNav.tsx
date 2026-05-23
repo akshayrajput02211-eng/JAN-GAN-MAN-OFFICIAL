@@ -1,3 +1,5 @@
+// components/dukaan/shared/bottom-nav/BottomNav.tsx
+
 "use client";
 
 import Link from "next/link";
@@ -27,31 +29,32 @@ export default function BottomNav() {
       "
     >
       <motion.div
+        initial={false}
         className="
           relative
 
           mx-auto
 
           flex
+          h-[82px]
+          max-w-2xl
           items-center
           justify-between
-
-          max-w-2xl
-
-          h-[82px]
 
           rounded-[30px]
 
           border
           border-white/30
+          dark:border-slate-700/40
 
           bg-white/70
+          dark:bg-slate-900/90
 
           px-6
 
-          backdrop-blur-3xl
+          shadow-[0_20px_50px_rgba(234,88,12,0.10)]
 
-          shadow-[0_20px_50px_rgba(0,0,0,0.10)]
+          backdrop-blur-3xl
         "
       >
         {/* LEFT */}
@@ -65,6 +68,8 @@ export default function BottomNav() {
         {/* CENTER BUTTON */}
 
         <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.96 }}
           className="
             absolute
             left-1/2
@@ -80,25 +85,41 @@ export default function BottomNav() {
                 relative
 
                 flex
+                h-20
+                w-20
                 items-center
                 justify-center
-
-                w-20
-                h-20
 
                 rounded-full
 
                 border-[6px]
                 border-white
+                dark:border-slate-900
 
                 bg-gradient-to-br
-                from-green-500
-                to-green-700
+                from-orange-500
+                to-orange-700
 
-                shadow-[0_20px_50px_rgba(22,163,74,0.4)]
+                shadow-[0_20px_50px_rgba(234,88,12,0.35)]
               "
             >
-              <CirclePlus className="w-9 h-9 text-white" />
+              <div
+                className="
+                  absolute inset-0
+                  rounded-full
+                  bg-orange-400/30
+                  blur-xl
+                "
+              />
+
+              <CirclePlus
+                className="
+                  relative z-10
+                  h-9
+                  w-9
+                  text-white
+                "
+              />
             </div>
           </Link>
 
@@ -109,7 +130,8 @@ export default function BottomNav() {
               text-center
               text-sm
               font-bold
-              text-green-700
+              text-orange-700
+              dark:text-orange-400
             "
           >
             Post Shop

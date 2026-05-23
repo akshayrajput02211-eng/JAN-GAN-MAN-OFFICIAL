@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -9,8 +8,11 @@ export default function Sun() {
     <motion.div
       className="
         absolute
-        top-1
-        right-10
+        top-16
+        md:top-1
+        right-2
+        sm:right-6
+        md:right-10
         z-10
       "
       animate={{
@@ -24,14 +26,13 @@ export default function Sun() {
         ease: "easeInOut",
       }}
     >
-
       {/* Glow */}
       <div
         className="
           absolute
           inset-0
           rounded-full
-          bg-yellow-300/10
+          bg-[#f6b21a]/10
           blur-3xl
           scale-110
         "
@@ -43,9 +44,21 @@ export default function Sun() {
         alt="sun"
         width={770}
         height={170}
-        className="relative object-contain"
-      />
+        priority
+        className="
+          relative
+          object-contain
 
+          w-[180px]
+          sm:w-[260px]
+          md:w-[420px]
+          lg:w-[770px]
+
+          h-auto
+          select-none
+          pointer-events-none
+        "
+      />
     </motion.div>
   );
 }

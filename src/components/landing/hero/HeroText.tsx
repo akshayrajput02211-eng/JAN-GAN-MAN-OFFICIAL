@@ -3,33 +3,34 @@ export default function HeroText() {
     <div
       className="
         absolute
-        top-[29%]
+        top-[22%]
+        md:top-[29%]
         left-1/2
         -translate-x-1/2
         -translate-y-1/2
-        text-center
         z-30
         w-full
-        px-4
-        
+        px-5
+        text-center
       "
     >
       <h1
-        className=" 
+        className="
           font-black
-          leading-[0.95]
+          leading-[0.92]
           tracking-tight
           text-4xl
           sm:text-5xl
           md:text-6xl
           lg:text-7xl
-          drop-shadow-[0_4px_12px_rgba(0,0,0,0.25)]
+          drop-shadow-[0_6px_18px_rgba(0,0,0,0.18)]
         "
       >
         <span
           className="
             block
-            text-green-800
+            text-[#16a34a]
+            font-[Noto_Sans_Devanagari]
           "
         >
           Aapka Gaon
@@ -39,7 +40,8 @@ export default function HeroText() {
           className="
             block
             mt-2
-            text-orange-500
+            text-[#f6b21a]
+            font-[Noto_Sans_Devanagari]
           "
         >
           Aapki Madad
@@ -49,16 +51,20 @@ export default function HeroText() {
       <p
         className="
           mt-5
-          text-sm
-          sm:text-base
-          md:text-lg
-          text-gray-700
-          font-medium
-          max-w-xl
           mx-auto
+          max-w-[320px]
+          sm:max-w-xl
+          text-xs
+          sm:text-sm
+          md:text-lg
+          leading-relaxed
+          text-slate-700
+          dark:text-slate-300
+          font-medium
+          font-[Geist]
         "
       >
-       
+        
       </p>
     </div>
   );

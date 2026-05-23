@@ -19,7 +19,7 @@ export default function StepCard({
         className="mx-auto"
       />
 
-      <h3 className="mt-6 text-2xl font-black text-[#1b2452]">
+      <h3 className="mt-6 text-2xl font-black text-[#686e8f]">
         {title}
       </h3>
 

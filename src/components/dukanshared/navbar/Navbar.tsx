@@ -27,22 +27,23 @@ export default function Navbar() {
           top-0
           z-50
 
-          backdrop-blur-xl
-          bg-white/70
-
           border-b
           border-white/40
+          dark:border-slate-700/40
+
+          bg-white/70
+          dark:bg-slate-900/80
+
+          backdrop-blur-xl
         "
       >
         <Container>
           <div
             className="
-              h-20
-
               flex
+              h-20
               items-center
               justify-between
-
               gap-6
             "
           >
@@ -51,16 +52,16 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <div
                 className="
-                  w-14
+                  flex
                   h-14
+                  w-14
+                  items-center
+                  justify-center
 
                   rounded-2xl
 
-                  bg-green-100
-
-                  flex
-                  items-center
-                  justify-center
+                  bg-orange-100
+                  dark:bg-orange-950/40
 
                   shadow-md
                 "
@@ -71,9 +72,10 @@ export default function Navbar() {
               <div>
                 <h2
                   className="
-                    font-black
                     text-2xl
-                    text-green-700
+                    font-black
+                    text-orange-700
+                    dark:text-orange-400
                   "
                 >
                   Dukaan
@@ -83,6 +85,7 @@ export default function Navbar() {
                   className="
                     text-sm
                     text-slate-500
+                    dark:text-slate-400
                   "
                 >
                   Apne gaon ki apni dukaan
@@ -97,26 +100,30 @@ export default function Navbar() {
                 hidden
                 lg:flex
 
+                w-[500px]
+
                 items-center
                 gap-3
 
-                bg-white
-
                 rounded-full
+
+                border
+                border-orange-100
+                dark:border-slate-700/50
+
+                bg-white
+                dark:bg-slate-800
 
                 px-5
                 py-3
 
-                border
                 shadow-sm
-
-                w-[500px]
               "
             >
               <Search
                 className="
-                  w-5
                   h-5
+                  w-5
                   text-slate-400
                 "
               />
@@ -124,9 +131,12 @@ export default function Navbar() {
               <input
                 placeholder="Search for milk, bread, kirana..."
                 className="
-                  bg-transparent
-                  outline-none
                   w-full
+                  bg-transparent
+                  text-slate-700
+                  dark:text-slate-200
+                  placeholder:text-slate-400
+                  outline-none
                 "
               />
             </div>
@@ -145,13 +155,15 @@ export default function Navbar() {
                   gap-2
 
                   text-slate-700
+                  dark:text-slate-300
                 "
               >
                 <MapPin
                   className="
-                    w-4
                     h-4
-                    text-green-600
+                    w-4
+                    text-orange-600
+                    dark:text-orange-400
                   "
                 />
 
@@ -168,17 +180,20 @@ export default function Navbar() {
                   hidden
                   md:flex
 
+                  h-11
                   items-center
                   gap-2
 
-                  h-11
-                  px-4
-
                   rounded-2xl
 
-                  bg-white
-
                   border
+                  border-orange-100
+                  dark:border-slate-700/50
+
+                  bg-white
+                  dark:bg-slate-800
+
+                  px-4
 
                   shadow-sm
 
@@ -188,12 +203,17 @@ export default function Navbar() {
                   hover:scale-105
                 "
               >
-                <Settings size={18} />
+                <Settings
+                  size={18}
+                  className="text-orange-600 dark:text-orange-400"
+                />
 
                 <span
                   className="
                     text-sm
                     font-semibold
+                    text-slate-700
+                    dark:text-slate-200
                   "
                 >
                   Services
@@ -207,50 +227,60 @@ export default function Navbar() {
                   setServiceOpen(true)
                 }
                 className="
-                  md:hidden
-
-                  w-11
+                  flex
                   h-11
+                  w-11
+                  items-center
+                  justify-center
 
                   rounded-2xl
 
-                  bg-white
-
                   border
+                  border-orange-100
+                  dark:border-slate-700/50
 
-                  flex
-                  items-center
-                  justify-center
+                  bg-white
+                  dark:bg-slate-800
 
                   shadow-sm
                 "
               >
-                <Menu size={20} />
+                <Menu
+                  size={20}
+                  className="text-slate-700 dark:text-slate-200"
+                />
               </button>
 
               {/* NOTIFICATION */}
 
               <button className="relative">
-                <Bell className="w-6 h-6" />
+                <Bell
+                  className="
+                    h-6
+                    w-6
+                    text-slate-700
+                    dark:text-slate-200
+                  "
+                />
 
                 <span
                   className="
                     absolute
-                    -top-1
                     -right-1
+                    -top-1
 
-                    bg-red-500
-                    text-white
-                    text-[10px]
+                    flex
+                    h-4
+                    w-4
+                    items-center
+                    justify-center
 
                     rounded-full
 
-                    w-4
-                    h-4
+                    bg-orange-600
 
-                    flex
-                    items-center
-                    justify-center
+                    text-[10px]
+                    text-white
                   "
                 >
                   3
@@ -261,14 +291,16 @@ export default function Navbar() {
 
               <div
                 className="
-                  w-12
                   h-12
+                  w-12
 
                   rounded-full
 
                   bg-gradient-to-br
-                  from-green-400
-                  to-green-700
+                  from-orange-400
+                  to-orange-700
+
+                  shadow-md
                 "
               />
             </div>

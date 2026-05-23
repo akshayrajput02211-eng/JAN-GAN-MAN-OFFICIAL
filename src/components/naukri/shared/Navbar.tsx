@@ -6,7 +6,6 @@ import {
   Bell,
   Briefcase,
   ChevronDown,
-  Grid2x2,
   Menu,
   Search,
 } from "lucide-react";
@@ -61,8 +60,10 @@ export default function NaukriNavbar({
 
           border
           border-white/40
+          dark:border-slate-700/40
 
           bg-white/80
+          dark:bg-slate-900/80
 
           px-4
           sm:px-6
@@ -70,7 +71,8 @@ export default function NaukriNavbar({
 
           backdrop-blur-3xl
 
-          shadow-[0_15px_50px_rgba(0,0,0,0.08)]
+          shadow-[0_15px_50px_rgba(124,58,237,0.12)]
+          dark:shadow-[0_15px_50px_rgba(0,0,0,0.45)]
         "
       >
         {/* LIGHT */}
@@ -82,6 +84,8 @@ export default function NaukriNavbar({
 
             bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),transparent_65%)]
 
+            dark:bg-[radial-gradient(circle_at_top,rgba(124,58,237,0.18),transparent_65%)]
+
             pointer-events-none
           "
         />
@@ -92,6 +96,7 @@ export default function NaukriNavbar({
           {/* MOBILE MENU */}
 
           <button
+            onClick={() => setSidebarOpen(!sidebarOpen)}
             className="
               flex
               h-11
@@ -103,13 +108,17 @@ export default function NaukriNavbar({
               rounded-2xl
 
               bg-white/70
+              dark:bg-slate-800/70
 
               shadow-md
+
+              transition-all
+              duration-300
 
               lg:hidden
             "
           >
-            <Menu className="h-5 w-5 text-[#10224f]" />
+            <Menu className="h-5 w-5 text-[#10224f] dark:text-white" />
           </button>
 
           {/* LOGO */}
@@ -134,10 +143,10 @@ export default function NaukriNavbar({
                 rounded-2xl
 
                 bg-gradient-to-br
-                from-[#22c55e]
-                to-[#15803d]
+                from-[#7c3aed]
+                to-[#4c1d95]
 
-                shadow-lg
+                shadow-[0_10px_30px_rgba(124,58,237,0.35)]
               "
             >
               <Briefcase className="h-5 w-5 text-white" />
@@ -150,6 +159,7 @@ export default function NaukriNavbar({
                   font-black
 
                   text-[#10224f]
+                  dark:text-white
                 "
               >
                 Jan Gan Man
@@ -160,9 +170,10 @@ export default function NaukriNavbar({
                   text-xs
 
                   text-[#6f7d95]
+                  dark:text-slate-400
                 "
               >
-                Jobs for everyone
+                Career Opportunities Nearby
               </p>
             </div>
           </Link>
@@ -189,16 +200,18 @@ export default function NaukriNavbar({
             rounded-2xl
 
             border
-            border-[#edf1f7]
+            border-[#e9ddff]
+            dark:border-slate-700/40
 
             bg-white/70
+            dark:bg-slate-800/70
 
             px-4
 
             shadow-inner
           "
         >
-          <Search className="h-5 w-5 text-[#7a859f]" />
+          <Search className="h-5 w-5 text-[#7a859f] dark:text-slate-400" />
 
           <input
             type="text"
@@ -215,10 +228,12 @@ export default function NaukriNavbar({
               font-medium
 
               text-[#10224f]
+              dark:text-white
 
               outline-none
 
               placeholder:text-[#94a3b8]
+              dark:placeholder:text-slate-500
             "
           />
         </div>
@@ -237,52 +252,52 @@ export default function NaukriNavbar({
             lg:gap-4
           "
         >
-         {/* SERVICES CTA */}
+          {/* SERVICES CTA */}
 
-<motion.button
-  whileHover={{
-    y: -2,
-    scale: 1.03,
-  }}
-  whileTap={{
-    scale: 0.96,
-  }}
-  onClick={() => setSidebarOpen(!sidebarOpen)}
-  className="
-    hidden
-    lg:flex
+          <motion.button
+            whileHover={{
+              y: -2,
+              scale: 1.03,
+            }}
+            whileTap={{
+              scale: 0.96,
+            }}
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="
+              hidden
+              lg:flex
 
-    items-center
-    gap-2
+              items-center
+              gap-2
 
-    h-12
+              h-12
 
-    rounded-2xl
+              rounded-2xl
 
-    px-5
+              px-5
 
-    bg-gradient-to-br
-    from-[#897fb1]
-    to-[#9c8ae3]
+              bg-gradient-to-br
+              from-[#7c3aed]
+              to-[#4c1d95]
 
-    text-white
+              text-white
 
-    shadow-[0_10px_30px_rgba(91,61,245,0.35)]
+              shadow-[0_10px_30px_rgba(124,58,237,0.35)]
 
-    transition-all
-    duration-300
-  "
->
-  <span
-    className="
-      text-sm
-      font-bold
-      tracking-wide
-    "
-  >
-    Services
-  </span>
-</motion.button>
+              transition-all
+              duration-300
+            "
+          >
+            <span
+              className="
+                text-sm
+                font-bold
+                tracking-wide
+              "
+            >
+              Services
+            </span>
+          </motion.button>
 
           {/* NOTIFICATION */}
 
@@ -308,11 +323,12 @@ export default function NaukriNavbar({
               rounded-2xl
 
               bg-white/70
+              dark:bg-slate-800/70
 
               shadow-md
             "
           >
-            <Bell className="h-5 w-5 text-[#10224f]" />
+            <Bell className="h-5 w-5 text-[#10224f] dark:text-white" />
 
             <span
               className="
@@ -358,8 +374,10 @@ export default function NaukriNavbar({
 
                 border
                 border-white/40
+                dark:border-slate-700/40
 
                 bg-white/80
+                dark:bg-slate-900/80
 
                 px-3
                 py-2
@@ -369,7 +387,8 @@ export default function NaukriNavbar({
 
                 backdrop-blur-xl
 
-                shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+                shadow-[0_10px_30px_rgba(124,58,237,0.12)]
+                dark:shadow-[0_10px_30px_rgba(0,0,0,0.35)]
 
                 transition-all
                 duration-300
@@ -381,6 +400,8 @@ export default function NaukriNavbar({
                   inset-0
 
                   bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.8),transparent_60%)]
+
+                  dark:bg-[radial-gradient(circle_at_top,rgba(124,58,237,0.12),transparent_60%)]
 
                   pointer-events-none
                 "
@@ -402,8 +423,8 @@ export default function NaukriNavbar({
                   rounded-full
 
                   bg-gradient-to-br
-                  from-[#5b3df5]
-                  to-[#7c5cff]
+                  from-[#7c3aed]
+                  to-[#4c1d95]
 
                   text-sm
                   font-black
@@ -422,6 +443,7 @@ export default function NaukriNavbar({
                     font-bold
 
                     text-[#10224f]
+                    dark:text-white
                   "
                 >
                   My Profile
@@ -432,6 +454,7 @@ export default function NaukriNavbar({
                     text-xs
 
                     text-[#6f7d95]
+                    dark:text-slate-400
                   "
                 >
                   View account
@@ -450,6 +473,7 @@ export default function NaukriNavbar({
                   w-4
 
                   text-[#7a859f]
+                  dark:text-slate-400
                 "
               />
             </motion.div>

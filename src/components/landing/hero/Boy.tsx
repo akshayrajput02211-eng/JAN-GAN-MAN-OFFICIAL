@@ -5,9 +5,13 @@ export default function Boy() {
     <div
       className="
         absolute
-        bottom-[99px]
-        left-[15%]
+        bottom-[85px]
+        left-[-20px]
+        sm:left-[2%]
+        md:left-[8%]
+        lg:left-[15%]
         z-20
+        pointer-events-none
       "
     >
       <Image
@@ -15,10 +19,16 @@ export default function Boy() {
         alt="boy"
         width={510}
         height={310}
-         className="w-[220px] md:w-[510px] h-auto"
         priority
+        className="
+          w-[150px]
+          sm:w-[190px]
+          md:w-[320px]
+          lg:w-[510px]
+          h-auto
+          object-contain
+        "
       />
-      
     </div>
   );
 }

@@ -5,11 +5,13 @@ export default function JobStatusCard() {
         rounded-[32px]
 
         bg-white
+        dark:bg-slate-800
 
         p-6
         lg:p-8
 
-        shadow-[0_10px_40px_rgba(0,0,0,0.06)]
+        shadow-[0_10px_40px_rgba(124,58,237,0.08)]
+        dark:shadow-[0_10px_40px_rgba(0,0,0,0.35)]
       "
     >
       {/* TITLE */}
@@ -24,6 +26,7 @@ export default function JobStatusCard() {
           leading-tight
 
           text-[#1b2452]
+          dark:text-white
         "
       >
         Mera Job Status
@@ -40,9 +43,10 @@ export default function JobStatusCard() {
             font-bold
 
             text-[#1b2452]
+            dark:text-white
           "
         >
-          Painter chahiye
+          Painter Chahiye
         </h4>
 
         <p
@@ -54,7 +58,7 @@ export default function JobStatusCard() {
 
             font-semibold
 
-            text-green-600
+            text-[#7c3aed]
           "
         >
           Live for 21h 45m
@@ -73,21 +77,21 @@ export default function JobStatusCard() {
             rounded-2xl
 
             border-2
-            border-blue-500
+            border-[#7c3aed]
 
-            bg-blue-50
+            bg-[#f5f3ff]
 
             text-sm
             lg:text-lg
 
             font-bold
 
-            text-blue-600
+            text-[#7c3aed]
 
             transition-all
             duration-300
 
-            hover:bg-blue-600
+            hover:bg-[#7c3aed]
             hover:text-white
           "
         >

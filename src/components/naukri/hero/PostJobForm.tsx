@@ -20,15 +20,18 @@ export default function PostJobForm() {
 
         border
         border-white/50
+        dark:border-slate-700/40
 
         bg-white/80
+        dark:bg-slate-800/80
 
         p-6
         lg:p-8
 
         backdrop-blur-3xl
 
-        shadow-[0_25px_80px_rgba(0,0,0,0.10)]
+        shadow-[0_25px_80px_rgba(124,58,237,0.12)]
+        dark:shadow-[0_25px_80px_rgba(0,0,0,0.45)]
       "
     >
       {/* TOP LIGHT */}
@@ -39,6 +42,8 @@ export default function PostJobForm() {
           inset-0
 
           bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),transparent_65%)]
+
+          dark:bg-[radial-gradient(circle_at_top,rgba(124,58,237,0.12),transparent_65%)]
 
           pointer-events-none
         "
@@ -61,7 +66,7 @@ export default function PostJobForm() {
 
                 rounded-full
 
-                bg-blue-100
+                bg-[#ede9fe]
 
                 px-4
                 py-2
@@ -69,10 +74,10 @@ export default function PostJobForm() {
                 text-xs
                 font-bold
 
-                text-blue-700
+                text-[#4c1d95]
               "
             >
-              <div className="h-2 w-2 rounded-full bg-blue-600" />
+              <div className="h-2 w-2 rounded-full bg-[#7c3aed]" />
 
               Quick Daily Hiring
             </div>
@@ -91,6 +96,7 @@ export default function PostJobForm() {
                 leading-tight
 
                 text-[#18214d]
+                dark:text-white
               "
             >
               Mujhe Kaam
@@ -110,6 +116,7 @@ export default function PostJobForm() {
                 leading-relaxed
 
                 text-gray-500
+                dark:text-slate-400
               "
             >
               Nearby workers aur local employers se
@@ -134,8 +141,8 @@ export default function PostJobForm() {
 
               ${
                 live
-                  ? "bg-green-500"
-                  : "bg-gray-300"
+                  ? "bg-[#7c3aed]"
+                  : "bg-gray-300 dark:bg-slate-600"
               }
             `}
           >
@@ -152,6 +159,7 @@ export default function PostJobForm() {
                 rounded-full
 
                 bg-white
+                dark:bg-slate-200
 
                 shadow-md
 
@@ -243,6 +251,7 @@ export default function PostJobForm() {
                     font-bold
 
                     text-[#18214d]
+                    dark:text-white
                   "
                 >
                   Nearby Distance
@@ -252,7 +261,7 @@ export default function PostJobForm() {
                   className="
                     rounded-full
 
-                    bg-green-100
+                    bg-[#ede9fe]
 
                     px-3
                     py-1
@@ -260,7 +269,7 @@ export default function PostJobForm() {
                     text-xs
                     font-bold
 
-                    text-green-700
+                    text-[#4c1d95]
                   "
                 >
                   10 KM
@@ -279,9 +288,9 @@ export default function PostJobForm() {
 
                   rounded-full
 
-                  bg-blue-100
+                  bg-[#ddd6fe]
 
-                  accent-blue-600
+                  accent-[#7c3aed]
                 "
               />
             </div>
@@ -295,8 +304,8 @@ export default function PostJobForm() {
                 rounded-2xl
 
                 bg-gradient-to-r
-                from-blue-600
-                to-blue-500
+                from-[#7c3aed]
+                to-[#4c1d95]
 
                 py-4
 
@@ -306,7 +315,7 @@ export default function PostJobForm() {
                 font-bold
                 text-white
 
-                shadow-[0_10px_30px_rgba(37,99,235,0.35)]
+                shadow-[0_10px_30px_rgba(124,58,237,0.35)]
 
                 transition-transform
                 duration-300
@@ -348,9 +357,10 @@ function Input({
           font-bold
 
           text-[#18214d]
+          dark:text-white
         "
       >
-        <span className="text-blue-600">
+        <span className="text-[#7c3aed]">
           {icon}
         </span>
 
@@ -368,12 +378,17 @@ function Input({
 
           border
           border-[#e7ebf3]
+          dark:border-slate-700/40
 
           bg-[#f8fafc]
+          dark:bg-slate-700/60
 
           px-5
 
           text-sm
+
+          text-[#18214d]
+          dark:text-white
 
           outline-none
 
@@ -381,9 +396,11 @@ function Input({
           duration-300
 
           placeholder:text-gray-400
+          dark:placeholder:text-slate-400
 
-          focus:border-blue-500
+          focus:border-[#7c3aed]
           focus:bg-white
+          dark:focus:bg-slate-600
         "
       />
     </div>

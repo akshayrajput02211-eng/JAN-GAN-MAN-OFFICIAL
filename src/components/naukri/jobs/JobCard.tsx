@@ -19,12 +19,14 @@ export default function JobCard({
         rounded-[28px]
 
         bg-white
+        dark:bg-slate-800
 
         p-5
         sm:p-6
         lg:p-8
 
-        shadow-[0_10px_40px_rgba(0,0,0,0.06)]
+        shadow-[0_10px_40px_rgba(124,58,237,0.08)]
+        dark:shadow-[0_10px_40px_rgba(0,0,0,0.35)]
 
         transition-all
         duration-300
@@ -66,6 +68,7 @@ export default function JobCard({
               rounded-2xl
 
               bg-[#f5f7fb]
+              dark:bg-slate-700/50
 
               p-2
             "
@@ -101,6 +104,7 @@ export default function JobCard({
                 leading-tight
 
                 text-[#1b2452]
+                dark:text-white
               "
             >
               {title}
@@ -115,6 +119,7 @@ export default function JobCard({
                 lg:text-lg
 
                 text-gray-500
+                dark:text-slate-400
               "
             >
               {location}
@@ -130,7 +135,7 @@ export default function JobCard({
 
                 font-black
 
-                text-green-600
+                text-[#7c3aed]
               "
             >
               {salary}
@@ -158,9 +163,9 @@ export default function JobCard({
               rounded-2xl
 
               border
-              border-green-400
+              border-[#7c3aed]/30
 
-              bg-green-50
+              bg-[#f5f3ff]
 
               px-5
               py-3
@@ -173,12 +178,12 @@ export default function JobCard({
 
               font-bold
 
-              text-green-600
+              text-[#7c3aed]
 
               transition-all
               duration-300
 
-              hover:bg-green-500
+              hover:bg-[#7c3aed]
               hover:text-white
             "
           >
@@ -195,9 +200,9 @@ export default function JobCard({
               rounded-2xl
 
               border
-              border-blue-400
+              border-[#4c1d95]/30
 
-              bg-blue-50
+              bg-[#ede9fe]
 
               px-5
               py-3
@@ -210,12 +215,12 @@ export default function JobCard({
 
               font-bold
 
-              text-blue-600
+              text-[#4c1d95]
 
               transition-all
               duration-300
 
-              hover:bg-blue-500
+              hover:bg-[#4c1d95]
               hover:text-white
             "
           >

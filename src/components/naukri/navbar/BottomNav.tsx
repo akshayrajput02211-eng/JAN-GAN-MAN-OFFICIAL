@@ -3,7 +3,6 @@
 import Link from "next/link";
 
 import {
-  Bell,
   Briefcase,
   CirclePlus,
   CreditCard,
@@ -73,8 +72,6 @@ export default function BottomNav() {
       "
     >
       <motion.div
-        
-       
         className="
           relative
 
@@ -89,21 +86,24 @@ export default function BottomNav() {
 
           max-w-5xl
 
+          overflow-visible
+
           rounded-[28px]
 
           border
           border-white/40
+          dark:border-slate-700/40
 
           bg-white/80
+          dark:bg-slate-900/90
 
           px-3
           sm:px-8
 
           backdrop-blur-3xl
 
-          shadow-[0_20px_60px_rgba(0,0,0,0.10)]
-
-          overflow-visible
+          shadow-[0_20px_60px_rgba(124,58,237,0.12)]
+          dark:shadow-[0_20px_60px_rgba(0,0,0,0.45)]
         "
       >
         {/* PREMIUM LIGHT */}
@@ -116,6 +116,8 @@ export default function BottomNav() {
             rounded-[28px]
 
             bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),transparent_65%)]
+
+            dark:bg-[radial-gradient(circle_at_top,rgba(124,58,237,0.15),transparent_65%)]
 
             pointer-events-none
           "
@@ -146,6 +148,7 @@ export default function BottomNav() {
                     gap-1
 
                     text-[#6f7d95]
+                    dark:text-slate-400
                   "
                 >
                   <div
@@ -164,13 +167,15 @@ export default function BottomNav() {
                       rounded-2xl
 
                       bg-white/70
+                      dark:bg-slate-800/70
 
                       shadow-md
 
                       transition-all
                       duration-300
 
-                      group-hover:bg-[#eef4ff]
+                      group-hover:bg-[#ede9fe]
+                      dark:group-hover:bg-slate-700
                     "
                   >
                     <Icon className="h-5 w-5" />
@@ -195,7 +200,6 @@ export default function BottomNav() {
         {/* ================= CENTER BUTTON ================= */}
 
         <motion.div
-       
           className="
             absolute
             left-1/2
@@ -231,13 +235,14 @@ export default function BottomNav() {
 
                 border-[6px]
                 border-white
+                dark:border-slate-900
 
                 bg-gradient-to-br
-                from-[#2563eb]
-                via-[#3b82f6]
-                to-[#60a5fa]
+                from-[#7c3aed]
+                via-[#8b5cf6]
+                to-[#4c1d95]
 
-                shadow-[0_20px_50px_rgba(37,99,235,0.35)]
+                shadow-[0_20px_50px_rgba(124,58,237,0.35)]
               "
             >
               {/* GLOW */}
@@ -268,7 +273,8 @@ export default function BottomNav() {
 
               font-bold
 
-              text-[#2563eb]
+              text-[#7c3aed]
+              dark:text-blue-400
             "
           >
             Post Job
@@ -300,6 +306,7 @@ export default function BottomNav() {
                     gap-1
 
                     text-[#6f7d95]
+                    dark:text-slate-400
                   "
                 >
                   <div
@@ -318,13 +325,15 @@ export default function BottomNav() {
                       rounded-2xl
 
                       bg-white/70
+                      dark:bg-slate-800/70
 
                       shadow-md
 
                       transition-all
                       duration-300
 
-                      group-hover:bg-[#eef4ff]
+                      group-hover:bg-[#ede9fe]
+                      dark:group-hover:bg-slate-700
                     "
                   >
                     <Icon className="h-5 w-5" />

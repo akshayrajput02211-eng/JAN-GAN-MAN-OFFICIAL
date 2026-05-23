@@ -60,21 +60,25 @@ export default function FeatureStrip() {
 
             border
             border-white/60
+            dark:border-slate-700/50
 
             bg-white/70
+            dark:bg-slate-800/70
 
             p-5
             lg:p-6
 
             backdrop-blur-2xl
 
-            shadow-[0_10px_40px_rgba(0,0,0,0.05)]
+            shadow-[0_10px_40px_rgba(124,58,237,0.08)]
+            dark:shadow-[0_10px_40px_rgba(0,0,0,0.35)]
 
             transition-all
             duration-300
 
             hover:-translate-y-1
             hover:bg-white
+            dark:hover:bg-slate-700
           "
         >
           {/* GLOW */}
@@ -85,8 +89,8 @@ export default function FeatureStrip() {
               inset-0
 
               bg-gradient-to-br
-              from-blue-100/0
-              to-blue-100/40
+              from-[#7c3aed]/0
+              to-[#7c3aed]/10
 
               opacity-0
 
@@ -113,9 +117,9 @@ export default function FeatureStrip() {
 
               rounded-2xl
 
-              bg-blue-100
+              bg-[#ede9fe]
 
-              text-blue-600
+              text-[#7c3aed]
             "
           >
             {item.icon}
@@ -130,6 +134,7 @@ export default function FeatureStrip() {
                 font-black
 
                 text-[#18214d]
+                dark:text-white
               "
             >
               {item.title}
@@ -142,7 +147,8 @@ export default function FeatureStrip() {
                 text-sm
                 leading-relaxed
 
-                text-gray-500
+                text-[#4b5578]
+                dark:text-slate-400
               "
             >
               {item.desc}

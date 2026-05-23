@@ -5,9 +5,13 @@ export default function Girl() {
     <div
       className="
         absolute
-        bottom-[99px]
-        right-[15%]
+        bottom-[85px]
+        right-[-20px]
+        sm:right-[2%]
+        md:right-[8%]
+        lg:right-[15%]
         z-20
+        pointer-events-none
       "
     >
       <Image
@@ -15,8 +19,15 @@ export default function Girl() {
         alt="girl"
         width={510}
         height={310}
-        className="w-[220px] md:w-[510px] h-auto"
         priority
+        className="
+          w-[150px]
+          sm:w-[190px]
+          md:w-[320px]
+          lg:w-[510px]
+          h-auto
+          object-contain
+        "
       />
     </div>
   );

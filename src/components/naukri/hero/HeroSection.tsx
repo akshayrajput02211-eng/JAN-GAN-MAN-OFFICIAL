@@ -16,14 +16,17 @@ const features = [
     icon: <Clock3 size={18} />,
     title: "24 Hour Live",
   },
+
   {
     icon: <RefreshCcw size={18} />,
     title: "Auto Refresh",
   },
+
   {
     icon: <ShieldCheck size={18} />,
     title: "Verified Workers",
   },
+
   {
     icon: <MapPin size={18} />,
     title: "Nearby Jobs",
@@ -40,53 +43,166 @@ export default function HeroSection() {
         rounded-[36px]
 
         border
-        border-white/50
+        border-[#e9ddff]
+        dark:border-slate-700/40
 
         bg-gradient-to-br
-        from-[#eef6ff]
-        via-[#f8fbff]
-        to-[#f4fff5]
+        from-[#f5f3ff]
+        via-white
+        to-[#faf5ff]
 
-        shadow-[0_20px_80px_rgba(0,0,0,0.06)]
+        dark:from-[#020617]
+        dark:via-[#0f172a]
+        dark:to-[#111827]
+
+        transition-all
+        duration-500
+
+        shadow-[0_20px_80px_rgba(124,58,237,0.08)]
+        dark:shadow-[0_20px_80px_rgba(0,0,0,0.55)]
       "
     >
-      {/* BACKGROUND GLOW */}
+      {/* ================= LIGHT MODE BG ================= */}
 
       <div
         className="
           absolute
-          left-[-120px]
-          top-[-120px]
+          inset-0
 
-          h-[320px]
-          w-[320px]
+          bg-[radial-gradient(circle_at_top,rgba(124,58,237,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(76,29,149,0.08),transparent_35%)]
 
-          rounded-full
-
-          bg-blue-300/20
-
-          blur-3xl
+          dark:hidden
         "
       />
+
+      {/* ================= DARK MODE BG ================= */}
 
       <div
         className="
+          hidden
+          dark:block
+
           absolute
-          bottom-[-100px]
-          right-[-100px]
-
-          h-[260px]
-          w-[260px]
-
-          rounded-full
-
-          bg-green-300/20
-
-          blur-3xl
+          inset-0
         "
-      />
+      >
+        {/* GRID */}
 
-      {/* MAIN CONTENT */}
+        <div
+          className="
+            absolute
+            inset-0
+
+            opacity-[0.05]
+
+            [background-image:linear-gradient(to_right,#7c3aed_1px,transparent_1px),linear-gradient(to_bottom,#7c3aed_1px,transparent_1px)]
+
+            [background-size:60px_60px]
+          "
+        />
+
+        {/* TOP LIGHT */}
+
+        <div
+          className="
+            absolute
+            inset-0
+
+            bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_45%)]
+          "
+        />
+
+        {/* LEFT GLOW */}
+
+        <div
+          className="
+            absolute
+            left-[-140px]
+            top-[-140px]
+
+            h-[340px]
+            w-[340px]
+
+            rounded-full
+
+            bg-[#7c3aed]/30
+
+            blur-3xl
+          "
+        />
+
+        {/* RIGHT GLOW */}
+
+        <div
+          className="
+            absolute
+            bottom-[-140px]
+            right-[-140px]
+
+            h-[340px]
+            w-[340px]
+
+            rounded-full
+
+            bg-[#4c1d95]/30
+
+            blur-3xl
+          "
+        />
+
+        {/* PARTICLES */}
+
+        <div
+          className="
+            absolute
+            left-[12%]
+            top-[18%]
+
+            h-3
+            w-3
+
+            rounded-full
+
+            bg-[#7c3aed]
+
+            animate-pulse
+          "
+        />
+
+        <div
+          className="
+            absolute
+            right-[15%]
+            top-[35%]
+
+            h-2
+            w-2
+
+            rounded-full
+
+            bg-white/70
+          "
+        />
+
+        <div
+          className="
+            absolute
+            bottom-[20%]
+            left-[30%]
+
+            h-4
+            w-4
+
+            rounded-full
+
+            bg-[#4c1d95]
+
+            animate-bounce
+          "
+        />
+      </div>
+
+      {/* ================= MAIN CONTENT ================= */}
 
       <div
         className="
@@ -105,7 +221,7 @@ export default function HeroSection() {
           lg:py-10
         "
       >
-        {/* LEFT SIDE */}
+        {/* ================= LEFT SIDE ================= */}
 
         <div
           className="
@@ -126,9 +242,11 @@ export default function HeroSection() {
               rounded-full
 
               border
-              border-green-200
+              border-[#d8ccff]
+              dark:border-[#7c3aed]/30
 
-              bg-green-50
+              bg-[#ede9fe]
+              dark:bg-[#7c3aed]/10
 
               px-4
               py-2
@@ -136,10 +254,13 @@ export default function HeroSection() {
               text-sm
               font-semibold
 
-              text-green-700
+              text-[#4c1d95]
+              dark:text-[#c4b5fd]
+
+              backdrop-blur-xl
             "
           >
-            <div className="h-2 w-2 rounded-full bg-green-500" />
+            <div className="h-2 w-2 rounded-full bg-[#7c3aed]" />
 
             Trusted Daily Jobs Platform
           </div>
@@ -163,10 +284,24 @@ export default function HeroSection() {
               tracking-[-2px]
 
               text-[#18214d]
+              dark:text-white
             "
           >
             Find Daily Jobs
-            <span className="block text-blue-600">
+
+            <span
+              className="
+                block
+
+                text-[#7c3aed]
+                dark:bg-gradient-to-r
+                dark:from-[#7c3aed]
+                dark:to-[#a78bfa]
+
+                dark:bg-clip-text
+                dark:text-transparent
+              "
+            >
               Near Your Area
             </span>
           </h1>
@@ -186,6 +321,7 @@ export default function HeroSection() {
               leading-relaxed
 
               text-[#4b5578]
+              dark:text-slate-400
             "
           >
             Nearby workers aur local job providers se
@@ -210,8 +346,8 @@ export default function HeroSection() {
                 rounded-2xl
 
                 bg-gradient-to-r
-                from-blue-600
-                to-blue-500
+                from-[#7c3aed]
+                to-[#4c1d95]
 
                 px-6
                 py-4
@@ -222,7 +358,7 @@ export default function HeroSection() {
                 font-bold
                 text-white
 
-                shadow-[0_10px_30px_rgba(37,99,235,0.35)]
+                shadow-[0_10px_30px_rgba(124,58,237,0.35)]
 
                 transition-all
                 duration-300
@@ -239,8 +375,10 @@ export default function HeroSection() {
 
                 border
                 border-[#dbe4f0]
+                dark:border-slate-700/50
 
                 bg-white/70
+                dark:bg-slate-800/70
 
                 px-6
                 py-4
@@ -251,6 +389,7 @@ export default function HeroSection() {
                 font-bold
 
                 text-[#18214d]
+                dark:text-white
 
                 backdrop-blur-xl
 
@@ -258,6 +397,7 @@ export default function HeroSection() {
                 duration-300
 
                 hover:bg-white
+                dark:hover:bg-slate-700
               "
             >
               Kaam Post Karein
@@ -288,13 +428,21 @@ export default function HeroSection() {
 
                   border
                   border-white/60
+                  dark:border-slate-700/50
 
                   bg-white/70
+                  dark:bg-slate-800/70
 
                   px-4
                   py-4
 
                   backdrop-blur-xl
+
+                  transition-all
+                  duration-300
+
+                  hover:bg-white
+                  dark:hover:bg-slate-700
                 "
               >
                 <div
@@ -308,9 +456,11 @@ export default function HeroSection() {
 
                     rounded-xl
 
-                    bg-blue-100
+                    bg-[#ede9fe]
+                    dark:bg-[#7c3aed]/15
 
-                    text-blue-600
+                    text-[#7c3aed]
+                    dark:text-[#a78bfa]
                   "
                 >
                   {item.icon}
@@ -323,6 +473,7 @@ export default function HeroSection() {
                       font-bold
 
                       text-[#18214d]
+                      dark:text-white
                     "
                   >
                     {item.title}
@@ -331,7 +482,9 @@ export default function HeroSection() {
                   <p
                     className="
                       text-xs
-                      text-gray-500
+
+                      text-[#4b5578]
+                      dark:text-slate-400
                     "
                   >
                     Professional support
@@ -342,7 +495,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
+        {/* ================= RIGHT SIDE ================= */}
 
         <div
           className="
@@ -353,8 +506,6 @@ export default function HeroSection() {
             justify-center
           "
         >
-          {/* IMAGE */}
-
           <div
             className="
               absolute
@@ -375,8 +526,6 @@ export default function HeroSection() {
               "
             />
           </div>
-
-          {/* FORM */}
 
           <div
             className="
