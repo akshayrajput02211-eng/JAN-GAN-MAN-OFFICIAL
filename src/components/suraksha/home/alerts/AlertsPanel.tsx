@@ -17,18 +17,40 @@ export default function AlertsPanel() {
   return (
     <section
       className="
-      rounded-[32px]
-      border border-white/70
-      bg-white/70 p-6
-      backdrop-blur-xl
-    "
+        rounded-[32px]
+
+        border border-white/70
+
+        bg-white/70
+
+        p-6
+
+        backdrop-blur-xl
+
+        dark:border-slate-700/50
+        dark:bg-slate-800/70
+      "
     >
       <div className="flex justify-between">
-        <h2 className="text-2xl font-black">
+        <h2
+          className="
+            text-2xl font-black
+            text-slate-900
+
+            dark:text-white
+          "
+        >
           Local Alerts
         </h2>
 
-        <button className="text-green-600">
+        <button
+          className="
+            font-semibold
+            text-blue-800
+
+            dark:text-blue-400
+          "
+        >
           View All
         </button>
       </div>

@@ -1,3 +1,7 @@
+// ================================
+// components/home/stats/Stats.tsx
+// ================================
+
 import Container from "@/components/shiksha/layout/container/Container";
 
 const stats = [
@@ -34,6 +38,10 @@ export default function Stats() {
             p-10
             shadow-xl
             backdrop-blur-xl
+
+            dark:border-slate-700/40
+            dark:bg-slate-800/70
+
             md:grid-cols-2
             lg:grid-cols-4
           "
@@ -43,11 +51,18 @@ export default function Stats() {
               key={item.label}
               className="text-center"
             >
-              <h3 className="text-5xl font-black text-green-600">
+              <h3 className="text-5xl font-black text-blue-600">
                 {item.number}
               </h3>
 
-              <p className="mt-3 text-gray-500">
+              <p
+                className="
+                  mt-3
+                  text-gray-500
+
+                  dark:text-slate-400
+                "
+              >
                 {item.label}
               </p>
             </div>

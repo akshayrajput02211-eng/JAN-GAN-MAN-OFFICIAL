@@ -17,36 +17,52 @@ export default function ChatContainer() {
 
         overflow-hidden
 
-        rounded-[40px]
+        rounded-2xl
+        md:rounded-[40px]
 
         border
-        border-white/40
+        border-white/20
 
-        bg-[#eef7ff]
+        bg-[#f3e8ff]
 
-        shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+        shadow-[0_20px_60px_rgba(147,51,234,0.12)]
       "
     >
-      {/* BG */}
+      {/* ================= BG ================= */}
 
       <BackgroundScene />
 
-      {/* FLOATING ITEMS */}
+      {/* ================= FLOATING ITEMS ================= */}
 
       <FloatingElements />
 
-      {/* OVERLAY */}
+      {/* ================= MAGICAL GLOW ================= */}
 
       <div
         className="
           absolute
           inset-0
 
-          bg-[linear-gradient(to_bottom,rgba(255,255,255,0.15),transparent)]
+          bg-[radial-gradient(circle_at_top,rgba(147,51,234,0.18),transparent_45%)]
+
+          pointer-events-none
         "
       />
 
-      {/* MAIN */}
+      {/* ================= OVERLAY ================= */}
+
+      <div
+        className="
+          absolute
+          inset-0
+
+          bg-[linear-gradient(to_bottom,rgba(255,255,255,0.18),transparent)]
+
+          pointer-events-none
+        "
+      />
+
+      {/* ================= MAIN ================= */}
 
       <div
         className="
@@ -66,14 +82,14 @@ export default function ChatContainer() {
             items-center
             gap-4
 
-            px-5
+            px-4
             py-5
 
             md:px-8
             md:py-6
           "
         >
-          {/* AVATAR */}
+          {/* ================= AVATAR ================= */}
 
           <div
             className="
@@ -87,29 +103,33 @@ export default function ChatContainer() {
               rounded-full
 
               border-4
-              border-white
+              border-white/80
 
               bg-gradient-to-br
-              from-[#7c3aed]
-              to-[#6366f1]
+              from-[#9333ea]
+              to-[#6b21a8]
 
-              shadow-[0_10px_30px_rgba(124,58,237,0.35)]
+              text-2xl
+
+              shadow-[0_10px_35px_rgba(147,51,234,0.4)]
             "
           >
             🤖
           </div>
 
-          {/* TEXT */}
+          {/* ================= TEXT ================= */}
 
           <div>
             <h1
               className="
-                text-2xl
+                text-xl
                 font-black
 
                 tracking-tight
 
-                text-[#1d2951]
+                text-[#3b0764]
+
+                md:text-3xl
               "
             >
               AI Sahayak
@@ -117,12 +137,16 @@ export default function ChatContainer() {
 
             <p
               className="
+                mt-1
+
                 text-sm
 
-                text-[#6f7d95]
+                text-[#7e22ce]
+
+                md:text-base
               "
             >
-              Aapka AI dost
+              Aapka Magical AI Dost ✨
             </p>
           </div>
         </div>
@@ -138,12 +162,26 @@ export default function ChatContainer() {
             overflow-y-auto
 
             px-2
-            pb-32
-            pt-6
+            pb-36
+            pt-4
 
             md:px-6
+            md:pt-6
           "
         >
+          {/* SOFT CHAT GLOW */}
+
+          <div
+            className="
+              pointer-events-none
+
+              absolute
+              inset-0
+
+              bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.08),transparent_70%)]
+            "
+          />
+
           <ScrollParallax />
         </div>
 
@@ -152,7 +190,7 @@ export default function ChatContainer() {
         <div
           className="
             absolute
-            bottom-5
+            bottom-4
             left-1/2
 
             z-30
@@ -162,14 +200,17 @@ export default function ChatContainer() {
 
             -translate-x-1/2
 
-            px-4
+            px-3
+
+            md:bottom-5
+            md:px-4
           "
         >
           <BottomInput />
         </div>
       </div>
 
-      {/* ROBOT */}
+      {/* ================= ROBOT ================= */}
 
       <RobotAssistant />
     </div>

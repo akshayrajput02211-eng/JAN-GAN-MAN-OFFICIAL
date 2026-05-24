@@ -1,7 +1,7 @@
-
 "use client";
 
 import { motion } from "framer-motion";
+
 import { cn } from "@/lib/cn";
 
 interface HoverCardProps {
@@ -23,13 +23,21 @@ export default function HoverCard({
       transition={{ duration: 0.3 }}
       className={cn(
         `
+        group
+
         relative overflow-hidden
+
         rounded-[28px]
-        border border-white/30
-        bg-white/70
+
+        border border-white/30 dark:border-slate-700/40
+
+        bg-[#dcfce7]/70 dark:bg-slate-800/70
+
         backdrop-blur-2xl
+
         transition-all duration-300
-        hover:shadow-[0_25px_60px_rgba(34,197,94,0.18)]
+
+        hover:shadow-[0_25px_60px_rgba(22,163,74,0.18)]
       `,
         className
       )}
@@ -38,14 +46,25 @@ export default function HoverCard({
       <div
         className="
         absolute inset-0
+
         bg-gradient-to-br
-        from-green-100/10 via-transparent to-emerald-100/10
-        opacity-0 transition-opacity duration-300
+
+        from-white/10 dark:from-slate-700/10
+        via-transparent
+        to-green-100/10
+
+        opacity-0
+
+        transition-opacity duration-300
+
         group-hover:opacity-100
       "
       />
 
-      {children}
+      {/* Content */}
+      <div className="relative z-10">
+        {children}
+      </div>
     </motion.div>
   );
 }

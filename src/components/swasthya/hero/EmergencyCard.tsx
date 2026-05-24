@@ -1,3 +1,5 @@
+// EMERGENCYCARD.tsx
+
 import GlassCard from "@/components/swasthyashared/cards/GlassCard";
 
 export default function EmergencyCard() {
@@ -9,15 +11,20 @@ export default function EmergencyCard() {
         overflow-hidden
 
         border-red-100
+        dark:border-red-900/30
 
         bg-gradient-to-br
         from-red-50
         via-orange-50
         to-yellow-50
 
-        p-6
+        dark:from-slate-900
+        dark:via-red-950/20
+        dark:to-slate-900
 
-        sm:p-8
+        p-4
+        md:p-8
+        lg:p-10
       "
     >
       {/* GLOW */}
@@ -65,7 +72,12 @@ export default function EmergencyCard() {
 
             rounded-full
 
+            border
+            border-red-200/40
+            dark:border-red-900/30
+
             bg-red-100
+            dark:bg-red-950/40
 
             px-4
             py-2
@@ -74,6 +86,7 @@ export default function EmergencyCard() {
             font-semibold
 
             text-red-600
+            dark:text-red-300
           "
         >
           Emergency Support
@@ -89,6 +102,7 @@ export default function EmergencyCard() {
             leading-tight
 
             text-red-600
+            dark:text-red-400
 
             sm:text-4xl
           "
@@ -106,6 +120,7 @@ export default function EmergencyCard() {
             leading-7
 
             text-slate-600
+            dark:text-slate-300
           "
         >
           One tap instant emergency response with
@@ -128,7 +143,9 @@ export default function EmergencyCard() {
             className="
               rounded-2xl
 
-              bg-red-500
+              bg-gradient-to-r
+              from-red-600
+              to-red-800
 
               px-6
               py-4
@@ -138,13 +155,12 @@ export default function EmergencyCard() {
 
               text-white
 
-              shadow-[0_10px_30px_rgba(239,68,68,0.3)]
+              shadow-[0_10px_30px_rgba(220,38,38,0.3)]
 
               transition-all
               duration-300
 
               hover:scale-105
-              hover:bg-red-600
             "
           >
             Call 108
@@ -154,9 +170,12 @@ export default function EmergencyCard() {
             className="
               rounded-2xl
 
-              border border-red-200
+              border
+              border-white/50
+              dark:border-slate-700/50
 
               bg-white/70
+              dark:bg-slate-800/70
 
               px-6
               py-4
@@ -165,6 +184,7 @@ export default function EmergencyCard() {
               font-semibold
 
               text-red-600
+              dark:text-red-300
 
               backdrop-blur-xl
 
@@ -172,6 +192,7 @@ export default function EmergencyCard() {
               duration-300
 
               hover:bg-white
+              dark:hover:bg-slate-700
             "
           >
             Nearby Hospitals
@@ -184,7 +205,6 @@ export default function EmergencyCard() {
       <img
         src="/assets/swasthya/hero/ambulance.png"
         alt="ambulance"
-
         className="
           pointer-events-none
 

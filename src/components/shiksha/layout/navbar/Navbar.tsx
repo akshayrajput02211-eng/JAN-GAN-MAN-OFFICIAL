@@ -1,3 +1,7 @@
+// ================================
+// components/layout/navbar/Navbar.tsx
+// ================================
+
 "use client";
 
 import { useState } from "react";
@@ -26,18 +30,21 @@ export default function Navbar() {
         <Container>
           <div
             className="
-              glass
-
               rounded-full
-
+              border
+              border-white/40
+              bg-white/70
               px-6
               py-4
+              shadow-lg
+              backdrop-blur-xl
+
+              dark:border-slate-700/40
+              dark:bg-slate-800/70
 
               flex
               items-center
               justify-between
-
-              shadow-lg
             "
           >
             {/* ================= LOGO ================= */}
@@ -48,14 +55,10 @@ export default function Navbar() {
                   flex
                   h-12
                   w-12
-
                   items-center
                   justify-center
-
                   rounded-2xl
-
-                  bg-green-600
-
+                  bg-blue-600
                   text-xl
                   font-black
                   text-white
@@ -69,6 +72,9 @@ export default function Navbar() {
                   className="
                     text-xl
                     font-bold
+                    text-gray-900
+
+                    dark:text-white
                   "
                 >
                   Shiksha
@@ -78,6 +84,8 @@ export default function Navbar() {
                   className="
                     text-sm
                     text-gray-500
+
+                    dark:text-slate-400
                   "
                 >
                   Learn Better
@@ -101,36 +109,26 @@ export default function Navbar() {
                 className="
                   hidden
                   lg:flex
-
                   items-center
                   gap-2
-
                   h-12
-
                   rounded-full
-
                   bg-gradient-to-r
-                  from-green-500
-                  to-emerald-600
-
+                  from-blue-600
+                  to-blue-700
                   px-5
-
-                  text-white
+                  text-sm
                   font-bold
-
-                  shadow-[0_10px_30px_rgba(34,197,94,0.25)]
-
+                  text-white
+                  shadow-[0_10px_30px_rgba(37,99,235,0.25)]
                   transition-all
                   duration-300
-
                   hover:scale-105
                 "
               >
                 <Settings size={18} />
 
-                <span className="text-sm">
-                  Services
-                </span>
+                <span>Services</span>
               </button>
 
               {/* NOTIFICATION */}
@@ -140,19 +138,19 @@ export default function Navbar() {
                   flex
                   h-12
                   w-12
-
                   items-center
                   justify-center
-
                   rounded-full
-
+                  border
+                  border-gray-200
                   bg-white
-
                   shadow
-
                   transition-all
-
                   hover:scale-105
+
+                  dark:border-slate-700
+                  dark:bg-slate-800
+                  dark:text-white
                 "
               >
                 <Bell size={18} />
@@ -173,22 +171,21 @@ export default function Navbar() {
                 className="
                   flex
                   lg:hidden
-
                   h-12
                   w-12
-
                   items-center
                   justify-center
-
                   rounded-full
-
+                  border
+                  border-gray-200
                   bg-white
-
                   shadow
-
                   transition-all
-
                   hover:scale-105
+
+                  dark:border-slate-700
+                  dark:bg-slate-800
+                  dark:text-white
                 "
               >
                 <Menu size={20} />

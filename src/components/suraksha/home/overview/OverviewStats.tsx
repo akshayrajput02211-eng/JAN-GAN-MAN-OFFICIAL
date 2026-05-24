@@ -24,10 +24,10 @@ export default function OverviewStats() {
         <div
           key={item.title}
           className="
-          rounded-2xl bg-slate-50 p-4
+          rounded-2xl bg-zinc-500 p-4
         "
         >
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-gray-50">
             {item.title}
           </p>
 

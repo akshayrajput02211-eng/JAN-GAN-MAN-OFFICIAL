@@ -1,3 +1,5 @@
+// HEROSEARCH.tsx
+
 "use client";
 
 import {
@@ -12,9 +14,12 @@ export default function HeroSearch() {
       className="
         rounded-[28px]
 
-        border border-white/50
+        border
+        border-white/50
+        dark:border-slate-700/50
 
         bg-white/70
+        dark:bg-slate-800/70
 
         p-3
 
@@ -47,6 +52,7 @@ export default function HeroSearch() {
             rounded-2xl
 
             bg-white
+            dark:bg-slate-800
 
             px-4
             py-4
@@ -69,6 +75,7 @@ export default function HeroSearch() {
 
               text-sm
               text-slate-700
+              dark:text-slate-200
 
               outline-none
 
@@ -90,16 +97,21 @@ export default function HeroSearch() {
               rounded-xl
 
               bg-slate-100
+              dark:bg-slate-700
 
               transition-all
               duration-300
 
-              hover:bg-green-100
+              hover:bg-red-100
+              dark:hover:bg-red-950/40
             "
           >
             <Mic
               size={18}
-              className="text-slate-600"
+              className="
+                text-slate-600
+                dark:text-slate-300
+              "
             />
           </button>
         </div>
@@ -117,8 +129,8 @@ export default function HeroSearch() {
             rounded-2xl
 
             bg-gradient-to-r
-            from-green-500
-            to-emerald-600
+            from-red-600
+            to-red-800
 
             px-6
             py-4
@@ -128,7 +140,7 @@ export default function HeroSearch() {
 
             text-white
 
-            shadow-[0_10px_30px_rgba(34,197,94,0.3)]
+            shadow-[0_10px_30px_rgba(220,38,38,0.3)]
 
             transition-all
             duration-300

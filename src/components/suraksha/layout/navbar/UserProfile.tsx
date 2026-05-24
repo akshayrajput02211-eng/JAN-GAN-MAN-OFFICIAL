@@ -10,13 +10,26 @@ export default function UserProfile() {
       <div
         className="
           flex cursor-pointer items-center gap-3
-          rounded-2xl border border-white/60
-          bg-white/80 px-3 py-2
-          backdrop-blur-xl
+
+          rounded-2xl
+
+          border border-white/60
+
+          bg-white/80
+
+          px-3 py-2
+
           shadow-sm
+          backdrop-blur-xl
+
           transition-all duration-300
+
           hover:scale-[1.02]
           hover:bg-white
+
+          dark:border-slate-700/50
+          dark:bg-slate-800/80
+          dark:hover:bg-slate-700
         "
       >
         <Image
@@ -28,18 +41,36 @@ export default function UserProfile() {
         />
 
         <div>
-          <h4 className="text-sm font-semibold text-slate-800">
+          <h4
+            className="
+              text-sm font-semibold
+              text-slate-800
+
+              dark:text-white
+            "
+          >
             Akshay kumar
           </h4>
 
-          <p className="text-xs text-green-600">
+          <p
+            className="
+              text-xs
+              text-blue-700
+
+              dark:text-blue-400
+            "
+          >
             Verified Citizen
           </p>
         </div>
 
         <ChevronDown
           size={18}
-          className="text-slate-500"
+          className="
+            text-slate-500
+
+            dark:text-slate-400
+          "
         />
       </div>
     </Link>

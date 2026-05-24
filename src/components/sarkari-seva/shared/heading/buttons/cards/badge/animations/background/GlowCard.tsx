@@ -10,17 +10,53 @@ export default function GlowCard({
   return (
     <div
       className="
+      group
       relative
       rounded-3xl
       p-[1px]
       bg-gradient-to-r
-      from-green-400
-      to-emerald-500
-    "
+      from-[#d97706]
+      to-[#f97316]
+      shadow-xl
+      hover:shadow-2xl
+      transition-all
+      duration-300
+      "
     >
-      <div className="bg-white rounded-3xl p-6">
+
+      {/* Glow Effect */}
+      <div
+        className="
+        absolute
+        inset-0
+        rounded-3xl
+        bg-gradient-to-r
+        from-[#d97706]
+        to-[#f97316]
+        opacity-0
+        blur-2xl
+        group-hover:opacity-30
+        transition-opacity
+        duration-500
+        "
+      />
+
+      {/* Inner Card */}
+      <div
+        className="
+        relative
+        z-10
+        bg-white
+        dark:bg-slate-800
+        rounded-3xl
+        p-6
+        transition-colors
+        duration-300
+        "
+      >
         {children}
       </div>
+
     </div>
   );
 }

@@ -1,3 +1,7 @@
+// ================================
+// components/doubts/DoubtItem.tsx
+// ================================
+
 import {
   Brain,
   Clock3,
@@ -24,7 +28,10 @@ export default function DoubtItem({
         transition-all
         duration-500
         hover:-translate-y-1
-        hover:shadow-[0_20px_60px_rgba(34,197,94,0.12)]
+        hover:shadow-[0_20px_60px_rgba(37,99,235,0.12)]
+
+        dark:border-slate-700/40
+        dark:bg-slate-800/80
       "
     >
       <div className="flex items-start gap-4">
@@ -36,23 +43,47 @@ export default function DoubtItem({
             items-center
             justify-center
             rounded-2xl
-            bg-green-100
-            text-green-700
+            bg-blue-100
+            text-blue-700
             transition-all
             duration-500
-            group-hover:bg-green-600
+
+            group-hover:bg-blue-600
             group-hover:text-white
+
+            dark:bg-blue-500/10
+            dark:text-blue-300
           "
         >
           <Brain size={24} />
         </div>
 
         <div className="flex-1">
-          <h3 className="text-lg font-semibold leading-relaxed text-gray-800">
+          <h3
+            className="
+              text-lg
+              font-semibold
+              leading-relaxed
+              text-gray-800
+
+              dark:text-white
+            "
+          >
             {question}
           </h3>
 
-          <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
+          <div
+            className="
+              mt-4
+              flex
+              items-center
+              gap-2
+              text-sm
+              text-gray-500
+
+              dark:text-slate-400
+            "
+          >
             <Clock3 size={16} />
 
             <span>2 min ago</span>

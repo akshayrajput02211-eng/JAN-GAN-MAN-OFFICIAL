@@ -25,16 +25,40 @@ export default function EmergencyGrid() {
         <div
           key={item.title}
           className="
-            rounded-2xl bg-white/70
-            p-5 backdrop-blur-xl
+            rounded-2xl
+
+            border border-white/70
+
+            bg-slate-400
+
+            p-5
+
             shadow-sm
+            backdrop-blur-xl
+
+            dark:border-slate-700/50
+            dark:bg-slate-800/70
           "
         >
-          <h3 className="font-bold text-slate-900">
+          <h3
+            className="
+              font-bold
+              text-slate-900
+
+              dark:text-white
+            "
+          >
             {item.title}
           </h3>
 
-          <p className="mt-2 text-2xl font-black text-red-500">
+          <p
+            className="
+              mt-2
+
+              text-2xl font-black
+              text-red-500
+            "
+          >
             {item.number}
           </p>
         </div>

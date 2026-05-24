@@ -1,4 +1,3 @@
-
 import SectionTitle from "@/components/krishi/shared/section-title/SectionTitle";
 import TimelineStep from "./TimelineStep";
 
@@ -30,8 +29,9 @@ export default function FarmingCalendar() {
     <section
       className="
       rounded-[40px]
-      border border-white/40
-      bg-white/70 p-8
+      border border-white/40 dark:border-slate-700/40
+      bg-[#dcfce7]/70 dark:bg-slate-800/70
+      p-6 md:p-8
       backdrop-blur-2xl
     "
     >
@@ -41,9 +41,23 @@ export default function FarmingCalendar() {
       />
 
       <div className="relative mt-12">
-        <div className="absolute left-0 top-3 h-1 w-full bg-green-100" />
+        <div
+          className="
+          absolute left-0 top-3
+          h-1 w-full
+          rounded-full
+          bg-green-100 dark:bg-slate-700
+        "
+        />
 
-        <div className="relative grid grid-cols-2 gap-10 md:grid-cols-5">
+        <div
+          className="
+          relative grid
+          grid-cols-2
+          gap-8
+          md:grid-cols-5
+        "
+        >
           {timeline.map((item, i) => (
             <TimelineStep
               key={i}

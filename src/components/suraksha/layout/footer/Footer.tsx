@@ -16,28 +16,52 @@ export default function Footer() {
   return (
     <footer
       className="
-        mt-20 border-t border-white/60
-        bg-white/70 backdrop-blur-xl
+        mt-20
+
+        border-t border-white/60
+
+        bg-white/70
+
+        backdrop-blur-xl
+
+        dark:border-slate-700/40
+        dark:bg-slate-900/80
       "
     >
       <div
         className="
-          mx-auto grid max-w-7xl gap-10
+          mx-auto
+
+          grid max-w-7xl gap-10
+
           px-4 py-14
+
           md:grid-cols-2
           lg:grid-cols-5
         "
       >
         {/* Brand */}
+
         <div>
-          <h2 className="text-2xl font-black text-slate-900">
+          <h2
+            className="
+              text-2xl font-black
+              text-slate-900
+
+              dark:text-white
+            "
+          >
             Suraksha Setu
           </h2>
 
           <p
             className="
-              mt-4 text-sm leading-relaxed
+              mt-4
+
+              text-sm leading-relaxed
               text-slate-500
+
+              dark:text-slate-400
             "
           >
             Bharat Police ke saath milkar
@@ -45,17 +69,28 @@ export default function Footer() {
           </p>
 
           {/* Social Icons */}
+
           <div className="mt-5 flex gap-3">
             {socialIcons.map((Icon, i) => (
               <button
                 key={i}
                 className="
-                  rounded-xl bg-slate-100
-                  p-3 text-slate-700
+                  rounded-xl
+
+                  bg-white
+
+                  p-3
+
+                  text-slate-700
+
                   transition-all duration-300
+
                   hover:scale-110
-                  hover:bg-green-100
-                  hover:text-green-600
+                  hover:bg-slate-100
+
+                  dark:bg-slate-700
+                  dark:text-white
+                  dark:hover:bg-slate-600
                 "
               >
                 <Icon size={18} />
@@ -65,13 +100,21 @@ export default function Footer() {
         </div>
 
         {/* Footer Links */}
+
         {[
           "Important Links",
           "Services",
           "Support",
         ].map((title) => (
           <div key={title}>
-            <h3 className="font-bold text-slate-900">
+            <h3
+              className="
+                font-bold
+                text-slate-900
+
+                dark:text-white
+              "
+            >
               {title}
             </h3>
 
@@ -85,10 +128,17 @@ export default function Footer() {
                 <p
                   key={item}
                   className="
-                    cursor-pointer text-sm
+                    cursor-pointer
+
+                    text-sm
                     text-slate-500
+
                     transition-all duration-300
-                    hover:text-green-600
+
+                    hover:text-blue-700
+
+                    dark:text-slate-400
+                    dark:hover:text-blue-400
                   "
                 >
                   {item}
@@ -99,30 +149,63 @@ export default function Footer() {
         ))}
 
         {/* Help Card */}
+
         <div
           className="
             rounded-[28px]
-            bg-gradient-to-br
-            from-red-50 to-orange-50
-            p-6 shadow-sm
+
+            border border-white/60
+
+            bg-white/80
+
+            p-6
+
+            shadow-sm
+
+            dark:border-slate-700/40
+            dark:bg-slate-800/70
           "
         >
-          <h3 className="text-lg font-bold text-slate-900">
+          <h3
+            className="
+              text-lg font-bold
+              text-slate-900
+
+              dark:text-white
+            "
+          >
             Need Help?
           </h3>
 
-          <p className="mt-3 font-medium text-red-500">
+          <p
+            className="
+              mt-3
+
+              font-medium
+              text-red-500
+            "
+          >
             Police Helpline: 112
           </p>
 
           <button
             className="
-              mt-5 rounded-2xl
-              bg-green-500 px-5 py-3
-              font-semibold text-white
+              mt-5
+
+              rounded-2xl
+
+              bg-gradient-to-r
+              from-blue-900
+              to-blue-700
+
+              px-5 py-3
+
+              font-semibold
+              text-white
+
               transition-all duration-300
+
               hover:scale-105
-              hover:bg-green-600
             "
           >
             Chat With Us

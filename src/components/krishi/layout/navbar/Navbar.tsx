@@ -18,7 +18,6 @@ import { motion } from "framer-motion";
 import ServiceSidebar from "@/components/cta/service-sidebar/ServiceSidebar";
 
 const navItems = [
-  "Home",
   "Mera Khet",
   "Fasal Prabandhan",
   "Mandi Bazaar",
@@ -47,9 +46,9 @@ export default function Navbar() {
           z-50
 
           border-b
-          border-white/30
+          border-white/30 dark:border-slate-700/40
 
-          bg-white/70
+          bg-[#dcfce7]/70 dark:bg-slate-900/80
 
           backdrop-blur-2xl
         "
@@ -85,8 +84,8 @@ export default function Navbar() {
                 rounded-2xl
 
                 bg-gradient-to-br
-                from-green-500
-                to-emerald-700
+                from-[#16a34a]
+                to-[#065f46]
 
                 shadow-lg
                 shadow-green-500/20
@@ -108,7 +107,7 @@ export default function Navbar() {
                 className="
                   text-xl
                   font-bold
-                  text-slate-900
+                  text-slate-900 dark:text-white
                 "
               >
                 Krishi
@@ -117,7 +116,7 @@ export default function Navbar() {
               <p
                 className="
                   text-xs
-                  text-slate-500
+                  text-slate-500 dark:text-slate-400
                 "
               >
                 Apni Kheti, Apna Vikas
@@ -145,12 +144,12 @@ export default function Navbar() {
 
                   text-sm
                   font-medium
-                  text-slate-700
+                  text-slate-700 dark:text-slate-200
 
                   transition-all
                   duration-300
 
-                  hover:text-green-600
+                  hover:text-[#16a34a]
 
                   after:absolute
                   after:left-0
@@ -159,7 +158,7 @@ export default function Navbar() {
                   after:h-[2px]
                   after:w-0
 
-                  after:bg-green-500
+                  after:bg-[#16a34a]
 
                   after:transition-all
 
@@ -201,12 +200,12 @@ export default function Navbar() {
                 px-5
 
                 bg-gradient-to-br
-                from-green-500
-                to-emerald-700
+                from-[#16a34a]
+                to-[#065f46]
 
                 text-white
 
-                shadow-[0_10px_30px_rgba(34,197,94,0.30)]
+                shadow-[0_10px_30px_rgba(22,163,74,0.30)]
 
                 transition-all
                 duration-300
@@ -241,9 +240,9 @@ export default function Navbar() {
                 rounded-2xl
 
                 border
-                border-white/40
+                border-white/40 dark:border-slate-700/40
 
-                bg-white/70
+                bg-white/70 dark:bg-slate-900/80
 
                 backdrop-blur-xl
 
@@ -255,7 +254,7 @@ export default function Navbar() {
                 hover:shadow-green-500/10
               "
             >
-              <Bell className="h-5 w-5 text-slate-700" />
+              <Bell className="h-5 w-5 text-slate-700 dark:text-slate-200" />
 
               <span
                 className="
@@ -286,9 +285,9 @@ export default function Navbar() {
                 rounded-2xl
 
                 border
-                border-white/40
+                border-white/40 dark:border-slate-700/40
 
-                bg-white/70
+                bg-white/70 dark:bg-slate-900/80
 
                 px-3
                 py-2
@@ -312,16 +311,16 @@ export default function Navbar() {
                   className="
                     text-sm
                     font-semibold
-                    text-slate-800
+                    text-slate-800 dark:text-white
                   "
                 >
-                  Ram Singh
+                  Akshay kumar
                 </h4>
 
                 <p
                   className="
                     text-xs
-                    text-green-600
+                    text-[#16a34a]
                   "
                 >
                   Verified Farmer
@@ -332,7 +331,7 @@ export default function Navbar() {
                 className="
                   h-4
                   w-4
-                  text-slate-500
+                  text-slate-500 dark:text-slate-400
                 "
               />
             </div>
@@ -354,14 +353,14 @@ export default function Navbar() {
                 rounded-2xl
 
                 border
-                border-white/40
+                border-white/40 dark:border-slate-700/40
 
-                bg-white/70
+                bg-white/70 dark:bg-slate-900/80
 
                 lg:hidden
               "
             >
-              <Menu className="h-5 w-5" />
+              <Menu className="h-5 w-5 text-slate-700 dark:text-white" />
             </button>
           </div>
         </div>

@@ -9,18 +9,35 @@ export default function PrimaryButton({ children }: Props) {
     <button
       className="
         rounded-2xl
-        bg-green-600
+
+        bg-[#2563eb]
+        hover:bg-[#1d4ed8]
+
         text-white
+
         px-6
         py-3
+
         font-semibold
+        tracking-wide
+
         shadow-lg
-        shadow-green-500/30
+        shadow-blue-500/30
+
+        border
+        border-blue-400/20
+
         transition-all
         duration-300
+
         hover:scale-105
-        hover:bg-green-700
+        hover:shadow-blue-500/40
+
         active:scale-95
+
+        dark:bg-[#1d4ed8]
+        dark:hover:bg-[#2563eb]
+        dark:border-blue-500/20
       "
     >
       {children}

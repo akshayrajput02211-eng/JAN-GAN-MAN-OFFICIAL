@@ -1,92 +1,170 @@
-
-
 import Image from "next/image";
 import { Send } from "lucide-react";
 
 export default function AIAssistant() {
   return (
-    <section className="py-14">
+    <section className="py-14 bg-[#fef3c7] dark:bg-slate-950 transition-colors duration-300">
 
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
 
-        <div className="
-        grid
-        lg:grid-cols-2
-        gap-8
-        ">
+        <div
+          className="
+          grid
+          grid-cols-1
+          lg:grid-cols-2
+          gap-8
+          "
+        >
 
-          <div className="
-          glass
-          rounded-[40px]
-          p-8
-          glow-green
-          relative overflow-hidden
-          ">
+          {/* AI Assistant Card */}
+          <div
+            className="
+            relative
+            overflow-hidden
+            rounded-[40px]
+            border
+            border-amber-200/60
+            dark:border-slate-700/60
+            bg-white/70
+            dark:bg-slate-900/70
+            backdrop-blur-xl
+            p-8
+            shadow-xl
+            "
+          >
 
-            <div className="
-            absolute
-            -top-20
-            -right-20
-            w-60 h-60
-            bg-green-300/20
-            rounded-full
-            blur-[100px]
-            " />
+            {/* Glow */}
+            <div
+              className="
+              absolute
+              -top-20
+              -right-20
+              w-60
+              h-60
+              rounded-full
+              bg-orange-400/20
+              blur-[100px]
+              "
+            />
 
-            <div className="
-            relative z-10
-            flex items-center gap-8
-            ">
+            <div
+              className="
+              relative
+              z-10
+              flex
+              flex-col
+              md:flex-row
+              items-center
+              gap-8
+              "
+            >
 
               <Image
                 src="/dummy/robot.png"
                 alt="robot"
                 width={180}
                 height={180}
+                className="drop-shadow-2xl"
               />
 
-              <div className="flex-1">
+              <div className="flex-1 w-full">
 
-                <h2 className="
-                text-4xl
-                font-black
-                ">
+                <div
+                  className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  px-4
+                  py-2
+                  rounded-full
+                  bg-white
+                  dark:bg-slate-700
+                  text-amber-700
+                  dark:text-amber-300
+                  text-sm
+                  font-semibold
+                  shadow-md
+                  "
+                >
+                  AI Powered Assistant
+                </div>
+
+                <h2
+                  className="
+                  mt-5
+                  text-4xl
+                  md:text-5xl
+                  font-black
+                  text-slate-900
+                  dark:text-white
+                  leading-tight
+                  "
+                >
                   AI Sahayak
                 </h2>
 
-                <p className="
-                mt-3
-                text-slate-600
-                ">
+                <p
+                  className="
+                  mt-4
+                  text-slate-600
+                  dark:text-slate-300
+                  text-lg
+                  leading-relaxed
+                  "
+                >
                   Ask anything about yojna,
-                  jobs and documents.
+                  government jobs, forms,
+                  documents and services instantly.
                 </p>
 
-                <div className="
-                mt-6
-                glass
-                rounded-2xl
-                p-3
-                flex items-center
-                gap-3
-                ">
+                {/* Input */}
+                <div
+                  className="
+                  mt-7
+                  rounded-2xl
+                  border
+                  border-amber-200/60
+                  dark:border-slate-700/60
+                  bg-white/80
+                  dark:bg-slate-800/80
+                  backdrop-blur-xl
+                  p-3
+                  flex
+                  items-center
+                  gap-3
+                  shadow-lg
+                  "
+                >
 
                   <input
-                    placeholder="Ask AI..."
+                    placeholder="Ask AI anything..."
                     className="
                     flex-1
                     bg-transparent
                     outline-none
+                    text-slate-800
+                    dark:text-white
+                    placeholder:text-slate-400
                     "
                   />
 
-                  <button className="
-                  w-12 h-12
-                  rounded-xl
-                  bg-green-500
-                  text-white
-                  flex items-center justify-center
-                  ">
+                  <button
+                    className="
+                    w-12
+                    h-12
+                    rounded-xl
+                    bg-[#d97706]
+                    hover:bg-[#f97316]
+                    transition-all
+                    duration-300
+                    text-white
+                    flex
+                    items-center
+                    justify-center
+                    shadow-lg
+                    hover:scale-105
+                    "
+                  >
                     <Send size={18} />
                   </button>
 
@@ -98,26 +176,69 @@ export default function AIAssistant() {
 
           </div>
 
-          <div className="
-          glass
-          rounded-[40px]
-          p-8
-          glow-blue
-          ">
+          {/* Quick Tools */}
+          <div
+            className="
+            rounded-[40px]
+            border
+            border-amber-200/60
+            dark:border-slate-700/60
+            bg-white/70
+            dark:bg-slate-900/70
+            backdrop-blur-xl
+            p-8
+            shadow-xl
+            "
+          >
 
-            <h2 className="
-            text-3xl
-            font-black
-            mb-8
-            ">
-              Quick Tools
-            </h2>
+            <div className="flex items-center justify-between mb-8">
 
-            <div className="
-            grid
-            grid-cols-2
-            gap-5
-            ">
+              <div>
+
+                <div
+                  className="
+                  inline-flex
+                  items-center
+                  px-4
+                  py-2
+                  rounded-full
+                  bg-white
+                  dark:bg-slate-700
+                  text-amber-700
+                  dark:text-amber-300
+                  text-sm
+                  font-semibold
+                  shadow-md
+                  "
+                >
+                  Smart Utilities
+                </div>
+
+                <h2
+                  className="
+                  mt-4
+                  text-3xl
+                  md:text-4xl
+                  font-black
+                  text-slate-900
+                  dark:text-white
+                  "
+                >
+                  Quick Tools
+                </h2>
+
+              </div>
+
+            </div>
+
+            <div
+              className="
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              gap-5
+              "
+            >
 
               {[
                 "Eligibility",
@@ -128,23 +249,55 @@ export default function AIAssistant() {
                 <div
                   key={tool}
                   className="
-                  bg-white
+                  group
                   rounded-3xl
+                  border
+                  border-amber-100
+                  dark:border-slate-700
+                  bg-white
+                  dark:bg-slate-800
                   p-6
                   text-center
-                  card-hover
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:shadow-2xl
+                  cursor-pointer
                   "
                 >
-                  <div className="
-                  w-16 h-16
-                  rounded-2xl
-                  bg-green-100
-                  mx-auto mb-4
-                  " />
 
-                  <p className="font-semibold">
+                  <div
+                    className="
+                    w-16
+                    h-16
+                    rounded-2xl
+                    bg-gradient-to-br
+                    from-[#d97706]
+                    to-[#f97316]
+                    mx-auto
+                    mb-4
+                    flex
+                    items-center
+                    justify-center
+                    shadow-lg
+                    group-hover:scale-110
+                    transition-transform
+                    duration-300
+                    "
+                  >
+                    <div className="w-6 h-6 rounded-full bg-white/80" />
+                  </div>
+
+                  <p
+                    className="
+                    font-bold
+                    text-slate-800
+                    dark:text-white
+                    "
+                  >
                     {tool}
                   </p>
+
                 </div>
               ))}
 

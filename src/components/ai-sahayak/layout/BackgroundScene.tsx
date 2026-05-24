@@ -10,6 +10,7 @@ import c3 from "@/assets/ai-sahayak/cloud-3.png";
 
 import f1 from "@/assets/ai-sahayak/flower-yellow.png";
 import f2 from "@/assets/ai-sahayak/flower-purple.png";
+import robot from "@/assets/ai-sahayak/robot.png";
 
 export default function BackgroundScene() {
   return (
@@ -124,6 +125,22 @@ export default function BackgroundScene() {
       <Image
         src={f2}
         alt=""
+        className="
+          absolute
+
+          bottom-3 right-2
+          w-10
+
+          sm:bottom-4 sm:right-4 sm:w-12
+
+          md:bottom-5 md:right-6 md:w-14
+
+          lg:right-8 lg:w-16
+        "
+      />
+        <Image
+        src={robot}
+        alt="robot"
         className="
           absolute
 

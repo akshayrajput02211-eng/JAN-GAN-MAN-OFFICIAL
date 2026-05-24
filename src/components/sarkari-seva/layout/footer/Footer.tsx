@@ -3,10 +3,6 @@
 // ================================
 
 import {
-  // Facebook,
-  // Instagram,
-  // Twitter,
-  // Youtube,
   MessageCircle,
   Phone,
   Mail,
@@ -41,42 +37,88 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="relative pt-20">
+    <footer className="relative pt-20 bg-[#fef3c7] dark:bg-slate-950 transition-colors duration-300">
 
       {/* TOP CTA */}
       <div className="max-w-7xl mx-auto px-4 lg:px-8 mb-10">
 
         <div
           className="
-          relative overflow-hidden
+          relative
+          overflow-hidden
           rounded-[40px]
           bg-gradient-to-r
-          from-green-700
-          via-green-600
-          to-emerald-500
-          p-8 lg:p-12
+          from-[#d97706]
+          via-[#ea580c]
+          to-[#f97316]
+          p-8
+          lg:p-12
           text-white
+          shadow-2xl
           "
         >
 
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute -top-20 -left-10 w-72 h-72 rounded-full bg-white blur-3xl" />
-            <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full bg-yellow-300 blur-3xl" />
+          {/* Glow */}
+          <div className="absolute inset-0 opacity-20">
+
+            <div
+              className="
+              absolute
+              -top-20
+              -left-10
+              w-72
+              h-72
+              rounded-full
+              bg-white
+              blur-3xl
+              "
+            />
+
+            <div
+              className="
+              absolute
+              bottom-0
+              right-0
+              w-72
+              h-72
+              rounded-full
+              bg-yellow-300
+              blur-3xl
+              "
+            />
+
           </div>
 
-          <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
+          <div
+            className="
+            relative
+            z-10
+            grid
+            grid-cols-1
+            lg:grid-cols-2
+            gap-10
+            items-center
+            "
+          >
 
+            {/* LEFT */}
             <div>
 
               <span
                 className="
-                inline-flex items-center gap-2
+                inline-flex
+                items-center
+                gap-2
                 bg-white/20
-                border border-white/20
+                border
+                border-white/20
                 rounded-full
-                px-4 py-2
-                text-sm font-semibold
+                px-4
+                py-2
+                text-sm
+                font-semibold
                 mb-5
+                backdrop-blur-xl
                 "
               >
                 🇮🇳 Digital Bharat Mission
@@ -84,7 +126,8 @@ export default function Footer() {
 
               <h2
                 className="
-                text-4xl lg:text-5xl
+                text-4xl
+                lg:text-5xl
                 font-black
                 leading-tight
                 mb-4
@@ -103,16 +146,20 @@ export default function Footer() {
                 max-w-xl
                 "
               >
-                Yojna, jobs, mandi bhav, scholarship, complaints,
-                AI sahayak aur documents — sab kuch ek premium
-                digital platform par.
+                Yojna, jobs, mandi bhav, scholarship,
+                complaints, AI sahayak aur documents —
+                sab kuch ek premium digital platform par.
               </p>
 
             </div>
 
+            {/* RIGHT */}
             <div
               className="
-              grid grid-cols-2 gap-4
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              gap-4
               "
             >
 
@@ -126,20 +173,26 @@ export default function Footer() {
                   key={item}
                   className="
                   bg-white/10
-                  border border-white/20
+                  border
+                  border-white/20
                   backdrop-blur-xl
                   rounded-3xl
                   p-6
                   text-center
+                  hover:bg-white/20
+                  transition-all
+                  duration-300
                   "
                 >
-                  <h3 className="text-2xl font-black">
+
+                  <h3 className="text-3xl font-black">
                     {item.split(" ")[0]}
                   </h3>
 
                   <p className="text-white/80 mt-2 text-sm">
                     {item.replace(item.split(" ")[0], "")}
                   </p>
+
                 </div>
               ))}
 
@@ -154,9 +207,14 @@ export default function Footer() {
       {/* MAIN FOOTER */}
       <div
         className="
-        border-t border-black/5
+        border-t
+        border-orange-200/50
+        dark:border-slate-800
         bg-white/80
+        dark:bg-slate-900/80
         backdrop-blur-xl
+        transition-colors
+        duration-300
         "
       >
 
@@ -166,7 +224,7 @@ export default function Footer() {
             className="
             grid
             grid-cols-1
-            md:grid-cols-2
+            sm:grid-cols-2
             lg:grid-cols-5
             gap-12
             "
@@ -179,12 +237,15 @@ export default function Footer() {
 
                 <div
                   className="
-                  w-14 h-14
+                  w-14
+                  h-14
                   rounded-2xl
                   bg-gradient-to-br
-                  from-green-500
-                  to-emerald-600
-                  flex items-center justify-center
+                  from-[#d97706]
+                  to-[#f97316]
+                  flex
+                  items-center
+                  justify-center
                   text-white
                   text-2xl
                   font-black
@@ -195,13 +256,15 @@ export default function Footer() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-black text-slate-900">
+
+                  <h2 className="text-2xl font-black text-slate-900 dark:text-white">
                     Sarkari Seva
                   </h2>
 
-                  <p className="text-slate-500 text-sm">
+                  <p className="text-slate-500 dark:text-slate-400 text-sm">
                     Sabhi Sarkari Jankari Ek Jagah
                   </p>
+
                 </div>
 
               </div>
@@ -209,44 +272,20 @@ export default function Footer() {
               <p
                 className="
                 text-slate-600
+                dark:text-slate-300
                 leading-relaxed
                 mb-6
                 "
               >
-                Bharat ka modern digital government assistance
-                platform jahan har nagrik ko sahi jankari aur
-                services ek hi jagah milti hain.
+                Bharat ka modern digital government
+                assistance platform jahan har nagrik ko
+                sahi jankari aur services ek hi jagah
+                milti hain.
               </p>
-
-              <div className="flex gap-3">
-
-                {[
-                  // Facebook,
-                  // Instagram,
-                  // Twitter,
-                  // Youtube,
-                ].map((Icon, i) => (
-                  <button
-                    key={i}
-                    className="
-                    w-11 h-11
-                    rounded-2xl
-                    bg-slate-100
-                    hover:bg-green-500
-                    hover:text-white
-                    transition-all duration-300
-                    flex items-center justify-center
-                    "
-                  >
-                    <Icon size={18} />
-                  </button>
-                ))}
-
-              </div>
 
             </div>
 
-            {/* LINKS */}
+            {/* PLATFORM */}
             <div>
 
               <h3
@@ -255,6 +294,7 @@ export default function Footer() {
                 font-black
                 mb-6
                 text-slate-900
+                dark:text-white
                 "
               >
                 Platform
@@ -268,7 +308,9 @@ export default function Footer() {
                     className="
                     block
                     text-slate-600
-                    hover:text-green-600
+                    dark:text-slate-300
+                    hover:text-[#d97706]
+                    dark:hover:text-orange-400
                     transition-colors
                     "
                   >
@@ -289,6 +331,7 @@ export default function Footer() {
                 font-black
                 mb-6
                 text-slate-900
+                dark:text-white
                 "
               >
                 Resources
@@ -302,7 +345,9 @@ export default function Footer() {
                     className="
                     block
                     text-slate-600
-                    hover:text-green-600
+                    dark:text-slate-300
+                    hover:text-[#d97706]
+                    dark:hover:text-orange-400
                     transition-colors
                     "
                   >
@@ -323,6 +368,7 @@ export default function Footer() {
                 font-black
                 mb-6
                 text-slate-900
+                dark:text-white
                 "
               >
                 Support
@@ -336,7 +382,9 @@ export default function Footer() {
                     className="
                     block
                     text-slate-600
-                    hover:text-green-600
+                    dark:text-slate-300
+                    hover:text-[#d97706]
+                    dark:hover:text-orange-400
                     transition-colors
                     "
                   >
@@ -357,6 +405,7 @@ export default function Footer() {
                 font-black
                 mb-6
                 text-slate-900
+                dark:text-white
                 "
               >
                 Contact
@@ -364,99 +413,126 @@ export default function Footer() {
 
               <div className="space-y-5">
 
+                {/* Phone */}
                 <div className="flex gap-4">
 
                   <div
                     className="
-                    w-10 h-10
+                    w-10
+                    h-10
                     rounded-xl
-                    bg-green-100
-                    text-green-600
-                    flex items-center justify-center
+                    bg-orange-100
+                    dark:bg-orange-500/20
+                    text-[#d97706]
+                    flex
+                    items-center
+                    justify-center
                     "
                   >
                     <Phone size={18} />
                   </div>
 
                   <div>
-                    <p className="text-sm text-slate-500">
+
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
                       Helpline
                     </p>
 
-                    <h4 className="font-bold text-slate-800">
+                    <h4 className="font-bold text-slate-800 dark:text-white">
                       1800 123 4567
                     </h4>
+
                   </div>
 
                 </div>
 
+                {/* Email */}
                 <div className="flex gap-4">
 
                   <div
                     className="
-                    w-10 h-10
+                    w-10
+                    h-10
                     rounded-xl
-                    bg-blue-100
-                    text-blue-600
-                    flex items-center justify-center
+                    bg-orange-100
+                    dark:bg-orange-500/20
+                    text-[#f97316]
+                    flex
+                    items-center
+                    justify-center
                     "
                   >
                     <Mail size={18} />
                   </div>
 
                   <div>
-                    <p className="text-sm text-slate-500">
+
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
                       Email
                     </p>
 
-                    <h4 className="font-bold text-slate-800">
+                    <h4 className="font-bold text-slate-800 dark:text-white">
                       help@sarkariseva.in
                     </h4>
+
                   </div>
 
                 </div>
 
+                {/* Location */}
                 <div className="flex gap-4">
 
                   <div
                     className="
-                    w-10 h-10
+                    w-10
+                    h-10
                     rounded-xl
                     bg-orange-100
+                    dark:bg-orange-500/20
                     text-orange-600
-                    flex items-center justify-center
+                    flex
+                    items-center
+                    justify-center
                     "
                   >
                     <MapPin size={18} />
                   </div>
 
                   <div>
-                    <p className="text-sm text-slate-500">
+
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
                       Location
                     </p>
 
-                    <h4 className="font-bold text-slate-800">
+                    <h4 className="font-bold text-slate-800 dark:text-white">
                       New Delhi, India
                     </h4>
+
                   </div>
 
                 </div>
 
+                {/* Button */}
                 <button
                   className="
                   mt-4
                   w-full
                   rounded-2xl
                   bg-gradient-to-r
-                  from-green-500
-                  to-emerald-600
+                  from-[#d97706]
+                  to-[#f97316]
                   hover:scale-[1.02]
-                  transition-all duration-300
+                  transition-all
+                  duration-300
                   py-4
                   font-bold
                   text-white
-                  shadow-lg shadow-green-500/20
-                  flex items-center justify-center gap-2
+                  shadow-lg
+                  shadow-orange-500/20
+                  flex
+                  items-center
+                  justify-center
+                  gap-2
                   "
                 >
                   <MessageCircle size={18} />
@@ -472,35 +548,39 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM */}
-        <div className="border-t border-black/5">
+        <div className="border-t border-orange-200/50 dark:border-slate-800">
 
           <div
             className="
-            max-w-7xl mx-auto
-            px-4 lg:px-8
+            max-w-7xl
+            mx-auto
+            px-4
+            lg:px-8
             py-6
-            flex flex-col lg:flex-row
+            flex
+            flex-col
+            lg:flex-row
             items-center
             justify-between
             gap-4
             "
           >
 
-            <p className="text-slate-500 text-sm">
+            <p className="text-slate-500 dark:text-slate-400 text-sm">
               © 2026 Sarkari Seva. All rights reserved.
             </p>
 
             <div className="flex items-center gap-6 text-sm">
 
-              <button className="text-slate-500 hover:text-green-600">
+              <button className="text-slate-500 dark:text-slate-400 hover:text-[#d97706]">
                 Privacy
               </button>
 
-              <button className="text-slate-500 hover:text-green-600">
+              <button className="text-slate-500 dark:text-slate-400 hover:text-[#d97706]">
                 Terms
               </button>
 
-              <button className="text-slate-500 hover:text-green-600">
+              <button className="text-slate-500 dark:text-slate-400 hover:text-[#d97706]">
                 Accessibility
               </button>
 

@@ -8,7 +8,7 @@ const complaints = [
 
 export default function ComplaintList() {
   return (
-    <section className="rounded-[32px] bg-white/70 p-6 backdrop-blur-xl">
+    <section className="rounded-[32px] bg-slate-500 p-6 backdrop-blur-xl">
       <div className="flex justify-between">
         <h2 className="text-2xl font-black">
           My Complaints

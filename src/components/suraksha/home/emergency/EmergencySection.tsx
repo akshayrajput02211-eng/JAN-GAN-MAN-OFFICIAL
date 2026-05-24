@@ -9,7 +9,7 @@ export default function EmergencySection() {
       rounded-[32px]
       border border-red-100
       bg-gradient-to-r
-      from-red-50 to-orange-50
+      from-red-500 to-blue-800
       p-8 lg:flex-row
       lg:items-center
       lg:justify-between

@@ -15,7 +15,30 @@ export default function TeacherCard({
   return (
     <GlowCard>
       <div className="text-center">
-        <div className="mx-auto mb-4 h-28 w-28 overflow-hidden rounded-full border-4 border-green-100">
+        <div
+          className="
+            mx-auto
+            mb-4
+
+            h-28
+            w-28
+
+            overflow-hidden
+            rounded-full
+
+            border-4
+            border-blue-100
+            dark:border-slate-700
+
+            shadow-lg
+            shadow-blue-100/60
+
+            transition-all
+            duration-300
+
+            group-hover:scale-105
+          "
+        >
           <Image
             src={image}
             alt={name}
@@ -25,11 +48,62 @@ export default function TeacherCard({
           />
         </div>
 
-        <h3 className="text-xl font-bold">{name}</h3>
+        <h3
+          className="
+            text-xl
+            font-bold
 
-        <p className="mt-2 text-gray-500">{subject}</p>
+            text-slate-900
+            dark:text-white
+          "
+        >
+          {name}
+        </h3>
 
-        <button className="mt-6 w-full rounded-2xl bg-green-50 py-3 font-semibold text-green-700 transition hover:bg-green-600 hover:text-white">
+        <p
+          className="
+            mt-2
+
+            text-slate-500
+            dark:text-slate-400
+          "
+        >
+          {subject}
+        </p>
+
+        <button
+          className="
+            mt-6
+            w-full
+
+            rounded-2xl
+
+            bg-blue-50
+            dark:bg-slate-800
+
+            py-3
+
+            font-semibold
+
+            text-[#2563eb]
+            dark:text-blue-400
+
+            border
+            border-blue-100
+            dark:border-slate-700
+
+            transition-all
+            duration-300
+
+            hover:bg-[#2563eb]
+            hover:text-white
+
+            hover:shadow-lg
+            hover:shadow-blue-200/50
+
+            dark:hover:bg-[#1d4ed8]
+          "
+        >
           Book Demo
         </button>
       </div>

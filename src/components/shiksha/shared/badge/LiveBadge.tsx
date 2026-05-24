@@ -1,3 +1,7 @@
+// ================================
+// components/shared/live-badge/LiveBadge.tsx
+// ================================
+
 export default function LiveBadge() {
   return (
     <div
@@ -6,16 +10,22 @@ export default function LiveBadge() {
         left-4
         top-4
         z-20
+
         flex
         items-center
         gap-2
+
         rounded-full
+
         bg-red-500
+
         px-4
         py-2
+
         text-sm
         font-bold
         text-white
+
         shadow-lg
         shadow-red-500/40
       "

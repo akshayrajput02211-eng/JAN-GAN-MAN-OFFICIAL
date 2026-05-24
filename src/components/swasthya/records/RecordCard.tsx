@@ -1,3 +1,5 @@
+// RECORDCARD.tsx
+
 interface Props {
   title: string;
   icon: string;
@@ -20,9 +22,12 @@ export default function RecordCard({
 
         rounded-[28px]
 
-        border border-white/40
+        border
+        border-white/40
+        dark:border-slate-700/40
 
         bg-white/70
+        dark:bg-slate-800/70
 
         p-6
 
@@ -35,6 +40,7 @@ export default function RecordCard({
 
         hover:-translate-y-2
         hover:bg-white
+        dark:hover:bg-slate-700
       "
     >
       {/* GLOW */}
@@ -50,7 +56,7 @@ export default function RecordCard({
 
           rounded-full
 
-          bg-green-100/40
+          bg-red-100/40
 
           blur-3xl
         "
@@ -72,8 +78,8 @@ export default function RecordCard({
           rounded-2xl
 
           bg-gradient-to-br
-          from-green-100
-          to-emerald-100
+          from-red-100
+          to-orange-100
 
           text-3xl
 
@@ -99,6 +105,7 @@ export default function RecordCard({
             font-black
 
             text-slate-900
+            dark:text-white
           "
         >
           {title}
@@ -112,6 +119,7 @@ export default function RecordCard({
             leading-7
 
             text-slate-600
+            dark:text-slate-400
           "
         >
           {desc}
@@ -123,7 +131,9 @@ export default function RecordCard({
 
             rounded-2xl
 
-            bg-green-500
+            bg-gradient-to-r
+            from-red-600
+            to-red-800
 
             px-5
             py-3
@@ -137,7 +147,6 @@ export default function RecordCard({
             duration-300
 
             hover:scale-105
-            hover:bg-green-600
           "
         >
           View Record

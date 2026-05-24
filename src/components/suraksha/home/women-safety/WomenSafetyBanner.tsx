@@ -7,7 +7,7 @@ export default function WomenSafetyBanner() {
         relative overflow-hidden
         rounded-[32px]
         bg-gradient-to-r
-        from-violet-100 to-pink-100
+        from-pink-500 to-blue-500
         p-8
       "
     >
