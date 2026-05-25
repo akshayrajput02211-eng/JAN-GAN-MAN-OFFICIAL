@@ -1,65 +1,68 @@
 import {
-  User,
-  ShoppingBag,
-  Heart,
-  Phone,
-  Wallet,
+  User2,
+  Bookmark,
+  FileText,
   MapPin,
+  Bell,
+  ShieldCheck,
+  HeartHandshake,
   Settings,
-  CircleHelp,
-  LogOut,
-  Store,
 } from "lucide-react";
 
 export const profileMenus = [
   {
-    title: "Meri Jankari",
-    subtitle: "Apni personal jankari dekhein aur update karein",
-    icon: User,
+    title: "Edit Profile",
+    subtitle: "Apni jankari update karo",
+    icon: User2,
+    href: "/profile/edit",
   },
-  {
-    title: "Mere Orders",
-    subtitle: "Aapke sabhi orders ki jankari",
-    icon: ShoppingBag,
-  },
-  {
-    title: "Meri Post / Listings",
-    subtitle: "Aapke dwara ki gayi posts aur listings",
-    icon: Store,
-  },
+
   {
     title: "Saved Items",
-    subtitle: "Aapke save kiye gaye items",
-    icon: Heart,
+    subtitle: "Saved jobs, products aur schemes",
+    icon: Bookmark,
+    href: "/profile/saved",
   },
+
   {
-    title: "Call History",
-    subtitle: "Aapke calls ka itihaas",
-    icon: Phone,
+    title: "Meri Listings",
+    subtitle: "Aapke posts aur listings",
+    icon: FileText,
+    href: "/profile/posts",
   },
-  {
-    title: "Wallet",
-    subtitle: "Wallet balance aur transactions",
-    icon: Wallet,
-  },
+
   {
     title: "Address Book",
-    subtitle: "Saved addresses",
+    subtitle: "Saved addresses manage karo",
     icon: MapPin,
+    href: "/profile/address-book",
   },
+
   {
-    title: "Settings",
-    subtitle: "App settings aur preferences",
-    icon: Settings,
+    title: "Notifications",
+    subtitle: "Latest updates dekho",
+    icon: Bell,
+    href: "/notifications",
   },
+
+  {
+    title: "Suraksha",
+    subtitle: "Account safety aur privacy",
+    icon: ShieldCheck,
+    href: "/suraksha",
+  },
+
   {
     title: "Help & Support",
-    subtitle: "Support aur sahayata",
-    icon: CircleHelp,
+    subtitle: "Madad aur support pao",
+    icon: HeartHandshake,
+    href: "/support",
   },
+
   {
-    title: "Logout",
-    subtitle: "Apne account se logout karein",
-    icon: LogOut,
+    title: "Settings",
+    subtitle: "App settings manage karo",
+    icon: Settings,
+    href: "/settings",
   },
 ];

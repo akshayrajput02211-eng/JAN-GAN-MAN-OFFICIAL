@@ -1,3 +1,7 @@
+// ========================================
+// FILE: src/components/swasthya/home/ServicesGrid.tsx
+// ========================================
+
 "use client";
 
 import ServiceCard from "./ServiceCard";
@@ -8,6 +12,7 @@ const services = [
     subtitle: "Book Tests",
     icon: "/assets/swasthya/icons/lab.png",
     gradient: "from-cyan-500 to-blue-500",
+    href: "/swasthya/lab",
   },
 
   {
@@ -15,6 +20,7 @@ const services = [
     subtitle: "Reports & History",
     icon: "/assets/swasthya/icons/report.png",
     gradient: "from-violet-500 to-purple-500",
+    href: "/swasthya/records",
   },
 
   {
@@ -22,6 +28,7 @@ const services = [
     subtitle: "Care & Support",
     icon: "/assets/swasthya/icons/women.png",
     gradient: "from-pink-500 to-rose-500",
+    href: "/swasthya/women-care",
   },
 
   {
@@ -29,6 +36,7 @@ const services = [
     subtitle: "Stay Fit",
     icon: "/assets/swasthya/icons/fitness.png",
     gradient: "from-green-500 to-emerald-500",
+    href: "/swasthya/fitness",
   },
 ];
 
@@ -46,6 +54,7 @@ export default function ServicesGrid() {
             tracking-tight
 
             text-slate-900
+            dark:text-white
           "
         >
           Popular Services
@@ -59,6 +68,7 @@ export default function ServicesGrid() {
             font-medium
 
             text-slate-500
+            dark:text-slate-300
           "
         >
           Smart healthcare services for everyone

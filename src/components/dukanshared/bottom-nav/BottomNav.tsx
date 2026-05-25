@@ -68,8 +68,7 @@ export default function BottomNav() {
         {/* CENTER BUTTON */}
 
         <motion.div
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.96 }}
+          
           className="
             absolute
             left-1/2

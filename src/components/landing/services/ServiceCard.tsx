@@ -1,301 +1,280 @@
 "use client";
 
-import policeImg from "@/assets/home/police.png";
-
-import Link from "next/link";
 import Image from "next/image";
-
-import gsap from "gsap";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 interface Props {
   title: string;
   description: string;
-  icon: React.ReactNode;
-  tone: string;
   href: string;
-  image: string;
+  image?: string;
 }
 
 export default function ServiceCard({
   title,
   description,
-  icon,
   href,
   image,
 }: Props) {
   return (
-    <Link href={href} className="block h-full">
-      {/* WRAPPER */}
-      <div
+    <Link href={href}>
+      <motion.div
+        whileHover={{
+          y: -6,
+          scale: 1.02,
+        }}
+        whileTap={{
+          scale: 0.98,
+        }}
         className="
           group
           relative
-          h-full
+          overflow-hidden
+
+          rounded-[36px]
+
+          border
+          border-white/50
+
+          bg-white/70
+          dark:bg-slate-800/70
+
+          backdrop-blur-2xl
+
+          shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+
+          transition-all
+          duration-500
         "
       >
-        {/* PREMIUM OUTSIDE GLOW */}
+        {/* GRADIENT GLOW */}
+
         <div
           className="
             absolute
-            inset-[-10px]
-
-            rounded-[34px]
+            inset-0
 
             bg-gradient-to-br
-            from-[#9333ea]
-            via-[#7c3aed]
-            to-[#16a34a]
+            from-[#3558ff]/10
+            via-[#9333ea]/5
+            to-[#16a34a]/10
 
-            opacity-20
+            opacity-0
+            transition-opacity
+            duration-500
 
-            blur-2xl
-
-            transition-all duration-500
-
-            group-hover:opacity-40
-            group-hover:scale-[1.02]
+            group-hover:opacity-100
           "
         />
 
-        {/* MAIN CARD */}
+        {/* TOP GLOW */}
+
         <div
-          onMouseEnter={(e) => {
-            gsap.to(e.currentTarget, {
-              y: -6,
-              duration: 0.35,
-              ease: "power3.out",
-            });
-          }}
-          onMouseLeave={(e) => {
-            gsap.to(e.currentTarget, {
-              y: 0,
-              duration: 0.35,
-              ease: "power3.out",
-            });
-          }}
           className="
-            relative z-10
+            absolute
+            -top-20
+            right-0
 
-            flex flex-col
-            justify-between
+            h-40
+            w-40
 
-            h-full
-            min-h-[250px]
+            rounded-full
 
-            overflow-hidden
+            bg-[#3558ff]/20
 
-            rounded-[30px]
-
-            border border-white/70
-            dark:border-slate-700/50
-
-            bg-[#f8fafc]/95
-            dark:bg-slate-800/95
-
-            p-5
-            sm:p-6
-
-            backdrop-blur-xl
-
-            shadow-[0_12px_40px_rgba(0,0,0,0.06)]
-
-            transition-all duration-500
-
-            group-hover:shadow-[0_20px_60px_rgba(147,51,234,0.18)]
+            blur-3xl
           "
-        >
-          {/* TOP */}
+        />
+
+        {/* IMAGE */}
+
+        {image ? (
+          <div className="relative h-52 w-full overflow-hidden">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="
+                object-cover
+
+                transition-transform
+                duration-700
+
+                group-hover:scale-110
+              "
+            />
+
+            {/* IMAGE OVERLAY */}
+
+            <div
+              className="
+                absolute
+                inset-0
+
+                bg-gradient-to-t
+                from-black/50
+                via-black/10
+                to-transparent
+              "
+            />
+          </div>
+        ) : (
           <div
             className="
-              flex items-start
-              justify-between
-              gap-4
+              flex
+              h-52
+              items-center
+              justify-center
+
+              bg-gradient-to-br
+              from-[#eef2ff]
+              via-[#f5f3ff]
+              to-[#ecfeff]
+
+              dark:from-slate-700
+              dark:via-slate-800
+              dark:to-slate-900
             "
           >
-            {/* LEFT */}
-            <div className="flex-1 min-w-0">
-              {/* ICON */}
-              <div
-                className="
-                  flex items-center
-                  justify-center
+            <span
+              className="
+                text-lg
+                font-bold
+                text-slate-400
+              "
+            >
+              No Image
+            </span>
+          </div>
+        )}
 
-                  w-14 h-14
-                  sm:w-16 sm:h-16
+        {/* CONTENT */}
 
-                  rounded-2xl
+        <div className="relative z-10 p-6">
+          {/* TITLE + BUTTON */}
 
-                  bg-gradient-to-br
-                  from-[#f6b21a]
-                  via-[#9333ea]
-                  to-[#16a34a]
-
-                  text-white
-
-                  shadow-[0_10px_25px_rgba(147,51,234,0.25)]
-
-                  transition-all duration-300
-
-                  group-hover:rotate-3
-                  group-hover:scale-105
-                "
-              >
-                <div className="scale-110">
-                  {icon}
-                </div>
-              </div>
-
-              {/* TITLE */}
+          <div className="flex items-start justify-between gap-4">
+            <div>
               <h3
                 className="
-                  mt-4
-
-                  text-lg
-                  sm:text-[22px]
-
+                  text-2xl
                   font-black
 
-                  leading-tight
-
-                  tracking-tight
-
-                  text-[#1e1b4b]
+                  text-[#10224f]
                   dark:text-white
 
-                  line-clamp-2
+                  transition-colors
+                  duration-300
+
+                  group-hover:text-[#3558ff]
                 "
               >
                 {title}
               </h3>
 
-              {/* DESCRIPTION */}
               <p
                 className="
-                  mt-2
-
+                  mt-3
                   text-sm
-                  sm:text-[15px]
-
-                  leading-6
-
+                  leading-7
                   text-slate-600
                   dark:text-slate-300
-
-                  line-clamp-3
                 "
               >
                 {description}
               </p>
             </div>
 
-            {/* MINI IMAGE CARD */}
-            <div
-              className="
-                flex-shrink-0
-
-                rounded-[22px]
-
-                border border-white/80
-                dark:border-slate-700/60
-
-                bg-white
-                dark:bg-slate-700
-
-                p-2
-
-                shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-
-                transition-all duration-300
-
-                group-hover:scale-105
-              "
-            >
-              <div
-                className="
-                  relative
-
-                  h-[70px]
-                  w-[70px]
-
-                  sm:h-[82px]
-                  sm:w-[82px]
-                "
-              >
-                {image && (
-                  <Image
-                    src={image}
-                    alt={title}
-                    width={300}
-                    height={300}
-                    className="object-contain"
-                  />
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* BOTTOM */}
-          <div
-            className="
-              mt-6
-
-              flex items-center
-              justify-end
-            "
-          >
             {/* ARROW */}
-            <div
+
+            <motion.div
+              whileHover={{
+                rotate: 12,
+                scale: 1.1,
+              }}
               className="
-                flex items-center
+                flex
+                h-12
+                w-12
+                items-center
                 justify-center
 
-                w-10 h-10
+                rounded-2xl
 
-                rounded-full
+                bg-gradient-to-br
+                from-[#3558ff]
+                to-[#6c63ff]
 
-                bg-[#f6b21a]/15
-                dark:bg-[#9333ea]/20
+                text-white
 
-                text-[#9333ea]
-                dark:text-[#f8fafc]
-
-                shadow-sm
-
-                transition-all duration-300
-
-                group-hover:bg-[#9333ea]
-                group-hover:text-white
-                group-hover:translate-x-1
+                shadow-lg
+                shadow-blue-500/30
               "
             >
-              →
-            </div>
+              <ArrowUpRight size={20} />
+            </motion.div>
           </div>
 
-          {/* SHINE EFFECT */}
-          <div
-            className="
-              absolute
-              top-0
-              left-[-120%]
+          {/* BOTTOM TAG */}
 
-              h-full
-              w-[90px]
+          <div className="mt-6 flex items-center justify-between">
+            <span
+              className="
+                rounded-full
 
-              rotate-12
+                bg-[#3558ff]/10
 
-              bg-white/50
-              dark:bg-slate-800/50
+                px-4
+                py-2
 
-              blur-2xl
+                text-xs
+                font-bold
 
-              transition-all duration-1000
+                text-[#3558ff]
+              "
+            >
+              Explore Service
+            </span>
 
-              group-hover:left-[130%]
-            "
-          />
+            <div
+              className="
+                h-2
+                w-2
+                rounded-full
+
+                bg-green-500
+
+                shadow-[0_0_15px_rgba(34,197,94,0.9)]
+              "
+            />
+          </div>
         </div>
-      </div>
+
+        {/* BOTTOM BORDER GLOW */}
+
+        <div
+          className="
+            absolute
+            bottom-0
+            left-0
+
+            h-1
+            w-0
+
+            bg-gradient-to-r
+            from-[#3558ff]
+            via-[#9333ea]
+            to-[#16a34a]
+
+            transition-all
+            duration-500
+
+            group-hover:w-full
+          "
+        />
+      </motion.div>
     </Link>
   );
 }

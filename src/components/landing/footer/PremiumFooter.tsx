@@ -1,623 +1,547 @@
 import {
-  ArrowRight,
-  Headphones,
+  Briefcase,
+  Store,
+  Heart,
+  Leaf,
+  GraduationCap,
+  Shield,
+  Landmark,
+  Bot,
+  Bell,
   ShieldCheck,
-  Sparkles,
+  Award,
+  Lock,
+  Apple,
 } from "lucide-react";
 
-import Image from "next/image";
+import Link from "next/link";
 
-import { BrandLogo } from "@/components/shared/BrandLogo";
+const services = [
+  { label: "Naukri", href: "/naukri", icon: Briefcase },
+  { label: "Dukaan", href: "/dukaan", icon: Store },
+  { label: "Swasthya", href: "/swasthya", icon: Heart },
+  { label: "Krishi", href: "/krishi", icon: Leaf },
+  { label: "Shiksha", href: "/shiksha", icon: GraduationCap },
+  { label: "Suraksha", href: "/suraksha", icon: Shield },
+  { label: "Sarkari Seva", href: "/sarkari-seva", icon: Landmark },
+  { label: "AI Sahayak", href: "/ai-sahayak", icon: Bot },
+];
 
-/* BG IMAGE */
-import footerBg from "@/assets/footer/footer.png";
+const companyLinks = [
+  { label: "About us", href: "/about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Careers", href: "/careers" },
+  { label: "Press kit", href: "/press" },
+  { label: "Partners", href: "/partners" },
+];
+
+const helpLinks = [
+  { label: "Help center", href: "/help" },
+  { label: "Contact us", href: "/contact" },
+  { label: "Community", href: "/community" },
+  { label: "Status", href: "/status" },
+];
+
+const legalLinks = [
+  { label: "Privacy policy", href: "/privacy" },
+  { label: "Terms of service", href: "/terms" },
+  { label: "Cookie policy", href: "/cookies" },
+  { label: "Grievance officer", href: "/grievance" },
+  { label: "Refund policy", href: "/refund" },
+];
+
+const trustBadges = [
+  { label: "ISO 27001", icon: ShieldCheck },
+  { label: "MeitY Registered", icon: Award },
+  { label: "SSL Secured", icon: Lock },
+];
+
+const socialLinks = [
+  {
+    label: "Twitter / X",
+    href: "#",
+    svg: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.622 5.905-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    label: "Instagram",
+    href: "#",
+    svg: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "#",
+    svg: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z" />
+      </svg>
+    ),
+  },
+];
 
 export function PremiumFooter() {
   return (
     <footer
-      className="
-        relative overflow-hidden
-
-        mt-24
-
-        rounded-t-[42px]
-
-        border-t border-white/10
-
-        text-white
-      "
+      className="relative overflow-hidden mt-24 rounded-t-[42px] text-white"
+      style={{
+        background:
+          "linear-gradient(160deg, #052e16 0%, #0a3d1f 30%, #0f2d3d 65%, #1a0a2e 100%)",
+      }}
     >
-      {/* BG IMAGE */}
-      <div className="absolute inset-0">
-        <Image
-          src={footerBg}
-          alt="Footer Background"
-          fill
-          priority
-          className="
-            object-cover
-            scale-100
-          "
-        />
-      </div>
+      {/* TOP LINE */}
 
-      {/* DARK CINEMATIC OVERLAY */}
       <div
-        className="
-          absolute inset-0
-
-          bg-gradient-to-b
-          from-[#04110c]/20
-          via-[#081a13]/20
-          to-[#10271d]/34
-        "
+        className="h-px w-full"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, #f6b21a80, #16a34a80, transparent)",
+        }}
       />
 
-      {/* TOP PREMIUM LINE */}
+      {/* GLOW EFFECTS */}
+
       <div
-        className="
-          absolute top-0 left-0
-
-          h-[1px] w-full
-
-          bg-gradient-to-r
-          from-transparent
-          via-emerald-400/80
-          to-transparent
-        "
+        className="pointer-events-none absolute -top-32 -left-20 w-[480px] h-[480px] rounded-full opacity-20"
+        style={{
+          background: "#16a34a",
+          filter: "blur(120px)",
+        }}
       />
 
-      {/* GLOW LEFT */}
       <div
-        className="
-          absolute
-
-          -top-40
-          -left-24
-
-          w-[520px]
-          h-[520px]
-
-          rounded-full
-
-          bg-emerald-500/20
-
-          blur-[140px]
-        "
+        className="pointer-events-none absolute bottom-0 -right-20 w-[380px] h-[380px] rounded-full opacity-15"
+        style={{
+          background: "#9333ea",
+          filter: "blur(100px)",
+        }}
       />
 
-      {/* GLOW RIGHT */}
-      <div
-        className="
-          absolute
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 py-14 md:px-10 lg:px-14">
 
-          bottom-0
-          -right-24
+        {/* NEWSLETTER */}
 
-          w-[420px]
-          h-[420px]
-
-          rounded-full
-
-          bg-teal-500/20
-
-          blur-[140px]
-        "
-      />
-
-      {/* EXTRA LIGHT */}
-      <div
-        className="
-          absolute inset-0
-
-          bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.10),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.18),transparent_35%)]
-
-          pointer-events-none
-        "
-      />
-
-      {/* NOISE TEXTURE */}
-      <div
-        className="
-          absolute inset-0
-
-          opacity-[0.03]
-
-          mix-blend-soft-light
-
-          bg-[url('/noise.png')]
-        "
-      />
-
-      {/* MAIN CONTENT */}
-      <div
-        className="
-          relative z-10
-
-          max-w-[1500px]
-
-          mx-auto
-
-          px-6 py-24
-
-          md:px-10
-          lg:px-16
-        "
-      >
-        {/* TOP SECTION */}
         <div
           className="
-            flex flex-col
+            mb-12
+            flex
+            flex-col
+            gap-4
+            rounded-2xl
+            border
+            border-white/10
+            p-5
 
-            lg:flex-row
-
-            items-start
-            lg:items-center
-
-            justify-between
-
-            gap-16
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
           "
+          style={{
+            background: "rgba(246,178,26,0.07)",
+          }}
         >
-          {/* LEFT */}
-          <div className="max-w-2xl">
-            {/* LOGO */}
+          <div className="flex items-center gap-3">
             <div
               className="
-                w-fit
-
-                transition-transform duration-500
-
-                hover:scale-105
+                flex
+                h-10
+                w-10
+                items-center
+                justify-center
+                rounded-xl
               "
+              style={{
+                background: "rgba(246,178,26,0.18)",
+              }}
             >
-              <BrandLogo />
-            </div>
-
-            {/* BADGE */}
-            <div
-              className="
-                mt-8
-
-                inline-flex items-center gap-2
-
-                rounded-full
-
-                border border-emerald-400/20
-
-                bg-emerald-400/10
-
-                px-5 py-2
-
-                text-sm
-
-                text-emerald-100
-
-                backdrop-blur-xl
-              "
-            >
-              <Sparkles className="w-4 h-4" />
-
-              India’s Premium Rural Super App
-            </div>
-
-            {/* HEADING */}
-            <h2
-              className="
-                mt-7
-
-                text-5xl
-                md:text-7xl
-
-                font-black
-
-                leading-[1.02]
-
-                tracking-tight
-
-                bg-gradient-to-b
-                from-white
-                via-emerald-100
-                to-emerald-300
-
-                bg-clip-text
-                text-transparent
-              "
-            >
-              Aapka Digital
-              <br />
-              Gaon Saathi
-            </h2>
-
-            {/* TEXT */}
-            <p
-              className="
-                mt-7
-
-                max-w-xl
-
-                text-base
-                md:text-lg
-
-                leading-9
-
-                text-emerald-50/75
-              "
-            >
-              Rozgaar, sahayata, yojana,
-              AI support aur smart digital
-              services — sab kuch ek hi
-              premium platform me.
-            </p>
-
-            {/* CTA */}
-            <button
-              className="
-                group
-
-                mt-10
-
-                relative overflow-hidden
-
-                rounded-[24px]
-
-                border border-white/10
-
-                bg-white/10
-
-                backdrop-blur-2xl
-
-                px-8 py-4
-
-                font-semibold
-
-                transition-all duration-500
-
-                hover:scale-[1.04]
-
-                hover:bg-emerald-500
-
-                hover:border-emerald-300
-
-                shadow-[0_10px_60px_rgba(16,185,129,0.18)]
-
-                hover:shadow-[0_20px_80px_rgba(16,185,129,0.45)]
-              "
-            >
-              {/* LIGHT */}
-              <div
-                className="
-                  absolute inset-0
-
-                  opacity-0
-                  group-hover:opacity-100
-
-                  transition-opacity duration-500
-
-                  bg-gradient-to-r
-                  from-white/20
-                  via-transparent
-                  to-white/10
-                "
+              <Bell
+                className="h-5 w-5"
+                style={{
+                  color: "#f6b21a",
+                }}
               />
+            </div>
 
-              <span
-                className="
-                  relative z-10
+            <div>
+              <p className="text-sm font-medium text-white">
+                Updates paate raho
+              </p>
 
-                  flex items-center gap-3
-                "
+              <p
+                className="text-xs"
+                style={{
+                  color: "rgba(255,255,255,0.5)",
+                }}
               >
-                Download App
-
-                <ArrowRight
-                  className="
-                    w-5 h-5
-
-                    transition-transform duration-500
-
-                    group-hover:translate-x-1
-                  "
-                />
-              </span>
-            </button>
+                Naukri, yojana aur app updates
+              </p>
+            </div>
           </div>
 
-          {/* RIGHT CARDS */}
-          <div
-            className="
-              grid
-
-              w-full
-              mt-20
-
-              gap-6
-
-              lg:max-w-xl
-            "
-          >
-            {/* CARD 1 */}
-            <div
+          <div className="flex w-full gap-2 sm:w-auto">
+            <input
+              type="text"
+              placeholder="Phone ya email"
               className="
-                group
-
-                relative overflow-hidden
-
-                rounded-[34px]
-
-                border border-white/10
-
-                bg-white/[0.06]
-
-                backdrop-blur-2xl
-
-                p-6
-
-                transition-all duration-500
-
-                hover:-translate-y-2
-
-                hover:bg-white/[0.10]
-
-                hover:border-emerald-400/30
-
-                shadow-[0_10px_50px_rgba(0,0,0,0.28)]
+                flex-1
+                rounded-lg
+                px-3
+                py-2
+                text-sm
+                text-white
+                outline-none
               "
+              style={{
+                background: "rgba(255,255,255,0.08)",
+                border: "1px solid rgba(255,255,255,0.15)",
+              }}
+            />
+
+            <button
+              className="
+                shrink-0
+                rounded-lg
+                px-4
+                py-2
+                text-sm
+                font-semibold
+              "
+              style={{
+                background: "#f6b21a",
+                color: "#0f172a",
+              }}
             >
-              {/* HOVER LIGHT */}
-              <div
-                className="
-                  absolute inset-0
+              Subscribe
+            </button>
+          </div>
+        </div>
 
-                  opacity-0
-                  group-hover:opacity-100
+        {/* GRID */}
 
-                  transition-opacity duration-500
+        <div
+          className="
+            grid
+            grid-cols-2
+            gap-10
+            pb-12
 
-                  bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_40%)]
-                "
-              />
+            md:grid-cols-4
+          "
+          style={{
+            borderBottom: "1px solid rgba(255,255,255,0.10)",
+          }}
+        >
+          {/* BRAND */}
 
-              <div className="relative z-10 flex items-center gap-5">
-                <div
-                  className="
-                    flex items-center justify-center
-
-                    w-16 h-16
-
-                    rounded-3xl
-
-                    border border-emerald-300/20
-
-                    bg-emerald-400/10
-
-                    text-emerald-200
-
-                    shadow-[0_0_40px_rgba(16,185,129,0.25)]
-                  "
-                >
-                  <Sparkles className="w-7 h-7" />
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold">
-                    Smart AI Sahayak
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-7 text-emerald-50/70">
-                    Har waqt intelligent
-                    digital madad.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* CARD 2 */}
-            <div
-              className="
-                group
-
-                relative overflow-hidden
-
-                rounded-[34px]
-
-                border border-white/10
-
-                bg-white/[0.06]
-
-                backdrop-blur-2xl
-
-                p-6
-
-                transition-all duration-500
-
-                hover:-translate-y-2
-
-                hover:bg-white/[0.10]
-
-                hover:border-green-400/30
-
-                shadow-[0_10px_50px_rgba(0,0,0,0.28)]
-              "
+          <div className="col-span-2 md:col-span-1">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2.5 mb-5"
             >
               <div
                 className="
-                  absolute inset-0
-
-                  opacity-0
-                  group-hover:opacity-100
-
-                  transition-opacity duration-500
-
-                  bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_40%)]
+                  flex
+                  h-9
+                  w-9
+                  items-center
+                  justify-center
+                  rounded-[10px]
+                  text-sm
+                  font-bold
+                  text-white
                 "
-              />
-
-              <div className="relative z-10 flex items-center gap-5">
-                <div
-                  className="
-                    flex items-center justify-center
-
-                    w-16 h-16
-
-                    rounded-3xl
-
-                    border border-green-300/20
-
-                    bg-green-400/10
-
-                    text-green-200
-
-                    shadow-[0_0_40px_rgba(34,197,94,0.25)]
-                  "
-                >
-                  <ShieldCheck className="w-7 h-7" />
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold">
-                    Trusted Services
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-7 text-emerald-50/70">
-                    Secure aur verified
-                    digital sevaayein.
-                  </p>
-                </div>
+                style={{
+                  background:
+                    "linear-gradient(135deg, #16a34a 0%, #15803d 100%)",
+                }}
+              >
+                JGM
               </div>
-            </div>
 
-            {/* CARD 3 */}
-            <div
+              <span className="text-base font-medium tracking-tight text-white">
+                Jan Gan Man
+              </span>
+            </Link>
+
+            <p
               className="
-                group
-
-                relative overflow-hidden
-
-                rounded-[34px]
-
-                border border-white/10
-
-                bg-white/[0.06]
-
-                backdrop-blur-2xl
-
-                p-6
-
-                transition-all duration-500
-
-                hover:-translate-y-2
-
-                hover:bg-white/[0.10]
-
-                hover:border-teal-400/30
-
-                shadow-[0_10px_50px_rgba(0,0,0,0.28)]
+                mb-6
+                max-w-[210px]
+                text-[13.5px]
+                leading-[1.75]
               "
+              style={{
+                color: "rgba(255,255,255,0.52)",
+              }}
             >
-              <div
+              India ka pehla rural super app — naukri, swasthya,
+              krishi aur zyada, sab ek jagah.
+            </p>
+
+            {/* APP BUTTONS */}
+
+            <div className="flex flex-col gap-3">
+              
+              <a
+                href="#"
                 className="
-                  absolute inset-0
-
-                  opacity-0
-                  group-hover:opacity-100
-
-                  transition-opacity duration-500
-
-                  bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_40%)]
+                  inline-flex
+                  w-fit
+                  items-center
+                  gap-2.5
+                  rounded-xl
+                  px-3.5
+                  py-2.5
                 "
-              />
-
-              <div className="relative z-10 flex items-center gap-5">
-                <div
-                  className="
-                    flex items-center justify-center
-
-                    w-16 h-16
-
-                    rounded-3xl
-
-                    border border-teal-300/20
-
-                    bg-teal-400/10
-
-                    text-teal-200
-
-                    shadow-[0_0_40px_rgba(20,184,166,0.25)]
-                  "
-                >
-                  <Headphones className="w-7 h-7" />
-                </div>
+                style={{
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.13)",
+                }}
+              >
+                <Apple
+                  className="h-5 w-5"
+                  style={{
+                    color: "#f6b21a",
+                  }}
+                />
 
                 <div>
-                  <h3 className="text-xl font-bold">
-                    Rural Support
-                  </h3>
+                  <p
+                    className="text-[10px]"
+                    style={{
+                      color: "rgba(255,255,255,0.45)",
+                    }}
+                  >
+                    Download on the
+                  </p>
 
-                  <p className="mt-2 text-sm leading-7 text-emerald-50/70">
-                    Gaon ke liye dedicated
-                    smart support system.
+                  <p className="text-[13px] font-medium text-white">
+                    App Store
                   </p>
                 </div>
-              </div>
+              </a>
+
+              <a
+                href="#"
+                className="
+                  inline-flex
+                  w-fit
+                  items-center
+                  gap-2.5
+                  rounded-xl
+                  px-3.5
+                  py-2.5
+                "
+                style={{
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.13)",
+                }}
+              >
+                <div
+                  className="h-5 w-5 rounded-full"
+                  style={{
+                    background: "#f6b21a",
+                  }}
+                />
+
+                <div>
+                  <p
+                    className="text-[10px]"
+                    style={{
+                      color: "rgba(255,255,255,0.45)",
+                    }}
+                  >
+                    Get it on
+                  </p>
+
+                  <p className="text-[13px] font-medium text-white">
+                    Google Play
+                  </p>
+                </div>
+              </a>
             </div>
+          </div>
+
+          {/* SERVICES */}
+
+          <div>
+            <p
+              className="
+                mb-4
+                text-[11px]
+                font-medium
+                uppercase
+                tracking-[0.08em]
+              "
+              style={{
+                color: "#f6b21a",
+              }}
+            >
+              Services
+            </p>
+
+            <ul className="flex flex-col gap-2.5">
+              {services.map(({ label, href, icon: Icon }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="
+                      flex
+                      items-center
+                      gap-2
+                      text-[13.5px]
+                      transition
+                      hover:text-white
+                    "
+                    style={{
+                      color: "rgba(255,255,255,0.58)",
+                    }}
+                  >
+                    <Icon
+                      className="h-[14px] w-[14px]"
+                      style={{
+                        color: "#16a34a",
+                      }}
+                    />
+
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* COMPANY */}
+
+          <div>
+            <p
+              className="
+                mb-4
+                text-[11px]
+                font-medium
+                uppercase
+                tracking-[0.08em]
+              "
+              style={{
+                color: "#f6b21a",
+              }}
+            >
+              Company
+            </p>
+
+            <ul className="flex flex-col gap-2.5">
+              {companyLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="
+                      text-[13.5px]
+                      transition
+                      hover:text-white
+                    "
+                    style={{
+                      color: "rgba(255,255,255,0.58)",
+                    }}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* HELP */}
+
+          <div>
+            <p
+              className="
+                mb-4
+                text-[11px]
+                font-medium
+                uppercase
+                tracking-[0.08em]
+              "
+              style={{
+                color: "#f6b21a",
+              }}
+            >
+              Help
+            </p>
+
+            <ul className="flex flex-col gap-2.5">
+              {helpLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="
+                      text-[13.5px]
+                      transition
+                      hover:text-white
+                    "
+                    style={{
+                      color: "rgba(255,255,255,0.58)",
+                    }}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
         {/* BOTTOM */}
+
         <div
           className="
-            mt-20
+            flex
+            flex-col
+            gap-4
+            pt-7
 
-            border-t border-white/10
-
-            pt-8
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
           "
         >
-          <div
-            className="
-              flex flex-col
-
-              md:flex-row
-
-              items-center
-              justify-between
-
-              gap-5
-            "
+          <span
+            className="text-[12.5px]"
+            style={{
+              color: "rgba(255,255,255,0.38)",
+            }}
           >
-            <p
-              className="
-                text-sm
+            © 2026 Jan Gan Man Technologies Pvt. Ltd.
+          </span>
 
-                text-emerald-50/60
-              "
-            >
-              © 2026 Rural Super App —
-              Aapka Digital Saathi
-            </p>
-
-            <div
-              className="
-                flex items-center gap-6
-
-                text-sm
-
-                text-emerald-50/60
-              "
-            >
-              <span className="cursor-pointer hover:text-white transition-colors">
-                Privacy
-              </span>
-
-              <span className="cursor-pointer hover:text-white transition-colors">
-                Terms
-              </span>
-
-              <span className="cursor-pointer hover:text-white transition-colors">
-                Support
-              </span>
-            </div>
+          <div className="flex items-center gap-2">
+            {socialLinks.map(({ label, href, svg }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                className="
+                  flex
+                  h-8
+                  w-8
+                  items-center
+                  justify-center
+                  rounded-lg
+                "
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.10)",
+                  color: "rgba(255,255,255,0.50)",
+                }}
+              >
+                {svg}
+              </a>
+            ))}
           </div>
         </div>
       </div>

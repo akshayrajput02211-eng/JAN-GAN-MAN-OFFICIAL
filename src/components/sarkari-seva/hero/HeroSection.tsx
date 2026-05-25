@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Search,
   Mic,
+  ArrowRight,
 } from "lucide-react";
 
 export default function HeroSection() {
@@ -123,6 +125,45 @@ export default function HeroSection() {
               AI help aur live government updates —
               sab kuch ek smart digital platform par.
             </p>
+
+            {/* CTA BUTTONS */}
+            <div className="mt-8 flex flex-wrap gap-4">
+
+              <Link href="/sarkari-seva/eligibility">
+                <button
+                  className="
+                  group
+                  inline-flex
+                  items-center
+                  gap-3
+                  rounded-2xl
+                  bg-[#f6b21a]
+                  hover:bg-[#e0a317]
+                  px-6
+                  py-4
+                  text-base
+                  font-bold
+                  text-black
+                  shadow-xl
+                  transition-all
+                  duration-300
+                  hover:scale-[1.03]
+                  "
+                >
+                  Yojana Check Karein
+
+                  <ArrowRight
+                    size={18}
+                    className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                    "
+                  />
+                </button>
+              </Link>
+
+            </div>
 
             {/* SEARCH */}
             <div

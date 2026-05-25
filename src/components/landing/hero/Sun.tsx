@@ -32,7 +32,7 @@ export default function Sun() {
           absolute
           inset-0
           rounded-full
-          bg-[#f6b21a]/10
+          bg-[#f6b21a]/
           blur-3xl
           scale-110
         "

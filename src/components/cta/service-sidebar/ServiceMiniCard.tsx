@@ -4,121 +4,185 @@ import Link from "next/link";
 
 interface Props {
   title: string;
+  subtitle: string;
   icon: React.ReactNode;
   href: string;
   color: string;
+  glow: string;
+
+  setOpen?: React.Dispatch<
+    React.SetStateAction<boolean>
+  >;
 }
 
 export default function ServiceMiniCard({
   title,
+  subtitle,
   icon,
   href,
   color,
+  glow,
+  setOpen,
 }: Props) {
   return (
-    <Link href={href}>
+    <Link
+      href={href}
+      onClick={() => setOpen?.(false)}
+      className="block relative z-50"
+    >
       <div
-        className="
+        className={`
           group
           relative
 
-          flex
-          items-center
-          gap-3
-
           overflow-hidden
 
-          rounded-[20px]
+          rounded-[24px]
 
           border
-          border-white/20
-          dark:border-slate-700/40
+          border-white/40
+          dark:border-slate-700/50
 
-          bg-white/70
-          dark:bg-slate-800/70
+          bg-white/80
+          dark:bg-slate-800/80
 
-          px-3
-          py-3
+          p-3.5
 
           backdrop-blur-2xl
-
-          shadow-[0_10px_30px_rgba(0,0,0,0.06)]
 
           transition-all
           duration-300
 
-          hover:scale-[1.02]
-          hover:bg-white
-          dark:hover:bg-slate-700/80
-        "
+          hover:-translate-y-1
+          hover:scale-[1.01]
+
+          shadow-[0_10px_30px_rgba(0,0,0,0.05)]
+
+          ${glow}
+          hover:shadow-2xl
+
+          cursor-pointer
+        `}
       >
-        {/* GLOW */}
+        {/* BACKGROUND GLOW */}
 
         <div
           className={`
             absolute
             inset-0
 
-            bg-gradient-to-br ${color}
-
             opacity-0
 
-            transition-opacity
-            duration-300
+            bg-gradient-to-br
+            ${color}
 
-            group-hover:opacity-10
+            transition-all
+            duration-500
+
+            group-hover:opacity-[0.08]
           `}
         />
 
-        {/* ICON */}
+        {/* TOP */}
 
-        <div
-          className={`
-            relative z-10
+        <div className="relative z-10 flex items-center gap-3">
+          {/* ICON */}
 
-            flex
-            h-11
-            w-11
+          <div
+            className={`
+              flex
+              h-12
+              w-12
 
-            items-center
-            justify-center
+              items-center
+              justify-center
 
-            rounded-2xl
+              rounded-2xl
 
-            bg-gradient-to-br ${color}
+              bg-gradient-to-br
+              ${color}
 
-            text-white
+              text-white
 
-            shadow-lg
-          `}
-        >
-          {icon}
-        </div>
+              shadow-lg
 
-        {/* TEXT */}
+              transition-all
+              duration-300
 
-        <div className="relative z-10">
-          <h3
+              group-hover:rotate-3
+              group-hover:scale-105
+            `}
+          >
+            {icon}
+          </div>
+
+          {/* TEXT */}
+
+          <div className="min-w-0 flex-1">
+            <h3
+              className="
+                truncate
+
+                text-[14px]
+                font-extrabold
+
+                tracking-tight
+
+                text-slate-900
+                dark:text-white
+              "
+            >
+              {title}
+            </h3>
+
+            <p
+              className="
+                mt-0.5
+
+                truncate
+
+                text-[11px]
+
+                text-slate-500
+                dark:text-slate-400
+              "
+            >
+              {subtitle}
+            </p>
+          </div>
+
+          {/* ARROW */}
+
+          <div
             className="
-              text-[14px]
-              font-bold
+              flex
+              h-8
+              w-8
 
-              text-[#1d2951]
-              dark:text-white
+              items-center
+              justify-center
+
+              rounded-full
+
+              bg-slate-100
+              dark:bg-slate-700
+
+              text-slate-500
+              dark:text-slate-300
+
+              transition-all
+              duration-300
+
+              group-hover:translate-x-1
+              group-hover:bg-slate-900
+              group-hover:text-white
+
+              dark:group-hover:bg-white
+              dark:group-hover:text-slate-900
             "
           >
-            {title}
-          </h3>
-
-          <p
-            className="
-              text-xs
-              text-gray-500
-              dark:text-slate-400
-            "
-          >
-            Explore service
-          </p>
+            →
+          </div>
         </div>
       </div>
     </Link>

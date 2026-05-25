@@ -1,4 +1,10 @@
+// ========================================
+// FILE: src/components/dukaan/home/SellerCTA.tsx
+// ========================================
+
 "use client";
+
+import Link from "next/link";
 
 import { motion } from "framer-motion";
 
@@ -11,10 +17,8 @@ export default function SellerCTA() {
   return (
     <section className="px-4 py-14">
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
+       
+        
         className="
           relative
           mx-auto
@@ -133,43 +137,45 @@ export default function SellerCTA() {
             digital banaaye.
           </p>
 
-          {/* Button */}
+          {/* BUTTON */}
 
-          <button
-            className="
-              mt-8
+          <Link href="/dukaan/post-shop">
+            <button
+              className="
+                mt-8
 
-              flex
-              h-14
-              items-center
-              gap-3
+                flex
+                h-14
+                items-center
+                gap-3
 
-              rounded-full
+                rounded-full
 
-              bg-white
-              dark:bg-slate-800
+                bg-white
+                dark:bg-slate-800
 
-              px-8
+                px-8
 
-              text-lg
-              font-black
+                text-lg
+                font-black
 
-              text-orange-700
-              dark:text-orange-400
+                text-orange-700
+                dark:text-orange-400
 
-              shadow-xl
+                shadow-xl
 
-              transition-all
-              duration-300
+                transition-all
+                duration-300
 
-              hover:scale-105
-              active:scale-[0.98]
-            "
-          >
-            Apni Dukaan Jodein
+                hover:scale-105
+                active:scale-[0.98]
+              "
+            >
+              Apni Dukaan Jodein
 
-            <ArrowRight size={20} />
-          </button>
+              <ArrowRight size={20} />
+            </button>
+          </Link>
         </div>
       </motion.div>
     </section>

@@ -1,4 +1,4 @@
-import type { Service } from "@/types/home";
+import type { Service } from "./servicesData";
 
 import ServiceCard from "./ServiceCard";
 
@@ -27,16 +27,21 @@ export default function ServiceGrid({
         mx-auto
       "
     >
-      {services.map((service) => (
-        <ServiceCard
-          key={service.title}
-          title={service.title}
-          description={service.description}
-          icon={service.icon}
-          tone={service.tone}
-          href={service.href}
-        />
-      ))}
+      {services.map((service) => {
+        const Icon = service.icon;
+
+        return (
+          <ServiceCard
+            key={service.title}
+            title={service.title}
+            description={service.description}
+            icon={<Icon size={22} />}
+            tone={service.tone}
+            href={service.href}
+            image={service.image}
+          />
+        );
+      })}
     </section>
   );
 }

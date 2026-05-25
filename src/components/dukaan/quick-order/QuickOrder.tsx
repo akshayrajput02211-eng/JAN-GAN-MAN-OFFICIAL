@@ -1,4 +1,10 @@
+// ========================================
+// FILE: src/components/dukaan/home/QuickOrder.tsx
+// ========================================
+
 "use client";
+
+import Link from "next/link";
 
 import Container from "@/components/dukanshared/container/Container";
 
@@ -84,61 +90,83 @@ export default function QuickOrder() {
               gap-4
             "
           >
-            {items.map((item) => (
-              <button
+            {items.map((item, index) => (
+              <Link
                 key={item}
-                className="
-                  rounded-2xl
-                  border
-                  border-orange-100
-                  dark:border-slate-700/50
-                  bg-orange-50
-                  dark:bg-slate-900
-                  px-5
-                  py-4
-                  text-left
-                  font-semibold
-                  text-slate-800
-                  dark:text-slate-200
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1
-                  hover:border-orange-300
-                  hover:bg-orange-100
-                  dark:hover:bg-slate-800
-                "
+                href={`/dukaan/product/${index + 1}`}
               >
-                {item}
-              </button>
+                <button
+                  className="
+                    w-full
+
+                    rounded-2xl
+                    border
+                    border-orange-100
+                    dark:border-slate-700/50
+
+                    bg-orange-50
+                    dark:bg-slate-900
+
+                    px-5
+                    py-4
+
+                    text-left
+                    font-semibold
+
+                    text-slate-800
+                    dark:text-slate-200
+
+                    transition-all
+                    duration-300
+
+                    hover:-translate-y-1
+                    hover:border-orange-300
+                    hover:bg-orange-100
+
+                    dark:hover:bg-slate-800
+                  "
+                >
+                  {item}
+                </button>
+              </Link>
             ))}
           </div>
 
           {/* Footer */}
           <div className="mt-8">
-            <button
-              className="
-                flex h-14 w-full items-center justify-center gap-2
-                rounded-2xl
-                bg-gradient-to-r
-                from-orange-600
-                to-orange-700
-                px-8
-                text-lg
-                font-black
-                text-white
-                shadow-lg
-                shadow-orange-300/30
-                transition-all
-                duration-300
-                hover:scale-[1.01]
-                hover:shadow-orange-400/40
-                active:scale-[0.99]
-              "
-            >
-              <ShoppingCart size={20} />
+            <Link href="/dukaan/cart">
+              <button
+                className="
+                  flex h-14 w-full items-center justify-center gap-2
 
-              View Cart
-            </button>
+                  rounded-2xl
+
+                  bg-gradient-to-r
+                  from-orange-600
+                  to-orange-700
+
+                  px-8
+
+                  text-lg
+                  font-black
+                  text-white
+
+                  shadow-lg
+                  shadow-orange-300/30
+
+                  transition-all
+                  duration-300
+
+                  hover:scale-[1.01]
+                  hover:shadow-orange-400/40
+                  active:scale-[0.99]
+                "
+              >
+                <ShoppingCart size={20} />
+
+                View Cart
+              </button>
+            </Link>
           </div>
         </div>
       </Container>

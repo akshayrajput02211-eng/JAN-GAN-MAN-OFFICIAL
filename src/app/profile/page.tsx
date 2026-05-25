@@ -7,37 +7,47 @@ export default function ProfilePage() {
   return (
     <main
       className="
+        relative
         min-h-screen
 
-        bg-[#f5f7fb]
-
-        px-4
-        pb-32
-        pt-6
+        bg-[#f4f8ff]
+        dark:bg-[#07111f]
 
         text-slate-900
+        dark:text-white
 
         transition-colors
         duration-300
-
-        dark:bg-[#07111f]
-        dark:text-white
-
-        md:px-6
       "
     >
-      <div className="mx-auto max-w-7xl">
-        
+      {/* MAIN CONTENT */}
+      <section
+        className="
+          mx-auto
+          max-w-7xl
 
+          px-4
+          pt-6
+          pb-36
+
+          md:px-6
+        "
+      >
+        {/* PROFILE HERO */}
         <ProfileHero />
 
-        <ProfileStats />
+        {/* STATS */}
+        <div className="mt-6">
+          <ProfileStats />
+        </div>
 
-        <ProfileMenu />
-      </div>
+        {/* MENU */}
+        <div className="mt-6">
+          <ProfileMenu />
+        </div>
+      </section>
 
-    
-
+      {/* BOTTOM NAVBAR */}
       <BottomNavbar />
     </main>
   );

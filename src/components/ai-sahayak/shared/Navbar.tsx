@@ -490,6 +490,7 @@ export default function Navbar() {
 
                   flex
                   items-center
+                  justify-center
 
                   gap-2
                   lg:gap-3
@@ -505,7 +506,7 @@ export default function Navbar() {
                   bg-white/80
                   dark:bg-slate-800/80
 
-                  px-3
+                  <px-2></px-2>
                   py-2
 
                   lg:px-5
@@ -577,7 +578,7 @@ export default function Navbar() {
                       dark:text-white
                     "
                   >
-                    AI Profile
+                    My Profile
                   </p>
 
                   <span

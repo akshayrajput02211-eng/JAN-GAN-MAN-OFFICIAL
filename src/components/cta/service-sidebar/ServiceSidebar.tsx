@@ -33,7 +33,7 @@ export default function ServiceSidebar({
           inset-0
           z-[60]
 
-          bg-black/20
+          bg-black/30
           backdrop-blur-sm
 
           transition-all
@@ -60,7 +60,7 @@ export default function ServiceSidebar({
           h-screen
           flex-col
 
-          w-[260px]
+          w-[290px]
 
           border-r
           border-white/20
@@ -71,7 +71,7 @@ export default function ServiceSidebar({
 
           backdrop-blur-3xl
 
-          shadow-[0_20px_50px_rgba(0,0,0,0.08)]
+          shadow-[0_20px_60px_rgba(0,0,0,0.12)]
 
           transition-all
           duration-500
@@ -95,14 +95,14 @@ export default function ServiceSidebar({
             border-black/5
             dark:border-slate-700/60
 
-            px-4
-            py-4
+            px-5
+            py-5
           "
         >
           <div>
             <h2
               className="
-                text-[17px]
+                text-[20px]
                 font-black
 
                 tracking-tight
@@ -111,19 +111,20 @@ export default function ServiceSidebar({
                 dark:text-white
               "
             >
-              Services
+              JAN GAN MAN
             </h2>
 
             <p
               className="
-                mt-0.5
+                mt-1
 
                 text-[11px]
+
                 text-slate-500
                 dark:text-slate-400
               "
             >
-              Healthcare modules
+              Rural Super App
             </p>
           </div>
 
@@ -131,36 +132,31 @@ export default function ServiceSidebar({
             onClick={() => setOpen(false)}
             className="
               flex
-              h-9
-              w-9
+              h-10
+              w-10
 
               items-center
               justify-center
 
-              rounded-xl
+              rounded-2xl
 
-              border
-              border-black/5
-              dark:border-slate-700/60
-
-              bg-white
+              bg-slate-100
               dark:bg-slate-800
 
-              text-slate-900
+              text-slate-700
               dark:text-white
 
               transition-all
               duration-300
 
-              hover:bg-slate-50
-              dark:hover:bg-slate-700
+              hover:scale-105
             "
           >
-            <ChevronLeft size={17} />
+            <ChevronLeft size={18} />
           </button>
         </div>
 
-        {/* HOME + PROFILE */}
+        {/* TOP BUTTONS */}
 
         <div
           className="
@@ -172,17 +168,10 @@ export default function ServiceSidebar({
             pt-4
           "
         >
-          {/* HOME */}
-
-          <Link href="/">
+          <Link href="/" className="block">
             <div
               className="
-                group
-                relative
-
-                overflow-hidden
-
-                rounded-[22px]
+                rounded-[24px]
 
                 bg-gradient-to-br
                 from-green-500
@@ -192,7 +181,7 @@ export default function ServiceSidebar({
 
                 text-white
 
-                shadow-[0_12px_30px_rgba(34,197,94,0.22)]
+                shadow-lg
 
                 transition-all
                 duration-300
@@ -200,78 +189,22 @@ export default function ServiceSidebar({
                 hover:-translate-y-1
               "
             >
-              <div
-                className="
-                  absolute
-                  right-[-30px]
-                  top-[-30px]
+              <Home size={20} />
 
-                  h-[90px]
-                  w-[90px]
+              <h3 className="mt-3 text-sm font-bold">
+                Home
+              </h3>
 
-                  rounded-full
-
-                  bg-white/10
-
-                  blur-3xl
-                "
-              />
-
-              <div className="relative z-10">
-                <div
-                  className="
-                    flex
-                    h-10
-                    w-10
-
-                    items-center
-                    justify-center
-
-                    rounded-2xl
-
-                    bg-white/15
-                  "
-                >
-                  <Home size={18} />
-                </div>
-
-                <h3
-                  className="
-                    mt-3
-
-                    text-sm
-                    font-bold
-                  "
-                >
-                  Home
-                </h3>
-
-                <p
-                  className="
-                    mt-1
-
-                    text-[10px]
-
-                    text-white/80
-                  "
-                >
-                  Dashboard
-                </p>
-              </div>
+              <p className="mt-1 text-[10px] text-white/80">
+                Dashboard
+              </p>
             </div>
           </Link>
 
-          {/* PROFILE */}
-
-          <Link href="/profile">
+          <Link href="/profile" className="block">
             <div
               className="
-                group
-                relative
-
-                overflow-hidden
-
-                rounded-[22px]
+                rounded-[24px]
 
                 bg-gradient-to-br
                 from-slate-800
@@ -281,7 +214,7 @@ export default function ServiceSidebar({
 
                 text-white
 
-                shadow-[0_12px_30px_rgba(15,23,42,0.22)]
+                shadow-lg
 
                 transition-all
                 duration-300
@@ -289,64 +222,15 @@ export default function ServiceSidebar({
                 hover:-translate-y-1
               "
             >
-              <div
-                className="
-                  absolute
-                  right-[-30px]
-                  top-[-30px]
+              <User size={20} />
 
-                  h-[90px]
-                  w-[90px]
+              <h3 className="mt-3 text-sm font-bold">
+                Profile
+              </h3>
 
-                  rounded-full
-
-                  bg-white/10
-
-                  blur-3xl
-                "
-              />
-
-              <div className="relative z-10">
-                <div
-                  className="
-                    flex
-                    h-10
-                    w-10
-
-                    items-center
-                    justify-center
-
-                    rounded-2xl
-
-                    bg-white/10
-                  "
-                >
-                  <User size={18} />
-                </div>
-
-                <h3
-                  className="
-                    mt-3
-
-                    text-sm
-                    font-bold
-                  "
-                >
-                  Profile
-                </h3>
-
-                <p
-                  className="
-                    mt-1
-
-                    text-[10px]
-
-                    text-white/70
-                  "
-                >
-                  My Account
-                </p>
-              </div>
+              <p className="mt-1 text-[10px] text-white/70">
+                My Account
+              </p>
             </div>
           </Link>
         </div>
@@ -363,20 +247,16 @@ export default function ServiceSidebar({
             py-4
           "
         >
-          <div
-            className="
-              flex
-              flex-col
-              gap-2.5
-            "
-          >
+          <div className="flex flex-col gap-3">
             {services.map((service) => (
               <ServiceMiniCard
                 key={service.title}
                 title={service.title}
+                subtitle={service.subtitle}
                 icon={service.icon}
                 href={service.href}
                 color={service.color}
+                glow={service.glow}
               />
             ))}
           </div>
@@ -390,18 +270,17 @@ export default function ServiceSidebar({
             border-black/5
             dark:border-slate-700/60
 
-            px-4
-            py-3
+            p-4
           "
         >
           <div
             className="
               rounded-2xl
 
-              bg-slate-50/80
+              bg-slate-100/80
               dark:bg-slate-800/80
 
-              px-3
+              px-4
               py-3
             "
           >
@@ -414,8 +293,8 @@ export default function ServiceSidebar({
                 dark:text-slate-400
               "
             >
-              Secure healthcare platform with protected
-              medical privacy support.
+              Secure digital rural ecosystem with trusted
+              services and citizen privacy protection.
             </p>
           </div>
         </div>

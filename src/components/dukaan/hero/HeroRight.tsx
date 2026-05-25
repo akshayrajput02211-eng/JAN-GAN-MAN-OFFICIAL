@@ -1,6 +1,17 @@
+// ========================================
+// FILE: src/components/dukaan/hero/HeroRight.tsx
+// ========================================
+
 "use client";
 
+import Link from "next/link";
+
 import { motion } from "framer-motion";
+
+import {
+  ArrowRight,
+  ShoppingBag,
+} from "lucide-react";
 
 export default function HeroRight() {
   return (
@@ -92,29 +103,89 @@ export default function HeroRight() {
           <option>Doodh</option>
         </select>
 
-        <button
-          className="
-            h-14
-            w-full
-            rounded-2xl
-            bg-gradient-to-r
-            from-orange-600
-            to-orange-700
-            px-6
-            text-lg
-            font-black
-            text-white
-            shadow-lg
-            shadow-orange-300/30
-            transition-all
-            duration-300
-            hover:scale-[1.02]
-            hover:shadow-orange-400/40
-            active:scale-[0.99]
-          "
-        >
-          Dukaan Dhundo
-        </button>
+        {/* PRIMARY CTA */}
+        <Link href="/dukaan/nearby">
+          <button
+            className="
+              flex
+              h-14
+              w-full
+              items-center
+              justify-center
+              gap-2
+
+              rounded-2xl
+
+              bg-gradient-to-r
+              from-orange-600
+              to-orange-700
+
+              px-6
+
+              text-lg
+              font-black
+              text-white
+
+              shadow-lg
+              shadow-orange-300/30
+
+              transition-all
+              duration-300
+
+              hover:scale-[1.02]
+              hover:shadow-orange-400/40
+              active:scale-[0.99]
+            "
+          >
+            <ShoppingBag className="h-5 w-5" />
+
+            Dukaan Dhundo
+
+            <ArrowRight className="h-5 w-5" />
+          </button>
+        </Link>
+
+        {/* SECONDARY CTA */}
+        <Link href="/dukaan/product/1">
+          <button
+            className="
+              flex
+              h-14
+              w-full
+              items-center
+              justify-center
+              gap-2
+              mt-5
+
+              rounded-2xl
+
+              border
+              border-orange-200
+              dark:border-slate-700
+
+              bg-orange-50
+              dark:bg-slate-900
+
+              px-6
+
+              text-base
+              font-bold
+
+              text-orange-700
+              dark:text-orange-400
+
+              transition-all
+              duration-300
+
+              hover:-translate-y-1
+              hover:border-orange-400
+            "
+          >
+            Popular Product Dekho
+
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </Link>
       </div>
 
       {/* Stats */}

@@ -7,9 +7,9 @@ import {
   CirclePlus,
   CreditCard,
   Home,
+  MapPin,
   MessageCircle,
   Search,
-  User,
 } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -20,38 +20,46 @@ const navItems = [
     label: "Home",
     href: "/",
   },
+
   {
     icon: Search,
     label: "Find",
     href: "/find-work",
   },
+
+  // ================= UPDATED =================
+
   {
-    icon: User,
-    label: "Profile",
-    href: "/profile",
+    icon: MapPin,
+    label: "Nearby",
+    href: "/naukri/nearby",
   },
-  {
-    icon: CirclePlus,
-    label: "Post",
-    href: "/post-job",
-    active: true,
-    center: true,
-  },
+
+  // ===========================================
+];
+
+const rightItems = [
   {
     icon: Briefcase,
     label: "My Jobs",
-    href: "/my-jobs",
+    href: "/naukri/my-applications",
   },
+
   {
     icon: MessageCircle,
     label: "Chat",
     href: "/messages",
   },
+
+  // ================= UPDATED =================
+
   {
     icon: CreditCard,
-    label: "Pay",
-    href: "/payments",
+    label: "Wallet",
+    href: "/wallet",
   },
+
+  // ===========================================
 ];
 
 export default function BottomNav() {
@@ -126,7 +134,7 @@ export default function BottomNav() {
         {/* ================= LEFT ================= */}
 
         <div className="flex items-center gap-3 sm:gap-7">
-          {navItems.slice(0, 3).map((item, i) => {
+          {navItems.map((item, i) => {
             const Icon = item.icon;
 
             return (
@@ -176,6 +184,8 @@ export default function BottomNav() {
 
                       group-hover:bg-[#ede9fe]
                       dark:group-hover:bg-slate-700
+
+                      group-hover:text-[#7c3aed]
                     "
                   >
                     <Icon className="h-5 w-5" />
@@ -197,7 +207,7 @@ export default function BottomNav() {
           })}
         </div>
 
-        {/* ================= CENTER BUTTON ================= */}
+        {/* ================= CENTER CTA BUTTON ================= */}
 
         <motion.div
           className="
@@ -215,8 +225,14 @@ export default function BottomNav() {
             -translate-y-[45%]
           "
         >
-          <Link href="/post-job">
-            <div
+          <Link href="/naukri/post-job">
+            <motion.div
+              whileHover={{
+                scale: 1.06,
+              }}
+              whileTap={{
+                scale: 0.96,
+              }}
               className="
                 relative
 
@@ -259,10 +275,10 @@ export default function BottomNav() {
               />
 
               <CirclePlus className="relative z-10 h-9 w-9 text-white" />
-            </div>
+            </motion.div>
           </Link>
 
-          {/* TEXT */}
+          {/* CTA TEXT */}
 
           <span
             className="
@@ -271,7 +287,7 @@ export default function BottomNav() {
               text-[11px]
               sm:text-sm
 
-              font-bold
+              font-black
 
               text-[#7c3aed]
               dark:text-blue-400
@@ -284,7 +300,7 @@ export default function BottomNav() {
         {/* ================= RIGHT ================= */}
 
         <div className="flex items-center gap-3 sm:gap-7">
-          {navItems.slice(4).map((item, i) => {
+          {rightItems.map((item, i) => {
             const Icon = item.icon;
 
             return (
@@ -334,6 +350,8 @@ export default function BottomNav() {
 
                       group-hover:bg-[#ede9fe]
                       dark:group-hover:bg-slate-700
+
+                      group-hover:text-[#7c3aed]
                     "
                   >
                     <Icon className="h-5 w-5" />

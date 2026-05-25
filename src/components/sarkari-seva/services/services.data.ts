@@ -1,4 +1,4 @@
-// components/services/services.data.ts
+import type { LucideIcon } from "lucide-react";
 
 import {
   FileText,
@@ -6,22 +6,32 @@ import {
   Landmark,
 } from "lucide-react";
 
-export const servicesData = [
+export type Service = {
+  title: string;
+  desc: string;
+  icon: LucideIcon;
+  href: string;
+};
+
+export const servicesData: Service[] = [
   {
     title: "Sarkari Yojna",
     desc: "Sabhi yojna details",
-    icon: <FileText size={22} />,
+    icon: FileText,
+    href: "/sarkari-seva/yojna",
   },
 
   {
     title: "Jobs & Exam",
     desc: "Govt jobs & results",
-    icon: <Briefcase size={22} />,
+    icon: Briefcase,
+    href: "/sarkari-seva/govt-jobs",
   },
 
   {
     title: "Banking",
     desc: "Jan dhan & loan",
-    icon: <Landmark size={22} />,
+    icon: Landmark,
+    href: "/sarkari-seva/banking",
   },
 ];

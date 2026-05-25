@@ -1,10 +1,13 @@
+// ========================================
+// FILE: src/data/dukaan/navItems.ts
+// ========================================
+
 import {
   Home,
   Store,
-  Package,
+  ShoppingCart,
   CirclePlus,
   MessageCircle,
-  User,
 } from "lucide-react";
 
 export const navItems = [
@@ -16,32 +19,28 @@ export const navItems = [
 
   {
     icon: Store,
-    label: "Shops",
-    href: "/shops",
+    label: "Nearby",
+    href: "/dukaan/nearby",
   },
 
+  // POST SHOP CTA
   {
     icon: CirclePlus,
     label: "Post",
-    href: "/post-shop",
-    center: true,
+    href: "/dukaan/post-shop",
+    cta: true,
   },
 
+  // CART
   {
-    icon: Package,
-    label: "Orders",
-    href: "/orders",
+    icon: ShoppingCart,
+    label: "Cart",
+    href: "/dukaan/cart",
   },
 
   {
     icon: MessageCircle,
     label: "Chat",
     href: "/messages",
-  },
-
-  {
-    icon: User,
-    label: "Profile",
-    href: "/profile",
   },
 ];

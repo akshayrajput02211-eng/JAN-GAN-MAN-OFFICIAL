@@ -26,8 +26,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Sahayak",
-  description: "Rural AI Assistant",
+  title: "JAN GAN MAN",
+  description: "Rural India Super App",
 };
 
 export default function RootLayout({
