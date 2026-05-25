@@ -1,10 +1,10 @@
 "use client";
 
-import CropHealthHero from "@/components/krishi/crop-health/CropHealthHero";
-import PhotoUpload from "@/components/krishi/crop-health/PhotoUpload";
-import AnalysisLoader from "@/components/krishi/crop-health/AnalysisLoader";
-import DiseaseResult from "@/components/krishi/crop-health/DiseaseResult";
-import TreatmentSteps from "@/components/krishi/crop-health/TreatmentSteps";
+import CropHealthHero from "@/components/krishi/krishi/crop-health/CropHealthHero";
+import PhotoUpload from "@/components/krishi/krishi/crop-health/PhotoUpload";
+import AnalysisLoader from "@/components/krishi/krishi/crop-health/AnalysisLoader";
+import DiseaseResult from "@/components/krishi/krishi/crop-health/DiseaseResult";
+import TreatmentSteps from "@/components/krishi/krishi/crop-health/TreatmentSteps";
 
 export default function CropHealthPage() {
   return (
