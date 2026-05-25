@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import { chatData } from "@/data/chatData";
+import { chatData } from "./chatData";
 
 import ChatMessage from "./ChatMessage";
 

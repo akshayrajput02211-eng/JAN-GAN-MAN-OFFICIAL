@@ -1,9 +1,10 @@
-// components/updates/UpdateCard.tsx
+
 
 interface Props {
   title: string;
   amount?: string;
   date: string;
+  updates?: any[];
 }
 
 export default function UpdateCard({

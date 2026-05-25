@@ -1,3 +1,9 @@
+// src/components/swasthya/hero/Hero.tsx
+
+"use client";
+
+import Image from "next/image";
+
 import GlassCard from "@/components/swasthyashared/cards/GlassCard";
 import FadeUp from "@/components/swasthyashared/animations/FadeUp";
 import GradientMesh from "@/components/swasthyashared/backgrounds/GradientMesh";
@@ -9,7 +15,7 @@ export default function Hero() {
       <GradientMesh />
 
       <div className="grid gap-6 lg:grid-cols-2">
-        
+
         {/* LEFT SIDE */}
         <FadeUp>
           <GlassCard
@@ -45,7 +51,7 @@ export default function Hero() {
                 backdrop-blur-xl
               "
             >
-              Sehat Saathi
+              🩺 Sehat Saathi
             </span>
 
             <h1
@@ -201,8 +207,11 @@ export default function Hero() {
               p-4
               md:p-8
               lg:p-10
+
+              min-h-[500px]
             "
           >
+            {/* Blur Effects */}
             <div
               className="
                 absolute
@@ -332,12 +341,8 @@ export default function Hero() {
               </button>
             </div>
 
-            <img
-              src="/assets/swasthya/hero/ambulance.png"
-              alt="Emergency Ambulance"
+            <div
               className="
-                pointer-events-none
-
                 absolute
                 bottom-0
                 right-0
@@ -346,11 +351,22 @@ export default function Hero() {
                 sm:w-[300px]
                 lg:w-[340px]
 
-                object-contain
+                h-[240px]
+                sm:h-[300px]
+                lg:h-[340px]
               "
-            />
+            >
+              <Image
+                src="/assets/swasthya/hero/ambulance.png"
+                alt="Emergency Ambulance"
+                fill
+                className="object-contain pointer-events-none"
+                priority
+              />
+            </div>
           </GlassCard>
         </FadeUp>
+
       </div>
     </section>
   );

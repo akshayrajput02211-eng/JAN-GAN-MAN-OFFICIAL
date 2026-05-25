@@ -1,32 +1,49 @@
-import { cn } from "@/lib/cn";
+// src/components/swasthyashared/animations/FadeUp.tsx
 
-interface Props {
-  children: React.ReactNode;
+"use client";
+
+import { motion } from "framer-motion";
+import type { ReactNode } from "react";
+
+interface FadeUpProps {
+  children: ReactNode;
+  delay?: number;
+  duration?: number;
   className?: string;
+  y?: number;
+  once?: boolean;
 }
 
-export default function GlassCard({
+export default function FadeUp({
   children,
-  className,
-}: Props) {
+  delay = 0,
+  duration = 0.7,
+  className = "",
+  y = 40,
+  once = true,
+}: FadeUpProps) {
   return (
-    <div
-      className={cn(
-        `
-        rounded-[32px]
-        border border-white/40
-        bg-white/70
-        backdrop-blur-xl
-        shadow-[0_10px_60px_rgba(0,0,0,0.06)]
-        transition-all
-        duration-500
-        hover:-translate-y-1
-        hover:shadow-[0_20px_80px_rgba(0,0,0,0.08)]
-      `,
-        className
-      )}
+    <motion.div
+      initial={{
+        opacity: 0,
+        y,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{
+        once,
+        amount: 0.2,
+      }}
+      transition={{
+        duration,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className={className}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

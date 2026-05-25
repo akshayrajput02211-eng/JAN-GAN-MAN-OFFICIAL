@@ -1,9 +1,9 @@
-import type { Service } from "./servicesData";
+import type { ServiceItem } from "./servicesData";
 
 import ServiceCard from "./ServiceCard";
 
 interface ServiceGridProps {
-  services: Service[];
+  services: ServiceItem[];
 }
 
 export default function ServiceGrid({
