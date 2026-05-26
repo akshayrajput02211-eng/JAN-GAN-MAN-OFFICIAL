@@ -1,6 +1,4 @@
-// ========================================
-// FILE: src/data/servicesData.tsx
-// ========================================
+
 
 import type { LucideIcon } from "lucide-react";
 
@@ -32,7 +30,7 @@ export const services: ServiceItem[] = [
     icon: Briefcase,
     href: "/naukri",
     color: "from-blue-500 to-cyan-500",
-    image: "/dummy/jobs.png",
+    image: "/image/hero/service/job.png",
   },
 
   {
@@ -42,7 +40,7 @@ export const services: ServiceItem[] = [
     icon: Store,
     href: "/dukaan",
     color: "from-pink-500 to-rose-500",
-    image: "/dummy/shop.png",
+    image: "/image/hero/service/shop.png",
   },
 
   {
@@ -52,17 +50,17 @@ export const services: ServiceItem[] = [
     icon: Shield,
     href: "/sarkari-seva",
     color: "from-orange-500 to-yellow-500",
-    image: "/dummy/government.png",
+    image: "/image/hero/service/yojna.png",
   },
 
   {
-    title: "Healthcare",
+    title: "Swasthya",
     description:
       "Health schemes, hospitals, AI health support aur emergency seva.",
     icon: HeartPulse,
-    href: "/healthcare",
+    href: "/swasthya",
     color: "from-red-500 to-pink-500",
-    image: "/dummy/healthcare.png",
+    image: "/image/hero/service/doctor.png",
   },
 
   {
@@ -72,17 +70,17 @@ export const services: ServiceItem[] = [
     icon: Tractor,
     href: "/krishi",
     color: "from-green-500 to-emerald-500",
-    image: "/dummy/farming.png",
+    image: "/image/hero/service/farmer.png",
   },
 
   {
-    title: "Education",
+    title: "Shiksha",
     description:
       "Scholarships, online learning aur student support services.",
     icon: GraduationCap,
-    href: "/education",
+    href: "/shiksha",
     color: "from-violet-500 to-purple-500",
-    image: "/dummy/education.png",
+    image: "/image/hero/service/teacher.png",
   },
 
   {
@@ -90,18 +88,18 @@ export const services: ServiceItem[] = [
     description:
       "AI assistant se turant help paayein Hindi aur local language mein.",
     icon: Sparkles,
-    href: "/ai-help",
+    href: "/ai-sahayak",
     color: "from-fuchsia-500 to-indigo-500",
-    image: "/dummy/ai.png",
+    image: "/image/hero/service/ai.png",
   },
 
   {
-    title: "Banking",
+    title: "Suraksha",
     description:
-      "Bank account, loans, insurance, subsidy aur digital banking services.",
+      "Bank account, loans, insurance aur digital banking services.",
     icon: Landmark,
-    href: "/banking",
+    href: "/suraksha",
     color: "from-yellow-500 to-orange-500",
-    image: "/dummy/banking.png",
+    image: "/image/hero/service/police.png",
   },
 ];

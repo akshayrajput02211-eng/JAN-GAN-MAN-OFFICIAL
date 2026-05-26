@@ -1,47 +1,44 @@
-import type { ServiceItem } from "./servicesData";
-
 import ServiceCard from "./ServiceCard";
 
-interface ServiceGridProps {
-  services: ServiceItem[];
-}
+import { services } from "./servicesData";
 
-export default function ServiceGrid({
-  services,
-}: ServiceGridProps) {
+export default function ServiceGrid() {
   return (
     <section
       className="
-        grid
-        grid-cols-1
-        sm:grid-cols-2
-        lg:grid-cols-3
-        gap-4
-        sm:gap-5
-        lg:gap-6
-        px-4
-        sm:px-5
-        md:px-6
-        py-8
-        max-w-7xl
         mx-auto
+        max-w-7xl
+
+        px-4
+        sm:px-6
+        lg:px-8
+
+        py-10
       "
     >
-      {services.map((service) => {
-        const Icon = service.icon;
+      <div
+        className="
+          grid
+          grid-cols-1
+          gap-6
 
-        return (
+          sm:grid-cols-2
+
+          lg:grid-cols-3
+
+          xl:grid-cols-4
+        "
+      >
+        {services.map((service) => (
           <ServiceCard
             key={service.title}
             title={service.title}
             description={service.description}
-            icon={<Icon size={22} />}
-            tone={service.tone}
             href={service.href}
             image={service.image}
           />
-        );
-      })}
+        ))}
+      </div>
     </section>
   );
 }
